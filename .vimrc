@@ -19,13 +19,10 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 
-" Autocomplite
-" autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-
 " NERDTree settings bellow:
 map <C-n> :NERDTreeToggle<CR>
 
-" Specify a directory for plugins
+" I use vim-plug for pluggins: https://github.com/junegunn/vim-plug
 call plug#begin('~/.vim/plugged')
 
 " A tree explorer.
