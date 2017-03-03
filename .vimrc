@@ -38,7 +38,6 @@ Plug 'sheerun/vim-polyglot'
 Plug 'scrooloose/syntastic'
 
 " Autocomplite
-" Plug 'ternjs/tern_for_vim', {'do': 'npm i' }
 Plug 'Valloric/YouCompleteMe', {'do': './install.py --clang-completer --gocode-completer --tern-completer' }
 
 " Commenting
