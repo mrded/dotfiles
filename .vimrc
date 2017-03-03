@@ -1,7 +1,10 @@
+" colorscheme
+syntax on
+colorscheme gruvbox
+set background=dark
+
 " Don't try to be vi compatible
 set nocompatible
-
-syntax on
 
 " Fix problem with backspace
 set backspace=2
@@ -9,9 +12,6 @@ set backspace=2
 " show line numbers
 set number
 set numberwidth=2
-
-" colorscheme
-colorscheme railscasts
 
 " Tab settings
 set tabstop=2
@@ -24,6 +24,9 @@ map <C-n> :NERDTreeToggle<CR>
 
 " I use vim-plug for pluggins: https://github.com/junegunn/vim-plug
 call plug#begin('~/.vim/plugged')
+
+" Theme (colourscheme)
+Plug 'morhetz/gruvbox'
 
 " A tree explorer.
 Plug 'scrooloose/nerdtree'
