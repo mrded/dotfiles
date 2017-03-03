@@ -20,7 +20,7 @@ set softtabstop=2
 set expandtab
 
 " NERDTree settings bellow:
-map <C-n> :NERDTreeToggle<CR>
+" map <C-n> :NERDTreeToggle<CR>
 
 " I use vim-plug for pluggins: https://github.com/junegunn/vim-plug
 call plug#begin('~/.vim/plugged')
@@ -48,6 +48,9 @@ Plug 'itchyny/lightline.vim'
 
 " Highlights words under the cursor: http://www.vim.org/scripts/script.php?script_id=4306
 Plug 'ihacklog/HiCursorWords'
+
+" Preview colours in source code while editing
+Plug 'ap/vim-css-color'
 
 " Initialize plugin system
 call plug#end()
