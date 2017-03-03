@@ -41,7 +41,6 @@ Plug 'scrooloose/syntastic'
 " Plug 'ternjs/tern_for_vim', {'do': 'npm i' }
 Plug 'Valloric/YouCompleteMe', {'do': './install.py --clang-completer --gocode-completer --tern-completer' }
 
-
 " Commenting
 Plug 'tpope/vim-commentary'
 
