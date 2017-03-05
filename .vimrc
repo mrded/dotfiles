@@ -1,27 +1,3 @@
-" colorscheme
-syntax on
-colorscheme gruvbox
-set background=dark
-
-" Don't try to be vi compatible
-set nocompatible
-
-" Fix problem with backspace
-set backspace=2
-
-" show line numbers
-set number
-set numberwidth=2
-
-" Tab settings
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-set expandtab
-
-" NERDTree settings bellow:
-" map <C-n> :NERDTreeToggle<CR>
-
 " I use vim-plug for pluggins: https://github.com/junegunn/vim-plug
 call plug#begin('~/.vim/plugged')
 
@@ -54,3 +30,24 @@ Plug 'ap/vim-css-color'
 
 " Initialize plugin system
 call plug#end()
+
+" colorscheme
+syntax on
+colorscheme gruvbox
+set background=dark
+
+" Don't try to be vi compatible
+set nocompatible
+
+" Fix problem with backspace
+set backspace=2
+
+" show line numbers
+set number
+set numberwidth=2
+
+" Tab settings
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
