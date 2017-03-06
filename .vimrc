@@ -7,7 +7,7 @@ Plug 'morhetz/gruvbox'
 " A tree explorer.
 Plug 'scrooloose/nerdtree'
 
-" A solid language pack (syntax highlighting)
+" A solid language pack (syntax highlighting) 
 Plug 'sheerun/vim-polyglot'
 
 " Syntax checking hacks
@@ -51,3 +51,11 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
+
+" Split screen
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+set splitbelow
+set splitright
