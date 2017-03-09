@@ -1,7 +1,7 @@
 " NoCompatible {{{1
 set nocp
 
-let g:vim_home = get(g:, 'vim_home', expand('~/.vim/'))
+let g:vim_home = get(g:, 'vim_home', expand('~/dotfiles/.vim/'))
 
 " Load all vim configs {{{1
 let config_list = [

@@ -5,8 +5,7 @@ Clone the repository into **~/dotfiles**: `git clone https://github.com/mrded/do
 
 ## Vim
 
-## Install 
+### Install 
 - I use vim 8.0 compiled like following: `brew install vim --override-system-vim --with-cscope --with-lua`
-- Replace **~/.vim/**: `ln -s ~/dotfiles/.vim ~/.vim`
 - Replace **~/.vimrc**: `ln -s ~/dotfiles/.vimrc ~/.vimrc`
 - Install [vim-plug](https://github.com/junegunn/vim-plug) then run `:PlugInstall`
