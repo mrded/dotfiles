@@ -17,7 +17,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'scrooloose/syntastic'
 
 " Autocomplite
-Plug 'Valloric/YouCompleteMe', {'do': './install.py --clang-completer --gocode-completer --tern-completer' }
+" Plug 'Valloric/YouCompleteMe', {'do': './install.py --clang-completer --gocode-completer --tern-completer' }
 
 " Commenting
 Plug 'tpope/vim-commentary'
@@ -30,6 +30,9 @@ Plug 'ihacklog/HiCursorWords'
 
 " Preview colours in source code while editing
 Plug 'ap/vim-css-color'
+
+" Tasks
+Plug 'irrationalistic/vim-tasks'
 
 " Initialize plugin system
 call plug#end()
