@@ -1,9 +1,12 @@
 # Dmitry Demenchuk does dotfiles
 The single dot that has it all.
 
-## Vim
-I use vim 8.0 compiled like following:
+Clone the repository into **~/dotfiles**: `git clone https://github.com/mrded/dotfiles.git ~/dotfiles`
 
-    brew install vim --override-system-vim --with-cscope --with-lua
-    
-To install all plugins, install [vim-plug](https://github.com/junegunn/vim-plug) first, then run `:PlugInstall`
+## Vim
+
+## Install 
+- I use vim 8.0 compiled like following: `brew install vim --override-system-vim --with-cscope --with-lua`
+- Replace **~/.vim/**: `ln -s ~/dotfiles/.vim ~/.vim`
+- Replace **~/.vimrc**: `ln -s ~/dotfiles/.vimrc ~/.vimrc`
+- Install [vim-plug](https://github.com/junegunn/vim-plug) then run `:PlugInstall`
