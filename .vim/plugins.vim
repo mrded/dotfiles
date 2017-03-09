@@ -33,4 +33,3 @@ Plug 'ap/vim-css-color'
 
 " Initialize plugin system
 call plug#end()
-
