@@ -1,4 +1,5 @@
 # Dmitry Demenchuk does dotfiles
+The single dot that has it all.
 
 ## Vim
 I use vim 8.0 compiled like following:
