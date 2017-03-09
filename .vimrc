@@ -7,6 +7,9 @@ Plug 'morhetz/gruvbox'
 " A tree explorer.
 Plug 'scrooloose/nerdtree'
 
+" Find and open a file by name
+Plug 'ctrlpvim/ctrlp.vim'
+
 " A solid language pack (syntax highlighting)
 Plug 'sheerun/vim-polyglot'
 
@@ -61,7 +64,8 @@ set splitbelow
 set splitright
 
 " lightline.vim
-set noshowmode
+set noshowmode " get rid of the extraneous default vim mode information that is now provided by lightline
+set laststatus=2 " make status bar appear not only on :vsp
 " @TODO: Show relative path to the file. https://github.com/itchyny/lightline.vim/issues/87
 " @TODO: Hide useless information from right side.
 
