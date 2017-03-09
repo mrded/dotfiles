@@ -1,0 +1,25 @@
+" colorscheme
+syntax on
+colorscheme gruvbox
+set background=dark
+
+" Don't try to be vi compatible
+set nocompatible
+
+" Fix problem with backspace
+set backspace=2
+
+" show line numbers
+set number
+set numberwidth=2
+
+" Tab settings
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+
+" Split screen
+set splitbelow
+set splitright
+
