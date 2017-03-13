@@ -15,7 +15,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
 
 " Syntax checking hacks
-Plug scrooloose/syntastic'
+Plug 'scrooloose/syntastic'
 
 " Autocomplite
 " Plug 'Valloric/YouCompleteMe', {'do': './install.py --clang-completer --gocode-completer --tern-completer' }
