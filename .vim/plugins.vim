@@ -8,13 +8,14 @@ Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdtree'
 
 " Find and open a file by name
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf', { 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 " A solid language pack (syntax highlighting)
 Plug 'sheerun/vim-polyglot'
 
 " Syntax checking hacks
-Plug 'scrooloose/syntastic'
+Plug scrooloose/syntastic'
 
 " Autocomplite
 " Plug 'Valloric/YouCompleteMe', {'do': './install.py --clang-completer --gocode-completer --tern-completer' }
