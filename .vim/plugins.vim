@@ -26,6 +26,9 @@ Plug 'scrooloose/syntastic'
 " Commenting
 Plug 'tpope/vim-commentary'
 
+" Rename files
+Plug 'danro/rename.vim'
+
 " Status bar
 Plug 'itchyny/lightline.vim'
 
