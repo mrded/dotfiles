@@ -8,8 +8,10 @@ Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdtree'
 
 " Find and open a file by name
-Plug 'junegunn/fzf', { 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf.vim', {'do': 'brew install fzf'}
+
+" Find text in files
+Plug 'dyng/ctrlsf.vim', {'do': 'brew install ack'}
 
 " A solid language pack (syntax highlighting)
 Plug 'sheerun/vim-polyglot'
