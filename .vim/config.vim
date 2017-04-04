@@ -23,3 +23,5 @@ set expandtab
 set splitbelow
 set splitright
 
+" Enable mouse
+set mouse=a
