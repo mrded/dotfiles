@@ -12,4 +12,4 @@ Clone the repository into **~/dotfiles**: `git clone https://github.com/mrded/do
 
 ## TODOs
 - [ ] [Debugging](https://github.com/joonty/vdebug)
-- [ ] Multiple selection / cursors
+- [ ] [Multiple selection / cursors](https://github.com/terryma/vim-multiple-cursors)
