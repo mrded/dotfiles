@@ -1,1 +1,1 @@
-map <C-n> :NERDTreeToggle<CR>
+map <C-n> :NERDTreeFind<CR>
