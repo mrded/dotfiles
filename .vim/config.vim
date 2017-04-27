@@ -13,6 +13,9 @@ set backspace=2
 set number
 set numberwidth=2
 
+" Highlight current line
+set cursorline
+
 " Tab settings
 set tabstop=2
 set shiftwidth=2
