@@ -13,6 +13,9 @@ set backspace=2
 set number
 set numberwidth=2
 
+" Delete pipe characters on styling vertical split borders
+set fillchars+=vert:\ 
+
 " Highlight current line
 set cursorline
 
