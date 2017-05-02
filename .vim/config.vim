@@ -16,6 +16,9 @@ set numberwidth=2
 " Highlight current line
 set cursorline
 
+" Highlight all search matches
+set hlsearch
+
 " Tab settings
 set tabstop=2
 set shiftwidth=2
