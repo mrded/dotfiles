@@ -44,5 +44,8 @@ Plug 'irrationalistic/vim-tasks'
 " Debugger
 Plug 'joonty/vdebug'
 
+" Highlight git changes
+Plug 'airblade/vim-gitgutter'
+
 " Initialize plugin system
 call plug#end()
