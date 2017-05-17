@@ -6,6 +6,7 @@ Plug 'morhetz/gruvbox'
 
 " A tree explorer.
 Plug 'scrooloose/nerdtree'
+Plug 'francoiscabrol/ranger.vim'
 
 " Find and open a file by name
 Plug 'junegunn/fzf', { 'do': './install --bin' }
