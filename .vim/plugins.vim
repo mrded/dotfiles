@@ -22,7 +22,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'scrooloose/syntastic'
 
 " Autocomplite
-Plug 'Valloric/YouCompleteMe', {'do': './install.py --tern-completer' }
+Plug 'Valloric/YouCompleteMe', {'do': 'brew install cmake; ./install.py --tern-completer' }
 
 " Commenting
 Plug 'tpope/vim-commentary'
