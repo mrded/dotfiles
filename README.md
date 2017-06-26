@@ -11,5 +11,5 @@ Clone the repository into **~/dotfiles**: `git clone https://github.com/mrded/do
 - Install [vim-plug](https://github.com/junegunn/vim-plug) then run `:PlugInstall`
 
 ## TODOs
-- [ ] [Debugging](https://github.com/joonty/vdebug)
+- [X] [Debugging](https://github.com/joonty/vdebug)
 - [ ] [Multiple selection / cursors](https://github.com/terryma/vim-multiple-cursors)
