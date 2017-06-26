@@ -27,8 +27,8 @@ Plug 'Valloric/YouCompleteMe', {'do': 'brew install cmake; ./install.py --tern-c
 " Commenting
 Plug 'tpope/vim-commentary'
 
-" Rename files
-Plug 'danro/rename.vim'
+" Sugar for the UNIX shell commands
+Plug 'tpope/vim-eunuch'
 
 " Status bar
 Plug 'itchyny/lightline.vim'
