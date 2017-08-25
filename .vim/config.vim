@@ -1,7 +1,6 @@
 " colorscheme
 syntax on
 colorscheme gruvbox
-set background=dark
 
 " Don't try to be vi compatible
 set nocompatible
@@ -12,9 +11,6 @@ set backspace=2
 " show line numbers
 set number
 set numberwidth=2
-
-" Delete pipe characters on styling vertical split borders
-set fillchars+=vert:\ 
 
 " Highlight current line
 set cursorline
