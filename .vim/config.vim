@@ -1,6 +1,5 @@
 " colorscheme
 syntax on
-colorscheme gruvbox
 
 " Don't try to be vi compatible
 set nocompatible
