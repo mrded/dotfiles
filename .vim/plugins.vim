@@ -39,9 +39,6 @@ Plug 'ihacklog/HiCursorWords'
 " Preview colours in source code while editing
 Plug 'ap/vim-css-color'
 
-" Tasks
-Plug 'irrationalistic/vim-tasks'
-
 " Debugger
 Plug 'joonty/vdebug'
 
