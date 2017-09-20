@@ -4,6 +4,9 @@ call plug#begin('~/.vim/plugged')
 " Theme (colourscheme)
 Plug 'morhetz/gruvbox'
 
+" Display the indention levels with thin vertical lines
+Plug 'Yggdroot/indentLine'
+
 " A tree explorer.
 Plug 'scrooloose/nerdtree'
 Plug 'francoiscabrol/ranger.vim'
