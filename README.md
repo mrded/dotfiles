@@ -10,6 +10,12 @@ Clone the repository into **~/dotfiles**: `git clone https://github.com/mrded/do
 - Replace **~/.vimrc**: `ln -s ~/dotfiles/.vimrc ~/.vimrc`
 - Install [vim-plug](https://github.com/junegunn/vim-plug) then run `:PlugInstall`
 
+## NeoVim
+
+### Install 
+- Replace **~/.config/nvim/init.vim**: `ln -s ~/dotfiles/.vimrc ~/.config/nvim/init.vim`
+- Install [vim-plug](https://github.com/junegunn/vim-plug) then run `:PlugInstall`
+
 ## TODOs
 - [X] [Debugging](https://github.com/joonty/vdebug)
 - [ ] [Multiple selection / cursors](https://github.com/terryma/vim-multiple-cursors)
