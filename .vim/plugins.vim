@@ -7,9 +7,6 @@ Plug 'morhetz/gruvbox'
 " The fancy start screen
 Plug 'mhinz/vim-startify'
 
-" Display the indention levels with thin vertical lines
-Plug 'Yggdroot/indentLine'
-
 " A tree explorer.
 Plug 'scrooloose/nerdtree'
 Plug 'francoiscabrol/ranger.vim'
@@ -42,10 +39,6 @@ Plug 'itchyny/lightline.vim'
 " Highlights words under the cursor: http://www.vim.org/scripts/script.php?script_id=4306
 Plug 'ihacklog/HiCursorWords'
 
-" Preview colours in source code while editing
-Plug 'ap/vim-css-color'
-
-" Debugger
 Plug 'joonty/vdebug'
 
 " Highlight git changes
