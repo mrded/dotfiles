@@ -13,6 +13,8 @@ Clone the repository into **~/dotfiles**: `git clone https://github.com/mrded/do
 ## NeoVim
 
 ### Install 
+- Requires Ruby support: `gem install neovim`
+- Requires Python (2.6+ or 3.3+) support: `pip2 install --user neovim` 
 - Replace **~/.config/nvim/init.vim**: `ln -s ~/dotfiles/.vimrc ~/.config/nvim/init.vim`
 - Install [vim-plug](https://github.com/junegunn/vim-plug) then run `:PlugInstall`
 
