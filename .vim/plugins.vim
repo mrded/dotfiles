@@ -39,6 +39,9 @@ Plug 'itchyny/lightline.vim'
 " Highlights words under the cursor: http://www.vim.org/scripts/script.php?script_id=4306
 Plug 'ihacklog/HiCursorWords'
 
+" Allows toggling bookmarks per line
+Plug 'MattesGroeger/vim-bookmarks'
+
 Plug 'joonty/vdebug'
 
 " Highlight git changes
