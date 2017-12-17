@@ -16,7 +16,7 @@ Plug 'junegunn/fzf', { 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 
 " Find text in files
-Plug 'dyng/ctrlsf.vim', {'do': 'brew install ack'}
+Plug 'dyng/ctrlsf.vim'
 
 " A solid language pack (syntax highlighting)
 Plug 'sheerun/vim-polyglot'
@@ -25,7 +25,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'scrooloose/syntastic'
 
 " Autocomplite
-Plug 'Valloric/YouCompleteMe', {'do': 'brew install cmake; ./install.py --tern-completer' }
+Plug 'Valloric/YouCompleteMe', {'do': './install.py --all' }
 
 " Commenting
 Plug 'tpope/vim-commentary'
