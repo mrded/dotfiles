@@ -10,13 +10,15 @@ Clone the repository into **~/dotfiles**: `git clone https://github.com/mrded/do
 - Replace **~/.vimrc**: `ln -s ~/dotfiles/.vimrc ~/.vimrc`
 - Install [vim-plug](https://github.com/junegunn/vim-plug) then run `:PlugInstall`
 
-## NeoVim
-
-### Install 
+### NeoVim
 - Requires Ruby support: `gem install neovim`
-- Requires Python (2.6+ or 3.3+) support: `pip2 install --user neovim` 
-- Replace **~/.config/nvim/init.vim**: `ln -s ~/dotfiles/.vimrc ~/.config/nvim/init.vim`
-- Install [vim-plug](https://github.com/junegunn/vim-plug) then run `:PlugInstall`
+- Requires Python (2.6+ or 3.3+) support: `pip2 install --user neovim`
+
+### Valloric/YouCompleteMe
+- `brew install cmake`
+
+### dyng/ctrlsf.vim
+- `brew install ack`
 
 ## TODOs
 - [X] [Debugging](https://github.com/joonty/vdebug)
