@@ -47,5 +47,8 @@ Plug 'joonty/vdebug'
 " Highlight git changes
 Plug 'airblade/vim-gitgutter'
 
+" Git intergation
+Plug 'tpope/vim-fugitive'
+
 " Initialize plugin system
 call plug#end()
