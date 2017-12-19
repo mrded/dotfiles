@@ -25,7 +25,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'scrooloose/syntastic'
 
 " Autocomplite
-Plug 'Valloric/YouCompleteMe', {'do': './install.py --all' }
+Plug 'Valloric/YouCompleteMe', {'do': './install.py --js-completer' }
 
 " Commenting
 Plug 'tpope/vim-commentary'
