@@ -43,6 +43,9 @@ Plug 'MattesGroeger/vim-bookmarks'
 
 " Plug 'joonty/vdebug'
 
+" interactive scratchpad for hackers. 
+Plug 'metakirby5/codi.vim'
+
 " Highlight git changes
 Plug 'airblade/vim-gitgutter'
 
