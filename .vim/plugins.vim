@@ -9,7 +9,6 @@ Plug 'mhinz/vim-startify'
 
 " A tree explorer.
 Plug 'scrooloose/nerdtree'
-Plug 'francoiscabrol/ranger.vim'
 
 " Find and open a file by name
 Plug 'junegunn/fzf', { 'do': './install --bin' }
@@ -42,7 +41,7 @@ Plug 'ihacklog/HiCursorWords'
 " Allows toggling bookmarks per line
 Plug 'MattesGroeger/vim-bookmarks'
 
-Plug 'joonty/vdebug'
+" Plug 'joonty/vdebug'
 
 " Highlight git changes
 Plug 'airblade/vim-gitgutter'
