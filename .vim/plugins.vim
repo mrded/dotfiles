@@ -48,8 +48,6 @@ Plug 'ihacklog/HiCursorWords'
 " Allows toggling bookmarks per line
 Plug 'MattesGroeger/vim-bookmarks'
 
-" Plug 'joonty/vdebug'
-
 " interactive scratchpad for hackers. 
 Plug 'metakirby5/codi.vim'
 
