@@ -25,7 +25,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'scrooloose/syntastic'
 
 " Autocomplite
-Plug 'Valloric/YouCompleteMe', {'do': './install.py --js-completer' }
+" Plug 'Valloric/YouCompleteMe', {'do': './install.py --js-completer' }
 
 " Commenting
 Plug 'tpope/vim-commentary'
@@ -43,7 +43,7 @@ Plug 'ihacklog/HiCursorWords'
 Plug 'MattesGroeger/vim-bookmarks'
 
 " interactive scratchpad for hackers. 
-Plug 'metakirby5/codi.vim'
+"Plug 'metakirby5/codi.vim'
 
 " Highlight git changes
 Plug 'airblade/vim-gitgutter'
