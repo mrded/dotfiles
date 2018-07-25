@@ -1,3 +1,6 @@
+" use utf-8 encoding
+set encoding=utf-8
+
 " colorscheme
 syntax on
 
