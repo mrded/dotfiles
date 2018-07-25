@@ -9,6 +9,7 @@ Plug 'mhinz/vim-startify'
 
 " A tree explorer.
 Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " Find and open a file by name
 Plug 'junegunn/fzf', { 'do': './install --bin' }
