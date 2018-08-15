@@ -35,6 +35,14 @@ Plug 'tpope/vim-eunuch'
 
 " Status bar
 Plug 'itchyny/lightline.vim'
+" @TODO: Alternative to try.
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
+
+
+" Provides an easy way to browse the tags of the current file and get an overview of its structure.
+" @TODO: To try.
+" Plug 'majutsushi/tagbar'
 
 " Highlights words under the cursor: http://www.vim.org/scripts/script.php?script_id=4306
 Plug 'mrded/vim-hi-cursor-words'
