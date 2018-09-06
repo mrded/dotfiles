@@ -15,6 +15,9 @@ Clone the repository into **~/dotfiles**: `git clone https://github.com/mrded/do
 - Requires Ruby support: `gem install neovim`
 - Requires Python (2.6+ or 3.3+) support: `pip2 install --user neovim`
 
+### vim-syntastic/syntastic
+- `npm install -g eslint babel-eslint eslint-plugin-react`
+
 ### Valloric/YouCompleteMe
 - `brew install cmake`
 
