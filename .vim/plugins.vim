@@ -59,5 +59,8 @@ Plug 'airblade/vim-gitgutter'
 " Git intergation
 Plug 'tpope/vim-fugitive'
 
+" Close all buffers except visible 
+Plug 'Asheq/close-buffers.vim'
+
 " Initialize plugin system
 call plug#end()
