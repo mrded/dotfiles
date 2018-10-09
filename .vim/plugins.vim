@@ -26,6 +26,8 @@ Plug 'scrooloose/syntastic'
 
 " Autocomplite
 " Plug 'Valloric/YouCompleteMe', {'do': './install.py --js-completer' }
+" Plug 'ncm2/ncm2'
+" Plug 'Shougo/deoplete.nvim'
 
 " Commenting
 Plug 'tpope/vim-commentary'
