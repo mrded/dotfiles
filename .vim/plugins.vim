@@ -24,6 +24,9 @@ Plug 'sheerun/vim-polyglot'
 " Syntax checking hacks
 Plug 'scrooloose/syntastic'
 
+" CTags
+Plug 'ludovicchabant/vim-gutentags'
+
 " Autocomplite
 " Plug 'Valloric/YouCompleteMe', {'do': './install.py --js-completer' }
 " Plug 'ncm2/ncm2'
