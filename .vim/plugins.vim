@@ -24,6 +24,9 @@ Plug 'sheerun/vim-polyglot'
 " Syntax checking hacks
 Plug 'scrooloose/syntastic'
 
+" TypeScript support 
+Plug 'Quramy/tsuquyomi'
+
 " CTags
 Plug 'ludovicchabant/vim-gutentags'
 
