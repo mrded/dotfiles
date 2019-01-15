@@ -1,2 +1,6 @@
-let g:ctrlsf_extra_root_markers = ['.root', 'composer.json', 'package.json']
-let g:ctrlsf_ignore_dir = ['bower_components', 'node_modules', 'build']
+let g:ctrlsf_search_mode = 'async'
+let g:ctrlsf_position = 'bottom'
+let g:ctrlsf_winsize = '50%'
+let g:ctrlsf_auto_focus = {
+    \ "at": "start"
+    \ }
