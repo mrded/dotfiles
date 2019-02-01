@@ -28,8 +28,8 @@ Plug 'scrooloose/syntastic'
 Plug 'Quramy/tsuquyomi'
 
 " CTags
-Plug 'ludovicchabant/vim-gutentags'
-Plug 'skywind3000/gutentags_plus'
+" Plug 'ludovicchabant/vim-gutentags'
+" Plug 'skywind3000/gutentags_plus'
 
 " Autocomplite
 " Plug 'Valloric/YouCompleteMe', {'do': './install.py --js-completer' }
