@@ -53,6 +53,9 @@ Plug 'itchyny/lightline.vim'
 " @TODO: To try.
 " Plug 'majutsushi/tagbar'
 
+" Templates manager
+Plug 'tibabit/vim-templates'
+
 " Highlights words under the cursor: http://www.vim.org/scripts/script.php?script_id=4306
 Plug 'mrded/vim-hi-cursor-words'
 
