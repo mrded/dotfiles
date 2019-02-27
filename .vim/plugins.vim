@@ -24,9 +24,8 @@ Plug 'sheerun/vim-polyglot'
 " Syntax checking hacks
 Plug 'scrooloose/syntastic'
 
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+" Formats your code to look pretty 
+" Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 " TypeScript support 
 Plug 'Quramy/tsuquyomi'
