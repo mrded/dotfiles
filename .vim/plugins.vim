@@ -24,6 +24,10 @@ Plug 'sheerun/vim-polyglot'
 " Syntax checking hacks
 Plug 'scrooloose/syntastic'
 
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+
 " TypeScript support 
 Plug 'Quramy/tsuquyomi'
 
