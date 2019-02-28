@@ -1,7 +1,9 @@
-let g:gruvbox_vert_split='bg1'
+if match(&runtimepath, 'gruvbox') != -1
+  let g:gruvbox_vert_split='bg1'
 
-" Delete pipe characters on styling vertical split borders
-set fillchars+=vert:\ 
+  " Delete pipe characters on styling vertical split borders
+  set fillchars+=vert:\ 
 
-colorscheme gruvbox
-set background=dark
+  colorscheme gruvbox
+  set background=dark
+endif
