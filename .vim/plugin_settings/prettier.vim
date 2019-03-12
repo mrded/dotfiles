@@ -4,5 +4,5 @@ if match(&runtimepath, 'vim-prettier') != -1
   let g:prettier#quickfix_enabled = 0
 
   " Apply Prettier on file save
-  :autocmd BufWritePre * execute 'silent Prettier'
+  autocmd BufWritePre *.js,*.ts Prettier
 endif
