@@ -23,10 +23,6 @@ Clone the repository into **~/dotfiles**: `git clone https://github.com/mrded/do
 
 - `npm install -g eslint babel-eslint eslint-plugin-react`
 
-### Valloric/YouCompleteMe
-
-- `brew install cmake`
-
 ### dyng/ctrlsf.vim
 
 - `brew install ack`

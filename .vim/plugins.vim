@@ -36,9 +36,13 @@ Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 " Plug 'skywind3000/gutentags_plus'
 
 " Autocomplite
-" Plug 'Valloric/YouCompleteMe', {'do': './install.py --js-completer' }
-" Plug 'ncm2/ncm2'
-" Plug 'Shougo/deoplete.nvim'
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 
 " Commenting
 Plug 'tpope/vim-commentary'
