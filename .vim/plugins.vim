@@ -15,6 +15,10 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'junegunn/fzf', { 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 
+" Fuzzy finder
+" @TODO: use as an alternative to ctrlp + fzf + ctrlsf
+" Plug 'Shougo/denite.nvim'
+
 " Find text in files
 Plug 'dyng/ctrlsf.vim'
 
