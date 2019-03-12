@@ -11,13 +11,9 @@ Plug 'mhinz/vim-startify'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
-" Find and open a file by name
-Plug 'junegunn/fzf', { 'do': './install --bin' }
-Plug 'junegunn/fzf.vim'
-
 " Fuzzy finder
 " @TODO: use as an alternative to ctrlp + fzf + ctrlsf
-" Plug 'Shougo/denite.nvim'
+Plug 'Shougo/denite.nvim'
 
 " Find text in files
 Plug 'dyng/ctrlsf.vim'
