@@ -31,6 +31,9 @@ Plug 'scrooloose/syntastic'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 
+" JavaScript support
+" Autocomplite for deoplete
+Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 " CTags
 " Plug 'ludovicchabant/vim-gutentags'
 " Plug 'skywind3000/gutentags_plus'
