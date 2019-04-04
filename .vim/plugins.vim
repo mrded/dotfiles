@@ -38,10 +38,6 @@ Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 " PHP support
 Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install && pecl install msgpack' }
 
-" CTags
-" Plug 'ludovicchabant/vim-gutentags'
-" Plug 'skywind3000/gutentags_plus'
-
 " Autocomplite
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -66,14 +62,6 @@ Plug 'itchyny/lightline.vim'
 " Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
 
-
-" Provides an easy way to browse the tags of the current file and get an overview of its structure.
-" @TODO: To try.
-" Plug 'majutsushi/tagbar'
-
-" Templates manager
-Plug 'tibabit/vim-templates'
-
 " Generates HTML the same way as in PhpStorm.
 Plug 'mattn/emmet-vim'
 
@@ -83,14 +71,8 @@ Plug 'mrded/vim-hi-cursor-words'
 " Allows toggling bookmarks per line
 Plug 'MattesGroeger/vim-bookmarks'
 
-" interactive scratchpad for hackers. 
-"Plug 'metakirby5/codi.vim'
-
 " Highlight git changes
 Plug 'airblade/vim-gitgutter'
-
-" Git intergation
-Plug 'tpope/vim-fugitive'
 
 " Close all buffers except visible 
 Plug 'Asheq/close-buffers.vim'
