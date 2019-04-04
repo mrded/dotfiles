@@ -53,6 +53,11 @@ Plug 'tpope/vim-commentary'
 " Adds quotes and brackeds around a selected block of text
 Plug 'mrded/vim-wrapper'
 
+" TextMate's snippets features  
+Plug 'tomtom/tlib_vim'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
 
 " Status bar
 Plug 'itchyny/lightline.vim'
