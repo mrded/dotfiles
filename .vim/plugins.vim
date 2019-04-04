@@ -54,6 +54,9 @@ endif
 " Commenting
 Plug 'tpope/vim-commentary'
 
+" Adds quotes and brackeds around a selected block of text
+Plug 'mrded/vim-wrapper'
+
 " Sugar for the UNIX shell commands
 Plug 'tpope/vim-eunuch'
 
