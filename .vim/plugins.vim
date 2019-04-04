@@ -34,6 +34,10 @@ Plug 'scrooloose/syntastic'
 " JavaScript support
 " Autocomplite for deoplete
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+
+" PHP support
+Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install && pecl install msgpack' }
+
 " CTags
 " Plug 'ludovicchabant/vim-gutentags'
 " Plug 'skywind3000/gutentags_plus'
