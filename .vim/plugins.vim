@@ -4,9 +4,6 @@ call plug#begin('~/.vim/plugged')
 " Theme (colourscheme)
 Plug 'morhetz/gruvbox'
 
-" The fancy start screen
-Plug 'mhinz/vim-startify'
-
 " A tree explorer.
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
