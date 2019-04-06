@@ -6,3 +6,4 @@
 # git change-commits GIT_AUTHOR_EMAIL "old@email.com" "new@email.com"
   change-commits = "!f() { VAR=$1; OLD=$2; NEW=$3; shift 3; git filter-branch --env-filter \"if [[ \\\"$`echo $VAR`\\\" = '$OLD' ]]; then export $VAR='$NEW'; fi\" $@; }; f "
   
+  lol = "log --graph --decorate --pretty=oneline --abbrev-commit --all"
