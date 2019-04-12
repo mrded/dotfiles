@@ -19,6 +19,12 @@ Clone the repository into **~/dotfiles**: `git clone https://github.com/mrded/do
 - Requires Python (2.6+ or 3.3+) support: `pip2 install --user neovim`
 - After installing you may have to run `:UpdateRemotePlugins`
 
+### Troubleshooting
+
+neovim sometimes may not install pluggins propperly. Try to run following:
+
+   :UpdateRemotePlugins 
+
 ### vim-syntastic/syntastic
 
 - `npm install -g eslint babel-eslint eslint-plugin-react`
