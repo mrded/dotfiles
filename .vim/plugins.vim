@@ -25,7 +25,6 @@ Plug 'scrooloose/syntastic'
 " Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 " TypeScript support 
-Plug 'HerringtonDarkholme/yats.vim'
 Plug 'mhartington/nvim-typescript', {'do': 'npm install -g typescript && ./install.sh'}
 
 " JavaScript support
