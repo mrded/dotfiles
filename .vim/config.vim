@@ -7,6 +7,10 @@ syntax on
 " Don't try to be vi compatible
 set nocompatible
 
+" Enable spell check
+set spelllang=en
+set spell
+
 " Fix problem with backspace
 set backspace=2
 
