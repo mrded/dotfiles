@@ -8,8 +8,7 @@ syntax on
 set nocompatible
 
 " Enable spell check
-set spelllang=en
-set spell
+set spell spelllang=en_gb
 
 " Fix problem with backspace
 set backspace=2
