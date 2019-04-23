@@ -18,8 +18,9 @@ Plug 'dyng/ctrlsf.vim'
 " A solid language pack (syntax highlighting)
 Plug 'sheerun/vim-polyglot'
 
-" Syntax checking hacks
-Plug 'scrooloose/syntastic'
+" Syntax checking 
+" Plug 'scrooloose/syntastic'
+Plug 'w0rp/ale'
 
 " Formats your code to look pretty 
 " Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
