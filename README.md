@@ -25,7 +25,7 @@ neovim sometimes may not install pluggins propperly. Try to run following:
 
    :UpdateRemotePlugins 
 
-### vim-syntastic/syntastic
+### vim-syntastic/syntastic || w0rp/ale
 
 - `npm install -g eslint babel-eslint eslint-plugin-react`
 
