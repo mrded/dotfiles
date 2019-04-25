@@ -21,9 +21,6 @@ Plug 'sheerun/vim-polyglot'
 " Syntax checking 
 Plug 'w0rp/ale'
 
-" Formats your code to look pretty 
-" Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-
 " TypeScript support 
 Plug 'leafgarland/typescript-vim'
 Plug 'mhartington/nvim-typescript', {'do': 'npm install -g typescript && ./install.sh'}
