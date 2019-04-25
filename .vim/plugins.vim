@@ -19,7 +19,6 @@ Plug 'dyng/ctrlsf.vim'
 Plug 'sheerun/vim-polyglot'
 
 " Syntax checking 
-" Plug 'scrooloose/syntastic'
 Plug 'w0rp/ale'
 
 " Formats your code to look pretty 
