@@ -22,11 +22,9 @@ Plug 'sheerun/vim-polyglot'
 Plug 'w0rp/ale'
 
 " TypeScript support 
-Plug 'leafgarland/typescript-vim'
 Plug 'mhartington/nvim-typescript', {'do': 'npm install -g typescript && ./install.sh'}
 
 " JavaScript support
-Plug 'pangloss/vim-javascript'
 " Autocomplite for deoplete
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 
