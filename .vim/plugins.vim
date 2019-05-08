@@ -53,10 +53,9 @@ Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
 
 " Status bar
-Plug 'itchyny/lightline.vim'
+" Plug 'itchyny/lightline.vim'
 " @TODO: Alternative to try.
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
 
 " Generates HTML the same way as in PhpStorm.
 Plug 'mattn/emmet-vim'
