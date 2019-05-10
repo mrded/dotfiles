@@ -9,8 +9,11 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " Fuzzy finder
-" @TODO: use as an alternative to ctrlp + fzf + ctrlsf
-Plug 'Shougo/denite.nvim'
+Plug 'junegunn/fzf', { 'do': './install --bin' }
+Plug 'junegunn/fzf.vim'
+
+" An asynchronous process manager.
+Plug 'Shougo/vimproc.vim'
 
 " Find text in files
 Plug 'dyng/ctrlsf.vim'
@@ -68,6 +71,9 @@ Plug 'MattesGroeger/vim-bookmarks'
 
 " Highlight git changes
 Plug 'airblade/vim-gitgutter'
+
+" Git wrapper
+Plug 'tpope/vim-fugitive'
 
 " Close all buffers except visible 
 Plug 'Asheq/close-buffers.vim'
