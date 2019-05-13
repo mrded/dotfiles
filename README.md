@@ -27,7 +27,7 @@ neovim sometimes may not install pluggins propperly. Try to run following:
 
 ### vim-syntastic/syntastic || w0rp/ale
 
-- `npm install -g eslint babel-eslint eslint-plugin-react`
+- `npm install -g eslint babel-eslint eslint-plugin-react eslint-config-react-app eslint-plugin-import eslint-plugin-flowtype eslint-plugin-jsx-a11y eslint-plugin-react-hooks`
 
 ### dyng/ctrlsf.vim
 
