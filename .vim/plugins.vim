@@ -22,7 +22,7 @@ Plug 'dyng/ctrlsf.vim'
 Plug 'sheerun/vim-polyglot'
 
 " Syntax checking 
-Plug 'w0rp/ale', { 'do': 'npm install -g eslint babel-eslint eslint-plugin-react eslint-config-react-app eslint-plugin-import eslint-plugin-flowtype eslint-plugin-jsx-a11y eslint-plugin-react-hooks'}
+Plug 'w0rp/ale', { 'do': 'npm install -g eslint babel-eslint eslint-plugin-react eslint-plugin-react-native eslint-config-react-app eslint-plugin-import eslint-plugin-flowtype eslint-plugin-jsx-a11y eslint-plugin-react-hooks'}
 
 " TypeScript support 
 Plug 'mhartington/nvim-typescript', {'do': 'npm install -g typescript && ./install.sh'}
