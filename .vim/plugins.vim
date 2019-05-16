@@ -28,20 +28,17 @@ Plug 'w0rp/ale', { 'do': 'npm install -g eslint babel-eslint eslint-plugin-react
 Plug 'mhartington/nvim-typescript', {'do': 'npm install -g typescript && ./install.sh'}
 
 " JavaScript support
-" Autocomplite for deoplete
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+Plug 'ncm2/ncm2-tern',  {'do': 'npm install'}
 
 " PHP support
-Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install && pecl install msgpack' }
+Plug 'phpactor/phpactor' ,  {'do': 'composer install', 'for': 'php'}
+Plug 'phpactor/ncm2-phpactor'
 
 " Autocomplite
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
+Plug 'ncm2/ncm2'
+Plug 'ncm2/ncm2-path'
+Plug 'roxma/nvim-yarp'
+" Plug 'ncm2/float-preview.nvim'
 
 " Commenting
 Plug 'tpope/vim-commentary'
