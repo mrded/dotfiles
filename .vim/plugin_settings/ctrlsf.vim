@@ -8,5 +8,6 @@ let g:ctrlsf_auto_focus = {
 let g:ctrlsf_ignore_dir = [
       \ "node_modules",
       \ "bower_components",
-      \ "cache"
+      \ "cache",
+      \ "vendor"
       \ ]
