@@ -9,5 +9,7 @@ let g:ctrlsf_ignore_dir = [
       \ "node_modules",
       \ "bower_components",
       \ "cache",
-      \ "vendor"
+      \ "vendor",
+      \ "lib",
+      \ "build"
       \ ]
