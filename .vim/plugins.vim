@@ -19,6 +19,9 @@ Plug 'Shougo/vimproc.vim'
 " Find text in files
 Plug 'dyng/ctrlsf.vim'
 
+" Multiple cursors
+Plug 'terryma/vim-multiple-cursors'
+
 " A solid language pack (syntax highlighting)
 Plug 'sheerun/vim-polyglot'
 
