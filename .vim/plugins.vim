@@ -31,18 +31,8 @@ Plug 'w0rp/ale', { 'do': 'npm install -g prettier'}
 " TypeScript support 
 Plug 'mhartington/nvim-typescript', {'do': 'npm install -g typescript && ./install.sh'}
 
-" JavaScript support
-Plug 'ncm2/ncm2-tern',  {'do': 'npm install'}
-
-" PHP support
-Plug 'phpactor/phpactor' ,  {'do': 'composer install', 'for': 'php'}
-Plug 'phpactor/ncm2-phpactor'
-
 " Autocomplite
-Plug 'ncm2/ncm2'
-Plug 'ncm2/ncm2-path'
-Plug 'roxma/nvim-yarp'
-" Plug 'ncm2/float-preview.nvim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Commenting
 Plug 'tpope/vim-commentary'
