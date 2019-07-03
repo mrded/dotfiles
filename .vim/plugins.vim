@@ -25,9 +25,6 @@ Plug 'terryma/vim-multiple-cursors'
 " A solid language pack (syntax highlighting)
 Plug 'sheerun/vim-polyglot'
 
-" Syntax checking 
-Plug 'w0rp/ale', { 'do': 'npm install -g prettier'}
-
 " TypeScript support 
 Plug 'mhartington/nvim-typescript', {'do': 'npm install -g typescript && ./install.sh'}
 
