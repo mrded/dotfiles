@@ -25,9 +25,6 @@ Plug 'terryma/vim-multiple-cursors'
 " A solid language pack (syntax highlighting)
 Plug 'sheerun/vim-polyglot'
 
-" TypeScript support 
-Plug 'mhartington/nvim-typescript', {'do': 'npm install -g typescript && ./install.sh'}
-
 " Autocomplite
 Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': ':CocInstall coc-prettier coc-tsserver'}
 
