@@ -29,7 +29,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'mhartington/nvim-typescript', {'do': 'npm install -g typescript && ./install.sh'}
 
 " Autocomplite
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': ':CocInstall coc-prettier coc-tsserver'}
 
 " Commenting
 Plug 'tpope/vim-commentary'
