@@ -43,9 +43,6 @@ Plug 'honza/vim-snippets'
 " Status bar
 Plug 'vim-airline/vim-airline'
 
-" Generates HTML the same way as in PhpStorm.
-Plug 'mattn/emmet-vim'
-
 " Highlights words under the cursor: http://www.vim.org/scripts/script.php?script_id=4306
 Plug 'mrded/vim-hi-cursor-words'
 
