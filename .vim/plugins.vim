@@ -13,9 +13,6 @@ Plug 'kien/ctrlp.vim'
 " Plug 'junegunn/fzf', { 'do': './install --bin' }
 " Plug 'junegunn/fzf.vim'
 
-" An asynchronous process manager.
-Plug 'Shougo/vimproc.vim'
-
 " Find text in files
 Plug 'dyng/ctrlsf.vim'
 
