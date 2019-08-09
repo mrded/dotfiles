@@ -9,6 +9,9 @@ if match(&runtimepath, 'coc') != -1
   " Prettier on save
   autocmd BufWritePre *.js,*.ts,*.tsx CocCommand prettier.formatFile
 
+  " Rename the current word in the cursor
+  nmap <leader>cr <Plug>(coc-rename)
+
   " Remap keys for gotos
   nmap <silent> gd <Plug>(coc-definition)
   nmap <silent> gy <Plug>(coc-type-definition)
