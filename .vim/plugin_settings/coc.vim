@@ -6,6 +6,13 @@ if match(&runtimepath, 'coc') != -1
   " Better display for messages
   set cmdheight=2
 
+  let g:coc_global_extensions = [
+      \ 'coc-pairs',
+      \ 'coc-snippets',
+      \ 'coc-prettier',
+      \ 'coc-tsserver',
+      \ ]
+
   " Prettier on save
   autocmd BufWritePre *.js,*.ts,*.tsx CocCommand prettier.formatFile
 
