@@ -6,6 +6,8 @@ if match(&runtimepath, 'coc') != -1
   " Better display for messages
   set cmdheight=2
 
+  let g:coc_user_config = get(g:, 'coc_user_config', {})
+
   let g:coc_global_extensions = [
       \ 'coc-pairs',
       \ 'coc-snippets',
