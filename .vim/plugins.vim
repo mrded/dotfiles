@@ -23,7 +23,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'sheerun/vim-polyglot'
 
 " Autocomplite
-Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': ':CocInstall coc-prettier coc-tsserver'}
+Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': ':CocInstall coc-pairs coc-snippets coc-prettier coc-tsserver'}
 
 " Commenting
 Plug 'tpope/vim-commentary'
