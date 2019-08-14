@@ -26,7 +26,7 @@ if match(&runtimepath, 'coc') != -1
   nmap <silent> gr <Plug>(coc-references)
 
   " Show documentation.
-  nnoremap <silent> gh :call <SID>show_documentation()<CR>
+  nnoremap <silent> K :call <SID>show_documentation()<CR>
 
   function! s:show_documentation()
     if &filetype == 'vim'
