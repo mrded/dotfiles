@@ -34,8 +34,8 @@ Plug 'mrded/vim-wrapper'
 " Status bar
 Plug 'vim-airline/vim-airline'
 
-" Highlights words under the cursor: http://www.vim.org/scripts/script.php?script_id=4306
-Plug 'mrded/vim-hi-cursor-words'
+" Highlights words under the cursor
+Plug 'RRethy/vim-illuminate'
 
 " Allows toggling bookmarks per line
 Plug 'MattesGroeger/vim-bookmarks'
