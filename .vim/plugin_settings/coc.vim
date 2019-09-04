@@ -9,7 +9,6 @@ if match(&runtimepath, 'coc') != -1
   let g:coc_user_config = get(g:, 'coc_user_config', {})
 
   let g:coc_global_extensions = [
-      \ 'coc-pairs',
       \ 'coc-snippets',
       \ 'coc-prettier',
       \ 'coc-tsserver',
@@ -26,6 +25,17 @@ if match(&runtimepath, 'coc') != -1
   nmap <silent> gy <Plug>(coc-type-definition)
   nmap <silent> gi <Plug>(coc-implementation)
   nmap <silent> gr <Plug>(coc-references)
+
+  " Use `gw` and `ge` to navigate diagnostics
+  nmap <silent> gW <Plug>(coc-diagnostic-prev)
+  nmap <silent> gw <Plug>(coc-diagnostic-next)
+
+  nmap <silent> gE <Plug>(coc-diagnostic-prev-error)
+  nmap <silent> ge <Plug>(coc-diagnostic-next-error)
+
+  " Select a function
+  vmap <silent> if <Plug>(coc-funcobj-i)
+  vmap <silent> af <Plug>(coc-funcobj-a)
 
   " Show documentation.
   nnoremap <silent> K :call <SID>show_documentation()<CR>
