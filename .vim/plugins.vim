@@ -10,14 +10,12 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " Fuzzy finder
 Plug 'kien/ctrlp.vim'
-" Plug 'junegunn/fzf', { 'do': './install --bin' }
-" Plug 'junegunn/fzf.vim'
 
 " Find text in files
 Plug 'dyng/ctrlsf.vim'
 
 " Multiple cursors
-Plug 'terryma/vim-multiple-cursors'
+" Plug 'terryma/vim-multiple-cursors'
 
 " A solid language pack (syntax highlighting)
 Plug 'sheerun/vim-polyglot'
@@ -37,17 +35,11 @@ Plug 'vim-airline/vim-airline'
 " Highlights words under the cursor
 Plug 'RRethy/vim-illuminate'
 
-" Allows toggling bookmarks per line
-Plug 'MattesGroeger/vim-bookmarks'
-
 " Highlight git changes
 Plug 'airblade/vim-gitgutter'
 
 " Git wrapper
 Plug 'tpope/vim-fugitive'
-
-" Close all buffers except visible 
-Plug 'Asheq/close-buffers.vim'
 
 " Initialize plugin system
 call plug#end()
