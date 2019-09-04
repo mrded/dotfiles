@@ -34,8 +34,8 @@ if match(&runtimepath, 'coc') != -1
   nmap <silent> ge <Plug>(coc-diagnostic-next-error)
 
   " Select a function
-  vmap <silent> if <Plug>(coc-funcobj-i)
-  vmap <silent> af <Plug>(coc-funcobj-a)
+  xmap <silent> if <Plug>(coc-funcobj-i)
+  xmap <silent> af <Plug>(coc-funcobj-a)
 
   " Show documentation.
   nnoremap <silent> K :call <SID>show_documentation()<CR>
