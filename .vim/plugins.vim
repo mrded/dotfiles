@@ -41,5 +41,8 @@ Plug 'airblade/vim-gitgutter'
 " Git wrapper
 Plug 'tpope/vim-fugitive'
 
+" Highlighte code levels
+Plug 'thiagoalessio/rainbow_levels.vim'
+
 " Initialize plugin system
 call plug#end()
