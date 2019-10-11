@@ -35,6 +35,9 @@ Plug 'mrded/vim-wrapper'
 " Status bar
 Plug 'vim-airline/vim-airline'
 
+" Bookmarks
+Plug 'MattesGroeger/vim-bookmarks'
+
 " Highlights words under the cursor
 Plug 'RRethy/vim-illuminate'
 
