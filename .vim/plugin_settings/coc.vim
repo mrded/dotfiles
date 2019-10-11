@@ -8,15 +8,6 @@ if match(&runtimepath, 'coc') != -1
 
   let g:coc_user_config = get(g:, 'coc_user_config', {})
 
-  let g:coc_global_extensions = [
-      \ 'coc-snippets',
-      \ 'coc-prettier',
-      \ 'coc-tsserver',
-      \ ]
-
-  " Prettier on save
-  autocmd BufWritePre *.js,*.ts,*.tsx CocCommand prettier.formatFile
-
   " Rename the current word in the cursor
   nmap <leader>cr <Plug>(coc-rename)
 
@@ -39,6 +30,9 @@ if match(&runtimepath, 'coc') != -1
 
   " Show documentation.
   nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+  " Show signature help while editing
+  autocmd CursorHoldI * silent! call CocAction('showSignatureHelp')
 
   function! s:show_documentation()
     if &filetype == 'vim'
