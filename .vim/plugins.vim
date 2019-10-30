@@ -9,7 +9,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " Fuzzy finder
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'liuchengxu/vim-clap'
+" Plug 'ctrlpvim/ctrlp.vim'
 
 " Find text in files
 Plug 'dyng/ctrlsf.vim'
