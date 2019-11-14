@@ -27,6 +27,9 @@ Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
 
+" Extract a variable
+Plug 'fvictorio/vim-extract-variable'
+
 " Commenting
 Plug 'tpope/vim-commentary'
 
