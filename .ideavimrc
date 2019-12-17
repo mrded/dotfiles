@@ -1,0 +1,11 @@
+" Comment mappings the same as vim-commentary
+set commentary
+
+" Highlighting search matches
+set hlsearch
+
+" Highlight current line
+set cursorline
+
+" One of the most annoying things about vim was that I frequently typed :W instead of :w.
+command! W w
