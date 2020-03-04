@@ -32,13 +32,13 @@ if match(&runtimepath, 'coc') != -1
   nnoremap <silent> K :call <SID>show_documentation()<CR>
 
   " Show signature help while editing
-  autocmd CursorHoldI * silent! call CocAction('showSignatureHelp')
+  autocmd CursorHoldI * silent! call CocActionAsync('showSignatureHelp')
 
   function! s:show_documentation()
     if &filetype == 'vim'
       execute 'h '.expand('<cword>')
     else
-      call CocAction('doHover')
+      call CocActionAsync('doHover')
     endif
   endfunction
 endif
