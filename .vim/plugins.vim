@@ -10,7 +10,6 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " Fuzzy finder
 Plug 'liuchengxu/vim-clap'
-" Plug 'ctrlpvim/ctrlp.vim'
 
 " Find text in files
 Plug 'dyng/ctrlsf.vim'
@@ -21,13 +20,14 @@ Plug 'dyng/ctrlsf.vim'
 " A solid language pack (syntax highlighting)
 Plug 'sheerun/vim-polyglot'
 
+Plug 'mustache/vim-mustache-handlebars'
+
 " Autocomplite
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
-Plug 'weirongxu/coc-explorer', {'do': 'yarn install --frozen-lockfile'}
-Plug 'marlonfan/coc-phpls', {'do': 'yarn install --frozen-lockfile'}
+" Plug 'weirongxu/coc-explorer', {'do': 'yarn install --frozen-lockfile'}
 
 " Extract a variable
 Plug 'fvictorio/vim-extract-variable'
@@ -41,9 +41,6 @@ Plug 'mrded/vim-wrapper'
 " Status bar
 Plug 'vim-airline/vim-airline'
 
-" Bookmarks
-Plug 'MattesGroeger/vim-bookmarks'
-
 " Highlights words under the cursor
 Plug 'RRethy/vim-illuminate'
 
@@ -52,9 +49,6 @@ Plug 'airblade/vim-gitgutter'
 
 " Git wrapper
 Plug 'tpope/vim-fugitive'
-
-" Highlighte code levels
-Plug 'thiagoalessio/rainbow_levels.vim'
 
 " Initialize plugin system
 call plug#end()
