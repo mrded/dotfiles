@@ -1,4 +1,3 @@
-:command! ShowTestCases g/ \(describe\|it\)( 
-
-:command! RunTest vsplit term://npx jest %
-:command! RunTestWatch vsplit term://npx jest % --watch
+:command! TestCases g/ \(describe\|it\)( 
+:command! TestRun vsplit term://npx jest %
+:command! TestRunWatch vsplit term://npx jest % --watch
