@@ -17,7 +17,8 @@ if match(&runtimepath, 'ctrlp') != -1
   set wildignore+=*/build/*
   set wildignore+=*/cache/*
   set wildignore+=*/vendor/*
-  set wildignore+=*/lib/*
+  set wildignore+=*/dist/*
+  set wildignore+=*/build-with-tests/*
 
   " Performance optimisation. 
   let g:ctrlp_clear_cache_on_exit = 0

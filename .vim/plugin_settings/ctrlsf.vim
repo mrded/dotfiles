@@ -13,7 +13,8 @@ if match(&runtimepath, 'ctrlsf') != -1
         \ "bower_components",
         \ "cache",
         \ "vendor",
-        \ "lib",
+        \ "build",
+        \ "dist",
         \ "build"
         \ ]
 endif
