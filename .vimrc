@@ -8,6 +8,7 @@ let config_list = [
       \ 'plugins.vim',
       \ 'config.vim',
       \ 'mappings.vim',
+      \ 'commands.vim',
       \ 'plugin_settings/*.vim'
       \]
 for files in config_list
