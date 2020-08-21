@@ -1,6 +1,6 @@
 if match(&runtimepath, 'nerdtree') != -1
-  map <C-n> :NERDTreeToggle<CR>
-  map <C-m> :NERDTreeFind<CR>
+  nnoremap <C-n> :NERDTreeToggle<CR>
+  nnoremap <C-m> :NERDTreeFind<CR>
 
   " Hide files/folders
   " let NERDTreeIgnore = ['^node_modules$[[dir]]', '^build$[[dir]]']
