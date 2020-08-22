@@ -41,4 +41,7 @@ set foldmethod=syntax
 set foldlevelstart=20 " All folds open when opening a file
 
 " get correct json comment highlighting
-autocmd FileType json syntax match Comment +\/\/.\+$+
+augroup customConfigGroup
+  autocmd!
+  autocmd FileType json syntax match Comment +\/\/.\+$+
+augroup END
