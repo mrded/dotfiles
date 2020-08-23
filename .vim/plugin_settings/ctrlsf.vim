@@ -15,6 +15,10 @@ if match(&runtimepath, 'ctrlsf') != -1
         \ "vendor",
         \ "build",
         \ "dist",
-        \ "build"
+        \ "build",
+        \ "coverage",
+        \ "__snapshots__",
+        \ "build-with-tests",
+        \ "build-with-tests-jest",
         \ ]
 endif
