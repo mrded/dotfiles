@@ -24,6 +24,20 @@ Clone the repository into **~/dotfiles**: `git clone https://github.com/mrded/do
 - Requires Python (2.6+ or 3.3+) support: `pip2 install --user neovim`
 - After installing you may have to run `:UpdateRemotePlugins`
 
+### vim-clap pluggin
+
+maple: 
+```
+brew install rust
+:call clap#installer#build_maple()
+```
+
+Universal tags with JSON support:
+```
+brew tap universal-ctags/universal-ctags
+brew install --with-jansson --HEAD universal-ctags/universal-ctags/universal-ctags
+```
+
 ### Troubleshooting
 
 neovim sometimes may not install pluggins propperly. Try to run following:
