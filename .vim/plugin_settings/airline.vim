@@ -10,9 +10,18 @@ if match(&runtimepath, 'airline') != -1
   let g:airline#extensions#tabline#show_buffers = 0
   let g:airline#extensions#tabline#ignore_bufadd_pat = 'gundo|undotree|vimfiler|tagbar|nerd_tree|startify|!'
 
-  let g:airline_section_a = ''
-  let g:airline_section_b = ''
-  " let g:airline_section_x = ''
-  let g:airline_section_y = ''
-  let g:airline_section_z = ''
+  let g:airline#extensions#clock#auto = 0
+
+  function! AirlineInit()
+    let g:airline_section_a = '' " mode, crypt, paste, spell, iminsert
+    let g:airline_section_b = '' " hunks, branch
+    " let g:airline_section_c = '' " bufferline or filename, readonly
+    " let g:airline_section_x = '' " tagbar, filetype, virtualenv
+    let g:airline_section_y = '' " fileencoding, fileformat
+    " let g:airline_section_z = '' " percentage, line number, column number
+
+    let g:airline_section_z = airline#section#create(['codeowners'])
+  endfunction
+
+  autocmd User AirlineAfterInit call AirlineInit()
 endif

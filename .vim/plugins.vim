@@ -42,6 +42,8 @@ Plug 'mrded/vim-wrapper'
 " Status bar
 Plug 'vim-airline/vim-airline'
 
+Plug 'mrded/vim-github-codeowners', {'do': 'npm install'}
+
 " Highlights words under the cursor
 Plug 'RRethy/vim-illuminate'
 

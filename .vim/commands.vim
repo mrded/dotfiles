@@ -10,5 +10,3 @@
 :command! NPMBuild vsplit term://npm i && npm run build
 :command! NPMFormat vsplit term://npm run format
 :command! NPMLint vsplit term://npm run lint 
-
-:command! CODEOWNERS echom system("github-codeowners who " . bufname() . " | awk '{ print $2 }'")
