@@ -20,5 +20,7 @@ if match(&runtimepath, 'ctrlsf') != -1
         \ "__snapshots__",
         \ "build-with-tests",
         \ "build-with-tests-jest",
+        \ "dist-with-tests",
+        \ "public",
         \ ]
 endif
