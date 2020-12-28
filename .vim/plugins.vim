@@ -8,8 +8,11 @@ Plug 'morhetz/gruvbox', { 'tag': 'v3.0.1-rc.0' }
 Plug 'scrooloose/nerdtree', { 'tag': '6.9.10' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
-" Fuzzy finder
-Plug 'liuchengxu/vim-clap', { 'tag': 'v0.21', 'do': ':Clap install-binary!' }
+" Fuzzy file finder
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+"
+" Plug 'liuchengxu/vim-clap', { 'tag': 'v0.21', 'do': ':Clap install-binary!' }
 " Plug 'liuchengxu/vista.vim'
 
 " Find text in files
