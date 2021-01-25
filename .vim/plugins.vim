@@ -53,6 +53,9 @@ Plug 'RRethy/vim-illuminate'
 " Highlight git changes
 Plug 'airblade/vim-gitgutter'
 
+" opens a link to the current line on GitHub
+Plug 'ruanyl/vim-gh-line'
+
 " Git wrapper
 Plug 'tpope/vim-fugitive', { 'tag': 'v3.2' }
 
