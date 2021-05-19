@@ -39,6 +39,9 @@ Plug 'neoclide/coc-prettier', { 'tag': '1.1.18', 'do': 'yarn install --frozen-lo
 " Commenting
 Plug 'tpope/vim-commentary', { 'tag': 'v1.3' }
 
+" YAML
+Plug 'pedrohdz/vim-yaml-folds'
+
 " Adds quotes and brackeds around a selected block of text
 " Plug 'mrded/vim-wrapper'
 
@@ -49,6 +52,9 @@ Plug 'vim-airline/vim-airline', { 'tag': 'v0.11' }
 
 " Highlights words under the cursor
 Plug 'RRethy/vim-illuminate'
+
+" display vertical lines at each indentation level 
+Plug 'Yggdroot/indentLine'
 
 " Highlight git changes
 Plug 'airblade/vim-gitgutter'
