@@ -18,6 +18,7 @@ if match(&runtimepath, 'ctrlsf') != -1
         \ "build",
         \ "coverage",
         \ "__snapshots__",
+        \ "__mocks__",
         \ "build-with-tests",
         \ "build-with-tests-jest",
         \ "dist-with-tests",
