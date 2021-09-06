@@ -20,6 +20,7 @@ Clone the repository into **~/dotfiles**: `git clone https://github.com/mrded/do
 ### NeoVim
 
 - Replace **~/.config/nvim/init.vim**: `ln -s ~/dotfiles/.vimrc ~/.config/nvim/init.vim`
+- Replace **~/.config/nvim/coc-settings.json**: `ln -s .vim/coc-settings.json ~/.config/nvim/coc-settings.json`
 - Requires Ruby support: `gem install neovim`
 - Requires Python (2.6+ or 3.3+) support: `pip2 install --user neovim`
 - After installing you may have to run `:UpdateRemotePlugins`
@@ -28,7 +29,8 @@ Clone the repository into **~/dotfiles**: `git clone https://github.com/mrded/do
 
 neovim sometimes may not install pluggins propperly. Try to run following:
 
-   :UpdateRemotePlugins 
+    :UpdateRemotePlugins 
+
 
 ### dyng/ctrlsf.vim
 
