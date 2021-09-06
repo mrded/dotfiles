@@ -5,11 +5,11 @@ call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox', { 'tag': 'v3.0.1-rc.0' }
 
 " A tree explorer.
-Plug 'scrooloose/nerdtree', { 'tag': '6.9.10' }
+Plug 'scrooloose/nerdtree', { 'tag': '6.10.11' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " Fuzzy file finder
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf', { 'tag': '0.27.2', 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 "
 " Plug 'liuchengxu/vim-clap', { 'tag': 'v0.21', 'do': ':Clap install-binary!' }
@@ -22,25 +22,20 @@ Plug 'dyng/ctrlsf.vim', { 'tag': 'v2.1.2' }
 " Plug 'terryma/vim-multiple-cursors'
 
 " A solid language pack (syntax highlighting)
-Plug 'sheerun/vim-polyglot', { 'tag': 'v4.16.0' }
+Plug 'sheerun/vim-polyglot', { 'tag': 'v4.17.0' }
 
 Plug 'mustache/vim-mustache-handlebars'
 
 " Autocomplite
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'neoclide/coc-tsserver', { 'tag': '1.6.0', 'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-prettier', { 'tag': '1.1.18', 'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc.nvim', {'tag': 'v0.0.80'}
+Plug 'neoclide/coc-tsserver', { 'tag': '1.8.6', 'do': 'yarn'}
+Plug 'neoclide/coc-prettier', { 'tag': '1.1.18', 'do': 'yarn'}
+Plug 'neoclide/coc-yaml', { 'tag': '1.4.2', 'do': 'yarn'}
 " Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
 " Plug 'weirongxu/coc-explorer', {'do': 'yarn install --frozen-lockfile'}
 
-" Extract a variable
-" Plug 'fvictorio/vim-extract-variable'
-
 " Commenting
 Plug 'tpope/vim-commentary', { 'tag': 'v1.3' }
-
-" YAML
-Plug 'pedrohdz/vim-yaml-folds'
 
 " Adds quotes and brackeds around a selected block of text
 " Plug 'mrded/vim-wrapper'
@@ -63,7 +58,10 @@ Plug 'airblade/vim-gitgutter'
 Plug 'ruanyl/vim-gh-line'
 
 " Git wrapper
-Plug 'tpope/vim-fugitive', { 'tag': 'v3.2' }
+Plug 'tpope/vim-fugitive', { 'tag': 'v3.4' }
+
+" Mark highlighting
+" Plug 'inkarkat/vim-mark', { 'tag': '3.1.1' }
 
 " Initialize plugin system
 call plug#end()
