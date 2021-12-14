@@ -1,3 +1,4 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": ["javascript", "typescript", "go"],
+  "coc.preferences.formatOnSaveFiletypes": ["javascript", "typescript", "go", "yaml", "vue"],
+  "prettier.disableLanguages": []
 }
