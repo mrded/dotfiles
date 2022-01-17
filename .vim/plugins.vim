@@ -26,14 +26,6 @@ Plug 'sheerun/vim-polyglot', { 'tag': 'v4.17.0' }
 
 Plug 'mustache/vim-mustache-handlebars'
 
-" Autocomplite
-Plug 'neoclide/coc.nvim', {'branch': 'release'} " Pluggins need `release` branch.
-Plug 'neoclide/coc-tsserver', { 'tag': '1.8.6', 'do': 'yarn'}
-Plug 'neoclide/coc-prettier', { 'tag': '1.1.24', 'do': 'yarn'}
-Plug 'neoclide/coc-yaml', { 'tag': '1.4.2', 'do': 'yarn'}
-Plug 'josa42/coc-go', { 'tag': 'v0.13.3', 'do': 'yarn'}
-" Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
-" Plug 'weirongxu/coc-explorer', {'do': 'yarn install --frozen-lockfile'}
 
 " Commenting
 Plug 'tpope/vim-commentary', { 'tag': 'v1.3' }
