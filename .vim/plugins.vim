@@ -5,7 +5,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox', { 'tag': 'v3.0.1-rc.0' }
 
 " A tree explorer.
-Plug 'scrooloose/nerdtree', { 'tag': '6.10.11' }
+Plug 'scrooloose/nerdtree', { 'tag': '6.10.16' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " Fuzzy file finder
