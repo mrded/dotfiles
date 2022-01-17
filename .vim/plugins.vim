@@ -37,6 +37,8 @@ Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/nvim-cmp'
 
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " :TSInstall all
+
 Plug 'prettier/vim-prettier', {
   \ 'tag': '1.0.0-beta',
   \ 'do': 'yarn install --frozen-lockfile --production',
