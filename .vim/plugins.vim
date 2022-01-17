@@ -29,6 +29,14 @@ Plug 'mustache/vim-mustache-handlebars'
 " LSP (Language Server Protocol)
 Plug 'neovim/nvim-lspconfig', { 'tag': 'v0.1.1', 'do': 'npm install -g yaml-language-server' }
 
+" Autocompletion 
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/nvim-cmp'
+
 Plug 'prettier/vim-prettier', {
   \ 'tag': '1.0.0-beta',
   \ 'do': 'yarn install --frozen-lockfile --production',
