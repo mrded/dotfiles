@@ -26,6 +26,9 @@ Plug 'sheerun/vim-polyglot', { 'tag': 'v4.17.0' }
 
 Plug 'mustache/vim-mustache-handlebars'
 
+" LSP (Language Server Protocol)
+Plug 'neovim/nvim-lspconfig', { 'tag': 'v0.1.1', 'do': 'npm install -g yaml-language-server' }
+
 Plug 'prettier/vim-prettier', {
   \ 'tag': '1.0.0-beta',
   \ 'do': 'yarn install --frozen-lockfile --production',
