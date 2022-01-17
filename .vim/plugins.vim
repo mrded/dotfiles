@@ -26,6 +26,10 @@ Plug 'sheerun/vim-polyglot', { 'tag': 'v4.17.0' }
 
 Plug 'mustache/vim-mustache-handlebars'
 
+Plug 'prettier/vim-prettier', {
+  \ 'tag': '1.0.0-beta',
+  \ 'do': 'yarn install --frozen-lockfile --production',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
 
 " Commenting
 Plug 'tpope/vim-commentary', { 'tag': 'v1.3' }
