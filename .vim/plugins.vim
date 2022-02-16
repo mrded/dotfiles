@@ -5,7 +5,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox', { 'tag': 'v3.0.1-rc.0' }
 
 " A tree explorer.
-Plug 'scrooloose/nerdtree', { 'tag': '6.10.11' }
+Plug 'scrooloose/nerdtree', { 'tag': '6.10.16' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " Fuzzy file finder
@@ -26,14 +26,23 @@ Plug 'sheerun/vim-polyglot', { 'tag': 'v4.17.0' }
 
 Plug 'mustache/vim-mustache-handlebars'
 
-" Autocomplite
-Plug 'neoclide/coc.nvim', {'branch': 'release'} " Pluggins need `release` branch.
-Plug 'neoclide/coc-tsserver', { 'tag': '1.8.6', 'do': 'yarn'}
-Plug 'neoclide/coc-prettier', { 'tag': '1.1.24', 'do': 'yarn'}
-Plug 'neoclide/coc-yaml', { 'tag': '1.4.2', 'do': 'yarn'}
-Plug 'josa42/coc-go', { 'tag': 'v0.13.3', 'do': 'yarn'}
-" Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
-" Plug 'weirongxu/coc-explorer', {'do': 'yarn install --frozen-lockfile'}
+" LSP (Language Server Protocol)
+Plug 'neovim/nvim-lspconfig', { 'tag': 'v0.1.1', 'do': 'npm install -g yaml-language-server' }
+
+" Autocompletion 
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/nvim-cmp'
+
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " :TSInstall all
+
+Plug 'prettier/vim-prettier', {
+  \ 'tag': '1.0.0-beta',
+  \ 'do': 'yarn install --frozen-lockfile --production',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
 
 " Commenting
 Plug 'tpope/vim-commentary', { 'tag': 'v1.3' }

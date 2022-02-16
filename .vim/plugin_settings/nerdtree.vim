@@ -1,6 +1,9 @@
 if match(&runtimepath, 'nerdtree') != -1
   nnoremap <C-n> :NERDTreeToggle<CR>
-  nnoremap <C-m> :NERDTreeFind<CR>
+
+  " this breakes vim.diagnostic.goto_next()
+  " @see: https://github.com/preservim/nerdtree/issues/1291
+  " nnoremap <C-m> :NERDTreeFind<CR> 
 
   " Hide files/folders
   " let NERDTreeIgnore = ['^node_modules$[[dir]]', '^build$[[dir]]']
