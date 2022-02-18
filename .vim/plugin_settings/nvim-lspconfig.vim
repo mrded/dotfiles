@@ -23,7 +23,7 @@ local do_config = function()
   -- Show line diagnostics automatically in hover window
   -- diagnostic.show_line_diagnostics is deprecated @see: https://github.com/neovim/neovim/pull/16057
   -- vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.lsp.diagnostic.show_line_diagnostics({border="rounded", focusable=false})]]
-  vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(0, {scope="line"})]]
+  vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(0, {scope="line", focusable=false})]]
 end
 
 local do_keymap = function(bufnr)
