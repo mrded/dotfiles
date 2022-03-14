@@ -1,9 +1,5 @@
 if match(&runtimepath, 'nerdtree') != -1
-  nnoremap <C-n> :NERDTreeToggle<CR>
-
-  " this breakes vim.diagnostic.goto_next()
-  " @see: https://github.com/preservim/nerdtree/issues/1291
-  " nnoremap <C-m> :NERDTreeFind<CR> 
+  nnoremap <C-n> :call NERDTreeToggleInCurDir()<cr>
 
   " Hide files/folders
   " let NERDTreeIgnore = ['^node_modules$[[dir]]', '^build$[[dir]]']
@@ -13,4 +9,13 @@ if match(&runtimepath, 'nerdtree') != -1
   let NERDTreeStatusline = 0
   let NERDTreeMinimalUI = 1
   let NERDTreeAutoDeleteBuffer = 1
+
+  function! NERDTreeToggleInCurDir()
+    " If NERDTree is open in the current buffer
+    if (exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1)
+      exe ":NERDTreeClose"
+    else
+      exe ":NERDTreeFind"
+    endif
+  endfunction
 endif
