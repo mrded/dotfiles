@@ -39,10 +39,14 @@ Plug 'hrsh7th/nvim-cmp', { 'branch': 'main' }
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " :TSInstall all
 
+" prettier of JS family
 Plug 'prettier/vim-prettier', {
   \ 'tag': '1.0.0-beta',
   \ 'do': 'yarn install --frozen-lockfile --production',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
+
+" prettier for everything but JS.
+Plug 'sbdchd/neoformat'
 
 " Commenting
 Plug 'tpope/vim-commentary', { 'tag': 'v1.3' }
