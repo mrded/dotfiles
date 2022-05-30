@@ -62,6 +62,9 @@ Plug 'vim-airline/vim-airline', { 'tag': 'v0.11' }
 " Highlights words under the cursor
 Plug 'RRethy/vim-illuminate'
 
+" REST client
+Plug 'diepm/vim-rest-console'
+
 " display vertical lines at each indentation level 
 Plug 'Yggdroot/indentLine'
 
