@@ -75,7 +75,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'ruanyl/vim-gh-line'
 
 " Git wrapper
-Plug 'tpope/vim-fugitive', { 'tag': 'v3.4' }
+Plug 'tpope/vim-fugitive', { 'tag': 'v3.7' }
 
 " Mark highlighting
 " Plug 'inkarkat/vim-mark', { 'tag': '3.1.1' }
