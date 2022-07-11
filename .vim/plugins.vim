@@ -27,7 +27,7 @@ Plug 'sheerun/vim-polyglot', { 'tag': 'v4.17.0' }
 Plug 'mustache/vim-mustache-handlebars'
 
 " LSP (Language Server Protocol)
-Plug 'neovim/nvim-lspconfig', { 'tag': 'v0.1.1', 'do': 'npm install -g yaml-language-server typescript-language-server' }
+Plug 'neovim/nvim-lspconfig', { 'tag': 'v0.1.1', 'do': 'npm install -g yaml-language-server typescript typescript-language-server' }
 
 " Autocompletion 
 Plug 'hrsh7th/cmp-nvim-lsp', { 'branch': 'main' }
