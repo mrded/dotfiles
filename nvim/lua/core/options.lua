@@ -55,6 +55,9 @@ opt.updatetime = 700        -- ms to wait for trigger an event
 -- Disable nvim intro
 opt.shortmess:append "sI"
 
+-- Change leader to a comma
+g.mapleader = ','
+
 -- Disable builtins plugins
 local disabled_built_ins = {
   "netrw",
