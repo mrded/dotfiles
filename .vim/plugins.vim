@@ -15,11 +15,6 @@ Plug 'junegunn/fzf.vim'
 " Find text in files
 Plug 'dyng/ctrlsf.vim', { 'tag': 'v2.1.2' }
 
-" A solid language pack (syntax highlighting)
-Plug 'sheerun/vim-polyglot', { 'tag': 'v4.17.0' }
-
-Plug 'mustache/vim-mustache-handlebars'
-
 " LSP (Language Server Protocol)
 Plug 'neovim/nvim-lspconfig', { 'tag': 'v0.1.3', 'do': 'brew install gopls && npm install -g yaml-language-server typescript typescript-language-server' }
 
@@ -31,6 +26,8 @@ Plug 'hrsh7th/cmp-vsnip', { 'branch': 'main' }
 Plug 'hrsh7th/vim-vsnip', { 'branch': 'master' }
 Plug 'hrsh7th/nvim-cmp', { 'branch': 'main' }
 
+" syntax highlighting
+Plug 'sheerun/vim-polyglot', { 'tag': 'v4.17.0' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " :TSInstall all
 
 " Commenting
