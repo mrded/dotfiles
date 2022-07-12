@@ -14,5 +14,5 @@ require('plugins/vim-rest-console')
 
 require('plugins/nvim-lspconfig')
 require('plugins/nvim-lspconfig-format')
--- require('plugins/nvim-cmp')
+require('plugins/nvim-cmp')
 require('plugins/nvim-treesitter')
