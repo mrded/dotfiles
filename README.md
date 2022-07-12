@@ -9,16 +9,10 @@ Clone the repository into **~/dotfiles**: `git clone https://github.com/mrded/do
 
 `ln -s ~/dotfiles/.ideavimrc ~/.ideavimrc`
 
-## Vim
-- I use vim 8.0 compiled like following: `brew install vim --override-system-vim --with-cscope --with-lua`
-- Replace **~/.vimrc**: `ln -s ~/dotfiles/.vimrc ~/.vimrc`
-- Install [vim-plug](https://github.com/junegunn/vim-plug) then run `:PlugInstall`
-
 ## NeoVim
-- Replace **~/.config/nvim/init.vim**: `ln -s ~/dotfiles/.vimrc ~/.config/nvim/init.vim`
-- Install [vim-plug](https://github.com/junegunn/vim-plug) then run `:PlugInstall`
-- Requires Ruby support: `gem install neovim`
-- Requires Python (2.6+ or 3.3+) support: `pip2 install --user neovim`
+- Install [Neovim v0.7.x](https://github.com/neovim/neovim/releases/latest).
+- Replace configuration: `ln -s ~/dotfiles/nvim ~/.config/nvim`
+- Install pluggins then run `nvim +PackerSync`
 
 ## Troubleshooting
 
