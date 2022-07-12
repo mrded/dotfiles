@@ -1,5 +1,22 @@
-lua << EOF
-local nvim_lsp = require('lspconfig')
+-----------------------------------------------------------
+-- Neovim LSP configuration file
+-----------------------------------------------------------
+
+-- Plugin: nvim-lspconfig
+-- url: https://github.com/neovim/nvim-lspconfig
+
+-- For configuration see the Wiki: https://github.com/neovim/nvim-lspconfig/wiki
+-- Autocompletion settings of "nvim-cmp" are defined in plugins/nvim-cmp.lua
+
+local lsp_status_ok, lspconfig = pcall(require, 'lspconfig')
+if not lsp_status_ok then
+  return
+end
+
+local cmp_status_ok, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
+if not cmp_status_ok then
+  return
+end
 
 local get_handlers = function()
   -- Hover doc popup
@@ -23,7 +40,7 @@ local do_config = function()
   -- Show line diagnostics automatically in hover window
   -- diagnostic.show_line_diagnostics is deprecated @see: https://github.com/neovim/neovim/pull/16057
   -- vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.lsp.diagnostic.show_line_diagnostics({border="rounded", focusable=false})]]
-  vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(0, {scope="line", focusable=false})]]
+  -- vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(0, {scope="line", focusable=false})]]
 end
 
 local do_keymap = function(bufnr)
@@ -67,7 +84,7 @@ end
 -- map buffer local keybindings when the language server attaches
 local servers = { 'tsserver', 'gopls', 'yamlls' }
 for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
+  lspconfig[lsp].setup {
     handlers = get_handlers(),
     on_attach = on_attach,
     flags = {
@@ -75,4 +92,3 @@ for _, lsp in ipairs(servers) do
       }
     }
 end
-EOF

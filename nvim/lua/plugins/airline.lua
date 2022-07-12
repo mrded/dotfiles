@@ -1,4 +1,4 @@
-if match(&runtimepath, 'airline') != -1
+vim.cmd [[
   let g:airline_theme='gruvbox'
 
   let g:airline#extensions#tabline#enabled = 1
@@ -24,4 +24,4 @@ if match(&runtimepath, 'airline') != -1
   endfunction
 
   autocmd User AirlineAfterInit call AirlineInit()
-endif
+]]

@@ -1,4 +1,4 @@
-if match(&runtimepath, 'ctrlsf') != -1
+vim.cmd [[
   " @TODO: map Ctrl+* to <Plug>CtrlSFPrompt
 
   let g:ctrlsf_search_mode = 'sync'
@@ -22,4 +22,4 @@ if match(&runtimepath, 'ctrlsf') != -1
         \ "dist-with-tests",
         \ "public",
         \ ]
-endif
+]]

@@ -1,5 +1,4 @@
-if match(&runtimepath, 'gh-line') != -1
+vim.cmd [[
   :command! GitHub GH 
   " :command! GitHubBlame GB 
-endif
-
+]]
