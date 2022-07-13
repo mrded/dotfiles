@@ -3,3 +3,11 @@ vim.cmd('command! W w')
 
 vim.cmd('command! TestRun vsplit term://npx jest % --watch')
 vim.cmd('command! Rename :lua vim.lsp.buf.rename()')
+
+-- Automatic formation on save
+vim.cmd [[
+  :command! Format :lua vim.lsp.buf.formatting()
+
+  autocmd BufWritePre *.js,*.ts,*.tsx :Format
+  autocmd BufWritePre *.go :Format 
+]]
