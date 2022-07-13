@@ -45,11 +45,8 @@ return packer.startup(function(use)
   require('plugins/ctrlsf')(use)
 
   -- LSP
-  use {
-    'neovim/nvim-lspconfig',
-    tag = 'v0.1.3',
-    -- brew install gopls && npm install -g yaml-language-server typescript typescript-language-server
-  }
+  require('plugins/nvim-lspconfig')(use)
+  -- brew install gopls && npm install -g yaml-language-server typescript typescript-language-server
 
   -- Autocomplete
   use {

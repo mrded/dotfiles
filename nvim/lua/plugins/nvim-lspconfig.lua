@@ -8,25 +8,6 @@
 -- For configuration see the Wiki: https://github.com/neovim/nvim-lspconfig/wiki
 -- Autocompletion settings of "nvim-cmp" are defined in plugins/nvim-cmp.lua
 
-local lsp_status_ok, lspconfig = pcall(require, 'lspconfig')
-if not lsp_status_ok then
-  return
-end
-
-local cmp_status_ok, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
-if not cmp_status_ok then
-  return
-end
-
-local get_handlers = function()
-  -- Hover doc popup
-  local pop_opts = { border = "rounded", max_width = 80 }
-
-  return {
-    ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, pop_opts),
-    ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, pop_opts)
-  } 
-end
 
 local do_config = function() 
   vim.diagnostic.config({
@@ -75,20 +56,49 @@ end
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
-local on_attach = function(client, bufnr)
+on_attach = function(client, bufnr)
   do_config()
   do_keymap(bufnr)
 end
 
--- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches
-local servers = { 'tsserver', 'gopls', 'yamlls' }
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    handlers = get_handlers(),
-    on_attach = on_attach,
-    flags = {
-      debounce_text_changes = 150,
-      }
-    }
+get_handlers = function()
+  -- Hover doc popup
+  local pop_opts = { border = "rounded", max_width = 80 }
+
+  return {
+    ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, pop_opts),
+    ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, pop_opts)
+  } 
+end
+
+return function(use)
+  use {
+    'neovim/nvim-lspconfig',
+    tag = 'v0.1.3',
+    config = function() 
+      local lsp_status_ok, lspconfig = pcall(require, 'lspconfig')
+      if not lsp_status_ok then
+        return
+      end
+
+      local cmp_status_ok, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
+      if not cmp_status_ok then
+        return
+      end
+
+      -- Use a loop to conveniently call 'setup' on multiple servers and
+      -- map buffer local keybindings when the language server attaches
+      local servers = { 'tsserver', 'gopls', 'yamlls' }
+
+      for _, lsp in ipairs(servers) do
+        lspconfig[lsp].setup {
+          handlers = get_handlers(),
+          on_attach = on_attach,
+          flags = {
+            debounce_text_changes = 150,
+            }
+          }
+      end
+    end
+  }
 end
