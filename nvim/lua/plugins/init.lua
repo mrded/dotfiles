@@ -53,10 +53,7 @@ return packer.startup(function(use)
 
   -- Syntax highlighting
   use { 'sheerun/vim-polyglot', tag = 'v4.17.0' }
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
-  }
+  require('plugins/treesitter')(use)
 
   -- Commenting
   require('plugins/commentary')(use)
