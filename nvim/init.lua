@@ -1,9 +1,8 @@
-require('packer_init')
-
 require('core/options')
 require('core/commands')
 require('core/colors')
 
+require('plugins')
 require('plugins/airline')
 require('plugins/commentary')
 require('plugins/ctrlsf')
