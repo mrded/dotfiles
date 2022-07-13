@@ -21,14 +21,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
   vim.o.runtimepath = vim.fn.stdpath('data') .. '/site/pack/*/start/*,' .. vim.o.runtimepath
 end
 
--- Autocommand that reloads neovim whenever you save the packer_init.lua file
-vim.cmd [[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost packer_init.lua source <afile> | PackerSync
-  augroup end
-]]
-
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, 'packer')
 if not status_ok then
@@ -41,29 +33,16 @@ return packer.startup(function(use)
   use 'wbthomason/packer.nvim' -- packer can manage itself
 
   -- Color schemes
-  use { 'morhetz/gruvbox', tag = 'v3.0.1-rc.0' }
+  require('plugins/gruvbox')(use)
 
   -- File explorer
-  use {
-    'scrooloose/nerdtree',
-    tag = '6.10.16',
-    requires = {
-      'Xuyuanp/nerdtree-git-plugin',
-    },
-  }
+  require('plugins/nerdtree')(use)
 
   -- Fuzzy file finder
-  use {
-    'junegunn/fzf',
-    tag = '0.27.2',
-    run = ':call fzf#install()',
-    requires = {
-      'junegunn/fzf.vim',
-    },
-  }
+  require('plugins/fzf')(use)
 
   -- Full text search
-  use { 'dyng/ctrlsf.vim', tag = 'v2.1.2' }
+  require('plugins/ctrlsf')(use)
 
   -- LSP
   use {
@@ -92,10 +71,10 @@ return packer.startup(function(use)
   }
 
   -- Commenting
-  use { 'tpope/vim-commentary', tag = 'v1.3' }
+  require('plugins/commentary')(use)
 
   -- Status bar
-  use { 'vim-airline/vim-airline', tag = 'v0.11' }
+  require('plugins/airline')(use)
 
   -- Plug 'mrded/vim-github-codeowners', {'do': 'npm install'}
 
@@ -103,7 +82,7 @@ return packer.startup(function(use)
   use 'RRethy/vim-illuminate'
 
   -- REST client
-  use 'diepm/vim-rest-console'
+  require('plugins/vim-rest-console')(use)
 
   -- display vertical lines at each indentation level 
   require('plugins/indent-blankline')(use)
@@ -112,7 +91,7 @@ return packer.startup(function(use)
   use 'airblade/vim-gitgutter'
 
   -- opens a link to the current line on GitHub
-  use 'ruanyl/vim-gh-line'
+  require('plugins/gh-line')(use)
 
   -- Git wrapper
   use { 'tpope/vim-fugitive', tag = 'v3.7' }
