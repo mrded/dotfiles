@@ -36,12 +36,15 @@ return packer.startup(function(use)
   require('plugins/gruvbox')(use)
 
   -- File explorer
+  -- TODO: replace with kyazdani42/nvim-tree.lua
   require('plugins/nerdtree')(use)
 
   -- Fuzzy file finder
+  -- TODO: replace with nvim-telescope/telescope.nvim
   require('plugins/fzf')(use)
 
   -- Full text search
+  -- TODO: replace with nvim-telescope/telescope.nvim
   require('plugins/ctrlsf')(use)
 
   -- LSP
@@ -56,6 +59,7 @@ return packer.startup(function(use)
   require('plugins/treesitter')(use)
 
   -- Commenting
+  -- TODO: can probably done natively with LSP.
   require('plugins/commentary')(use)
 
   -- Status bar
@@ -64,6 +68,7 @@ return packer.startup(function(use)
   -- Plug 'mrded/vim-github-codeowners', {'do': 'npm install'}
 
   -- Highlights words under the cursor
+  -- TODO: can probably done natively.
   use 'RRethy/vim-illuminate'
 
   -- REST client
