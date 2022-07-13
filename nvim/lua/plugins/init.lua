@@ -106,7 +106,7 @@ return packer.startup(function(use)
   use 'diepm/vim-rest-console'
 
   -- display vertical lines at each indentation level 
-  use 'Yggdroot/indentLine'
+  require('plugins/indent-blankline')(use)
 
   -- Highlight git changes
   use 'airblade/vim-gitgutter'
