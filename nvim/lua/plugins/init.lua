@@ -49,16 +49,7 @@ return packer.startup(function(use)
   -- brew install gopls && npm install -g yaml-language-server typescript typescript-language-server
 
   -- Autocomplete
-  use {
-    'hrsh7th/nvim-cmp',
-    requires = {
-      'L3MON4D3/LuaSnip',
-      'hrsh7th/cmp-nvim-lsp',
-      'hrsh7th/cmp-path',
-      'hrsh7th/cmp-buffer',
-      'saadparwaiz1/cmp_luasnip',
-    },
-  }
+  require('plugins/nvim-cmp')(use)
 
   -- Syntax highlighting
   use { 'sheerun/vim-polyglot', tag = 'v4.17.0' }
