@@ -45,11 +45,11 @@ return packer.startup(function(use)
   require('plugins/ctrlsf')(use)
 
   -- LSP
-  require('plugins/nvim-lspconfig')(use)
+  require('plugins/lspconfig')(use)
   -- brew install gopls && npm install -g yaml-language-server typescript typescript-language-server
 
   -- Autocomplete
-  require('plugins/nvim-cmp')(use)
+  require('plugins/cmp')(use)
 
   -- Syntax highlighting
   use { 'sheerun/vim-polyglot', tag = 'v4.17.0' }
