@@ -54,6 +54,12 @@ return packer.startup(function(use)
   -- Autocomplete
   require('plugins/cmp')(use)
 
+  -- AI autocomplite
+  use { 
+    'github/copilot.vim',
+    -- you need to run ':Copilot setup' manually
+  }
+
   -- Syntax highlighting
   use { 'sheerun/vim-polyglot', tag = 'v4.17.0' }
   require('plugins/treesitter')(use)
