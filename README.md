@@ -10,15 +10,24 @@ Clone the repository into **~/dotfiles**: `git clone https://github.com/mrded/do
 `ln -s ~/dotfiles/.ideavimrc ~/.ideavimrc`
 
 ## NeoVim
-- Install [Neovim v0.7.x](https://github.com/neovim/neovim/releases/latest).
+- Install nighty version of Neovim `brew install neovim --HEAD`
+    - `winbar` feature is required 
 - Replace configuration: `ln -s ~/dotfiles/nvim ~/.config/nvim`
 - Install pluggins then run `nvim +PackerSync`
 
 ## Troubleshooting
 
 neovim sometimes may not install pluggins propperly. Try to run following:
+```
+:UpdateRemotePlugins 
+```
 
-    :UpdateRemotePlugins 
+Building nighty Neovim may fail because of `libvterm` version https://github.com/neovim/neovim/issues/16217
+Try following:
+```
+brew uninstall --force libvterm
+brew unlink libvterm
+```
 
 
 ## dyng/ctrlsf.vim
