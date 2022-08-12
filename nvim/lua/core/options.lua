@@ -36,6 +36,10 @@ vim.cmd [[
   set winbar=%=%m\ %f
 ]] -- Show a file name for every split
 
+vim.cmd [[
+  set nofoldenable
+]] -- Prevent automatic folding 
+
 -----------------------------------------------------------
 -- Tabs, indent
 -----------------------------------------------------------
