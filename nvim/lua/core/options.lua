@@ -22,7 +22,7 @@ opt.spelllang = 'en_gb'
 -- Neovim UI
 -----------------------------------------------------------
 opt.number = true           -- Show line number
-opt.showmatch = true        -- Highlight matching parenthesis
+opt.showmatch = false       -- Highlight matching parenthesis
 opt.foldmethod = 'syntax'   -- Enable folding (default 'foldmarker')
 opt.splitright = true       -- Vertical split to the right
 opt.splitbelow = true       -- Horizontal split to the bottom
