@@ -39,13 +39,12 @@ return packer.startup(function(use)
   -- TODO: replace with kyazdani42/nvim-tree.lua
   require('plugins/nerdtree')(use)
 
-  -- Fuzzy file finder
-  -- TODO: replace with nvim-telescope/telescope.nvim
-  require('plugins/fzf')(use)
-
   -- Full text search
   -- TODO: replace with nvim-telescope/telescope.nvim
   require('plugins/ctrlsf')(use)
+
+  -- Fuzzy file finder
+  require('plugins/telescope')(use)
 
   -- LSP
   require('plugins/lspconfig')(use)
