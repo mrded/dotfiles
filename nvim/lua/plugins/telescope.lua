@@ -9,7 +9,8 @@ return function(use)
     },
     config = function() 
       vim.cmd [[
-        nnoremap <C-p> :Telescope git_files<CR>
+        nnoremap <C-p> <cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>
+        nnoremap <C-f> <cmd>lua require'telescope.builtin'.live_grep()<cr>
       ]]
 
       require('telescope').setup {
