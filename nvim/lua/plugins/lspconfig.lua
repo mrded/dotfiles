@@ -75,6 +75,7 @@ return function(use)
   use {
     'neovim/nvim-lspconfig',
     tag = 'v0.1.3',
+    run = 'brew install gopls yaml-language-server && npm install -g yaml-language-server typescript typescript-language-server',
     config = function() 
       local lsp_status_ok, lspconfig = pcall(require, 'lspconfig')
       if not lsp_status_ok then

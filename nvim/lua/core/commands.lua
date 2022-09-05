@@ -6,7 +6,7 @@ vim.cmd('command! Rename :lua vim.lsp.buf.rename()')
 
 -- Automatic formation on save
 vim.cmd [[
-  :command! Format :lua vim.lsp.buf.formatting()
+  :command! Format :lua vim.lsp.buf.format { async = true }
 
   autocmd BufWritePre *.js,*.ts,*.tsx :Format
   autocmd BufWritePre *.go :Format 
