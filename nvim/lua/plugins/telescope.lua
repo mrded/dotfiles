@@ -1,3 +1,25 @@
+run_test_picker = function()
+  local actions = require "telescope.actions"
+  local action_state = require "telescope.actions.state"
+
+  local theme_opts = require('telescope.themes').get_dropdown({ previewer = false })
+  local opts = { 
+    search_file = ".spec.ts$",
+    attach_mappings = function (prompt_bufnr, map)
+      actions.select_default:replace(function()
+        actions.close(prompt_bufnr)
+        local selection = action_state.get_selected_entry()
+        vim.cmd([[vsplit term://npx jest ]]..selection[1])
+      end)
+      return true
+    end
+  }
+
+  local combined_opts = vim.tbl_extend("force", theme_opts, opts)
+
+  require('telescope.builtin').find_files(combined_opts)
+end
+
 return function(use)
   use {
     'nvim-telescope/telescope.nvim',
@@ -8,10 +30,11 @@ return function(use)
       { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
     },
     config = function() 
-      vim.cmd [[
-        nnoremap <C-p> <cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>
-        nnoremap <C-f> <cmd>lua require'telescope.builtin'.live_grep()<cr>
-      ]]
+      local opts = { noremap = true, silent = true }
+
+      vim.api.nvim_set_keymap('n', '<C-t>', "<cmd>lua run_test_picker()<CR>", opts)
+      vim.api.nvim_set_keymap('n', '<C-p>', "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<CR>", opts)
+      vim.api.nvim_set_keymap('n', '<C-f>', "<cmd>lua require'telescope.builtin'.live_grep()<CR>", opts)
 
       require('telescope').setup {
         extensions = {
