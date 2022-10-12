@@ -26,8 +26,8 @@ local config = function()
       'python', 
       'ruby', 
 
-      'php', 
-      'phpdoc', 
+      -- 'php', 
+      -- 'phpdoc', 
 
       'make', 
       'bash',
