@@ -2,7 +2,10 @@ run_test_picker = function()
   local actions = require "telescope.actions"
   local action_state = require "telescope.actions.state"
 
-  local theme_opts = require('telescope.themes').get_dropdown({ previewer = false })
+  local theme_opts = require('telescope.themes').get_dropdown({
+      prompt_title = 'Run a test',
+      previewer = false 
+    })
   local opts = { 
     search_file = ".spec.ts$",
     attach_mappings = function (prompt_bufnr, map)
