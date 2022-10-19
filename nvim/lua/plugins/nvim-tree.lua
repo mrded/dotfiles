@@ -1,0 +1,30 @@
+return function(use)
+  use {
+    'nvim-tree/nvim-tree.lua',
+    tag = 'nightly',
+    config = function() 
+      -- disable netrw 
+      vim.g.loaded_netrw = 1
+      vim.g.loaded_netrwPlugin = 1
+
+      require("nvim-tree").setup({
+          renderer = {
+            icons = { 
+              show = {
+                file = false,
+                folder = false,
+                folder_arrow = false,
+                git = false,
+              },
+            },
+          },
+        })
+
+      -- keybindings
+      local opts = { noremap = true, silent = true }
+
+      vim.api.nvim_set_keymap('n', '<C-n>', "<cmd>NvimTreeToggle<CR>", opts)
+      vim.api.nvim_set_keymap('n', '<C-b>', "<cmd>NvimTreeFindFile<CR>", opts)
+    end
+  }
+end

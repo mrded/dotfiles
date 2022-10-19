@@ -37,7 +37,8 @@ return packer.startup(function(use)
 
   -- File explorer
   -- TODO: replace with kyazdani42/nvim-tree.lua
-  require('plugins/nerdtree')(use)
+  -- require('plugins/nerdtree')(use)
+  require('plugins/nvim-tree')(use)
 
   -- Full text search
   -- TODO: replace with nvim-telescope/telescope.nvim
