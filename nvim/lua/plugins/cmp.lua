@@ -58,8 +58,9 @@ end
 return function(use)
   use {
     'hrsh7th/nvim-cmp',
+    tag = 'v0.0.1',
     requires = {
-      'L3MON4D3/LuaSnip',
+      { 'L3MON4D3/LuaSnip', tag = 'v1.1.0' },
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-buffer',
