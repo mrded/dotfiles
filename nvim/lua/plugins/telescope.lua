@@ -12,7 +12,7 @@ run_test_picker = function()
       actions.select_default:replace(function()
         actions.close(prompt_bufnr)
         local selection = action_state.get_selected_entry()
-        vim.cmd([[vsplit term://npx jest ]]..selection[1])
+        vim.cmd([[vsplit term://npx jest --runInBand ]]..selection[1])
       end)
       return true
     end
