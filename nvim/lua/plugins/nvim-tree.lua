@@ -8,6 +8,15 @@ return function(use)
       vim.g.loaded_netrwPlugin = 1
 
       require("nvim-tree").setup({
+          view = {
+            adaptive_size = true,
+            mappings = {
+              list = {
+                { key = "s", action = "vsplit" },
+                { key = "t", action = "tabnew" },
+              },
+            },
+          },
           renderer = {
             icons = { 
               show = {
