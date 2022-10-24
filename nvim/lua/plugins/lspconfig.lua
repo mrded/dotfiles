@@ -35,6 +35,7 @@ local do_keymap = function(bufnr)
   local opts = { noremap=true, silent=true }
 
   -- See `:help vim.lsp.*` for documentation on any of the below functions
+  buf_set_keymap('n', '<C-r>', '<cmd>LspRestart<CR>', opts)
   buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
   buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
   buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
@@ -75,7 +76,7 @@ return function(use)
   use {
     'neovim/nvim-lspconfig',
     tag = 'v0.1.3',
-    run = 'brew install gopls yaml-language-server && npm install -g yaml-language-server typescript typescript-language-server',
+    run = 'brew install gopls yaml-language-server lua-language-server && npm install -g yaml-language-server typescript typescript-language-server',
     config = function() 
       local lsp_status_ok, lspconfig = pcall(require, 'lspconfig')
       if not lsp_status_ok then
@@ -89,7 +90,7 @@ return function(use)
 
       -- Use a loop to conveniently call 'setup' on multiple servers and
       -- map buffer local keybindings when the language server attaches
-      local servers = { 'tsserver', 'gopls', 'yamlls' }
+      local servers = { 'tsserver', 'gopls', 'yamlls', 'sumneko_lua' }
 
       for _, lsp in ipairs(servers) do
         lspconfig[lsp].setup {
