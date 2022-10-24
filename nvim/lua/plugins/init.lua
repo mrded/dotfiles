@@ -46,6 +46,7 @@ return packer.startup(function(use)
 
   -- Fuzzy file finder
   require('plugins/telescope')(use)
+  require('plugins/zond')(use)
 
   -- LSP
   require('plugins/lspconfig')(use)
