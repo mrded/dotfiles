@@ -58,12 +58,12 @@ end
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
-local on_attach = function(_, bufnr)
+on_attach = function(_, bufnr)
   do_config()
   do_keymap(bufnr)
 end
 
-local get_handlers = function()
+get_handlers = function()
   -- Hover doc popup
   local pop_opts = { border = "rounded", max_width = 80 }
 
@@ -72,8 +72,6 @@ local get_handlers = function()
     ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, pop_opts)
   }
 end
-
-local handlers = get_handlers()
 
 local config = function()
   local lsp_status_ok, lspconfig = pcall(require, 'lspconfig')
@@ -99,9 +97,9 @@ local config = function()
 
   for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
-      handlers = handlers,
       on_attach = on_attach,
-      flags = { debounce_text_changes = 150, }
+      flags = { debounce_text_changes = 150 },
+      handlers = get_handlers(),
     }
   end
 end
