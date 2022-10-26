@@ -9,9 +9,11 @@ Clone the repository into **~/dotfiles**: `git clone https://github.com/mrded/do
 - Install nighty version of Neovim `brew install neovim --HEAD`
     - `winbar` feature is required 
 - Replace configuration: `ln -s ~/dotfiles/nvim ~/.config/nvim`
-- Install pluggins then run `nvim +PackerSync`
+- Install pluggins then run `nvim +PackerSync +TSUpdate`
 
 ## Troubleshooting
+
+Sometimes treesitter may give errors. Try running `:TSUpdate` to update languages 
 
 neovim sometimes may not install pluggins propperly. Try to run following:
 ```
