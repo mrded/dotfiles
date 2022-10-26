@@ -5,10 +5,6 @@ The single dot that has it all.
 Clone the repository into **~/dotfiles**: `git clone https://github.com/mrded/dotfiles.git ~/dotfiles`
 
 
-## IntelliJ IDEA Vim. 
-
-`ln -s ~/dotfiles/.ideavimrc ~/.ideavimrc`
-
 ## NeoVim
 - Install nighty version of Neovim `brew install neovim --HEAD`
     - `winbar` feature is required 
