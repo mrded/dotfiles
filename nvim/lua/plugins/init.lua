@@ -64,6 +64,8 @@ return packer.startup(function(use)
   -- Syntax highlighting
   require('plugins/treesitter')(use)
 
+  require('plugins/null-ls')(use)
+
   -- Commenting
   -- TODO: can probably done natively with LSP.
   require('plugins/commentary')(use)
