@@ -56,7 +56,7 @@ return packer.startup(function(use)
   require('plugins/cmp')(use)
 
   -- AI autocomplite
-  use { 
+  use {
     'github/copilot.vim',
     -- you need to run ':Copilot setup' manually
   }
@@ -81,7 +81,7 @@ return packer.startup(function(use)
   -- REST client
   require('plugins/vim-rest-console')(use)
 
-  -- display vertical lines at each indentation level 
+  -- display vertical lines at each indentation level
   require('plugins/indent-blankline')(use)
 
   -- Highlight git changes
