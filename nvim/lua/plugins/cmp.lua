@@ -5,7 +5,7 @@
 -- Plugin: nvim-cmp
 -- url: https://github.com/hrsh7th/nvim-cmp
 
-local config = function() 
+local config = function()
   local cmp_status_ok, cmp = pcall(require, 'cmp')
   if not cmp_status_ok then
     return

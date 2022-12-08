@@ -16,36 +16,36 @@ local config = function()
     ensure_installed = {
       'dockerfile',
 
-      'gomod', 
+      'gomod',
       'go',
 
-      'regex', 
-      'graphql', 
-      'http', 
+      'regex',
+      'graphql',
+      'http',
 
-      'python', 
-      'ruby', 
+      'python',
+      'ruby',
 
-      -- 'php', 
-      -- 'phpdoc', 
+      -- 'php',
+      -- 'phpdoc',
 
-      'make', 
+      'make',
       'bash',
       'cpp',
-      'cmake', 
+      'cmake',
 
       'html',
       'css',
       'scss',
-      'vue', 
+      'vue',
 
       'vim',
       'lua',
 
-      'json', 
+      'json',
       'json5',
-      'yaml', 
-      'markdown', 
+      'yaml',
+      'markdown',
 
       'javascript',
       'typescript',
@@ -66,7 +66,7 @@ local config = function()
     },
 
     indent = {
-      enable = false 
+      enable = false
       -- Not sure I need this.
     },
 

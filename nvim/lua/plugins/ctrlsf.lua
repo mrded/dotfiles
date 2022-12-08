@@ -2,7 +2,7 @@ return function(use)
   use {
     "dyng/ctrlsf.vim",
     tag = 'v2.6.0',
-    config = function() 
+    config = function()
       vim.cmd [[
         " @TODO: map Ctrl+* to <Plug>CtrlSFPrompt
 

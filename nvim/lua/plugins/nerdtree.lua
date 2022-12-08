@@ -5,7 +5,7 @@ return function(use)
     requires = {
       'Xuyuanp/nerdtree-git-plugin',
     },
-    config = function() 
+    config = function()
       vim.cmd [[
         nnoremap <C-n> :NERDTreeToggle<cr>
         nnoremap <C-b> :NERDTreeFind<cr>

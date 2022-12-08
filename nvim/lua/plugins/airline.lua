@@ -2,7 +2,7 @@ return function(use)
   use {
     "vim-airline/vim-airline",
     tag = 'v0.11',
-    config = function() 
+    config = function()
       vim.cmd [[
         let g:airline_theme='gruvbox'
 
@@ -30,6 +30,6 @@ return function(use)
 
           autocmd User AirlineAfterInit call AirlineInit()
         ]]
-      end
-    }
-  end
+    end
+  }
+end
