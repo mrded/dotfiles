@@ -62,7 +62,6 @@ return packer.startup(function(use)
   }
 
   -- Syntax highlighting
-  use { 'sheerun/vim-polyglot', tag = 'v4.17.0' }
   require('plugins/treesitter')(use)
 
   -- Commenting
