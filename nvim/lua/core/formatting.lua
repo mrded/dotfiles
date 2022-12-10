@@ -1,5 +1,9 @@
 local lsp_formatting = function()
-  vim.lsp.buf.format({ async = false })
+  vim.lsp.buf.format({
+    async = false,
+    -- only use null-ls
+    filter = function(client) return client.name == "null-ls" end
+  })
 end
 
 vim.api.nvim_create_autocmd(
