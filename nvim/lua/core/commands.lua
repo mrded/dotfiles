@@ -2,9 +2,14 @@
 vim.cmd('command! W w')
 
 vim.cmd('command! TestRun vsplit term://npx jest % --watch --runInBand')
-vim.cmd('command! Rename :lua vim.lsp.buf.rename()')
-vim.cmd('command! Format :lua vim.lsp.buf.format { async = true }')
+vim.api.nvim_create_user_command('Rename', function() vim.lsp.buf.rename() end, { nargs = 0 })
 
-vim.cmd('command! Ghistory :lua require("vgit").buffer_history_preview()')
-vim.cmd('command! Gblame :lua require("vgit").buffer_blame_preview()')
-vim.cmd('command! GblameGutter :lua require("vgit").buffer_gutter_blame_preview()')
+vim.api.nvim_create_user_command('Ghistory', require("vgit").buffer_history_preview, { nargs = 0 })
+vim.api.nvim_create_user_command('Gblame', require("vgit").buffer_blame_preview, { nargs = 0 })
+vim.api.nvim_create_user_command('GblameGutter', require("vgit").buffer_gutter_blame_preview, { nargs = 0 })
+
+vim.api.nvim_create_user_command('RestartEverything', function()
+  vim.cmd('source $MYVIMRC')
+  vim.cmd('PackerSync')
+  -- vim.cmd('LspRestart')
+end, { nargs = 0 })
