@@ -86,13 +86,10 @@ return packer.startup(function(use)
   require('plugins/indent-blankline')(use)
 
   -- Highlight git changes
-  use 'airblade/vim-gitgutter'
+  require('plugins/vgit')(use)
 
   -- opens a link to the current line on GitHub
   require('plugins/gh-line')(use)
-
-  -- Git wrapper
-  use { 'tpope/vim-fugitive', tag = 'v3.7' }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
