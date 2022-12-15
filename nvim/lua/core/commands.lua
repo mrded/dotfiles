@@ -8,8 +8,14 @@ vim.api.nvim_create_user_command('Ghistory', require("vgit").buffer_history_prev
 vim.api.nvim_create_user_command('Gblame', require("vgit").buffer_blame_preview, { nargs = 0 })
 vim.api.nvim_create_user_command('GblameGutter', require("vgit").buffer_gutter_blame_preview, { nargs = 0 })
 
-vim.api.nvim_create_user_command('RestartEverything', function()
-  vim.cmd('source $MYVIMRC')
-  vim.cmd('PackerSync')
-  -- vim.cmd('LspRestart')
-end, { nargs = 0 })
+vim.api.nvim_set_keymap('n', '<C-r>', '', {
+  noremap = true,
+  desc = 'restarting everything',
+  callback = function()
+    print('restarting everything')
+    vim.cmd('edit')
+    -- vim.cmd('PackerSync')
+    -- vim.cmd('TSUpdateSync')
+    -- vim.cmd('LspRestart')
+  end,
+})
