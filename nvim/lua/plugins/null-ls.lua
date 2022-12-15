@@ -9,7 +9,6 @@ return function(use)
 
       local sources = {
         formatting.prettier,
-        formatting.stylua,
       }
 
       null_ls.setup({
