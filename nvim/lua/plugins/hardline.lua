@@ -4,6 +4,11 @@ return function(use)
     config = function()
 
       require('hardline').setup {
+        bufferline = true,
+        bufferline_settings = {
+          exclude_terminal = true,
+          show_index = true, -- show buffer indexes (not the actual buffer numbers) in bufferline
+        },
         theme = 'gruvbox',
         sections = {
           { class = 'mode', item = require('hardline.parts.mode').get_item },
