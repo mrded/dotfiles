@@ -9,20 +9,18 @@ return function(use)
     },
     config = function()
       local builtin = require('telescope.builtin')
-      local themes = require('telescope.themes')
       local opts = { noremap = true, silent = true }
 
-      local function find_files()
-        local find_files_opts = themes.get_dropdown({ previewer = false })
-        find_files_opts["hidden"] = true
-
-        builtin.find_files(find_files_opts)
-      end
-
-      vim.keymap.set('n', '<C-p>', find_files, opts)
+      vim.keymap.set('n', '<c-p>', builtin.find_files, opts)
       vim.keymap.set('n', '<C-f>', builtin.live_grep, opts)
 
       require('telescope').setup {
+        pickers = {
+          find_files = {
+            theme = "dropdown",
+            previewer = false,
+          },
+        },
         extensions = {
           fzf = {
             fuzzy = true, -- false will only do exact matching
