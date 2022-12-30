@@ -90,7 +90,7 @@ local config = function()
     'gopls',
     'yamlls',
     'sumneko_lua',
-    'eslint',
+    -- 'eslint',
     -- 'volar'
   }
 
