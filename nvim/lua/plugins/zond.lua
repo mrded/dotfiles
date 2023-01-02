@@ -10,7 +10,7 @@ return function(use)
       local opts = { noremap = true, silent = true }
 
       vim.api.nvim_set_keymap('n', '<C-t>',
-        "<cmd>lua require('zond').find_and_run({title = 'Run a test', filter = '.spec.ts$', cmd = 'vsplit term://npx jest --runInBand %s'})<CR>"
+        "<cmd>lua require('zond').find_and_run({title = 'Run a test', filter = '.spec.ts$', cmd = 'vsplit term://npx jest --watch --runInBand --no-cache %s'})<CR>"
         , opts)
     end
   }
