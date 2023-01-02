@@ -106,7 +106,7 @@ end
 return function(use)
   use {
     'neovim/nvim-lspconfig',
-    tag = 'v0.1.3',
+    tag = 'v0.1.4',
     run = 'brew install gopls yaml-language-server lua-language-server && npm install -g yaml-language-server typescript typescript-language-server vscode-langservers-extracted @volar/vue-language-server',
     config = config
   }
