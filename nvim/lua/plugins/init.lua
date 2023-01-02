@@ -89,6 +89,9 @@ return packer.startup(function(use)
   -- Highlight git changes
   require('plugins/vgit')(use)
 
+  -- Showing functions and methods
+  require('plugins/aerial')(use)
+
   -- opens a link to the current line on GitHub
   require('plugins/gh-line')(use)
 
