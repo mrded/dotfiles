@@ -1,9 +1,8 @@
-return function(use)
-  use {
-    "vim-airline/vim-airline",
-    tag = 'v0.11',
-    config = function()
-      vim.cmd [[
+return {
+  "vim-airline/vim-airline",
+  tag = 'v0.11',
+  config = function()
+    vim.cmd [[
         let g:airline#extensions#tabline#enabled = 1
         let g:airline#extensions#tabline#formatter = 'unique_tail'
 
@@ -16,7 +15,7 @@ return function(use)
         let g:airline#extensions#tabline#tab_min_count = 2
       ]]
 
-      vim.cmd [[
+    vim.cmd [[
         let g:airline_theme='gruvbox'
         let g:airline#extensions#clock#auto = 0
         function! AirlineInit()
@@ -30,6 +29,5 @@ return function(use)
         endfunction
         autocmd User AirlineAfterInit call AirlineInit()
       ]]
-    end
-  }
-end
+  end
+}

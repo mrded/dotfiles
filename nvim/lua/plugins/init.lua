@@ -85,7 +85,8 @@ return packer.startup(function(use)
   use 'RRethy/vim-illuminate'
 
   for _, plugin in ipairs(plugins) do
-    require(plugin)(use)
+    local meta = require(plugin)
+    use(meta)
   end
 
   -- Automatically set up your configuration after cloning packer.nvim

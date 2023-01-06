@@ -1,9 +1,8 @@
-return function(use)
-  use {
-    "dyng/ctrlsf.vim",
-    tag = 'v2.6.0',
-    config = function()
-      vim.cmd [[
+return {
+  "dyng/ctrlsf.vim",
+  tag = 'v2.6.0',
+  config = function()
+    vim.cmd [[
         " @TODO: map Ctrl+* to <Plug>CtrlSFPrompt
 
         let g:ctrlsf_search_mode = 'sync'
@@ -28,6 +27,5 @@ return function(use)
               \ "public",
               \ ]
       ]]
-    end
-  }
-end
+  end
+}

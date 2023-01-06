@@ -1,11 +1,9 @@
-return function(use)
-  use {
-    "ruanyl/vim-gh-line",
-    config = function()
-      vim.cmd [[
+return {
+  "ruanyl/vim-gh-line",
+  config = function()
+    vim.cmd [[
         :command! GitHub GH 
         " :command! GitHubBlame GB 
       ]]
-    end
-  }
-end
+  end
+}

@@ -1,12 +1,11 @@
-return function(use)
-  use {
-    'scrooloose/nerdtree',
-    tag = '6.10.16',
-    requires = {
-      'Xuyuanp/nerdtree-git-plugin',
-    },
-    config = function()
-      vim.cmd [[
+return {
+  'scrooloose/nerdtree',
+  tag = '6.10.16',
+  requires = {
+    'Xuyuanp/nerdtree-git-plugin',
+  },
+  config = function()
+    vim.cmd [[
         nnoremap <C-n> :NERDTreeToggle<cr>
         nnoremap <C-b> :NERDTreeFind<cr>
 
@@ -17,6 +16,5 @@ return function(use)
         let NERDTreeMinimalUI = 1
         let NERDTreeAutoDeleteBuffer = 1
       ]]
-    end
-  }
-end
+  end
+}

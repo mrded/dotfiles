@@ -1,10 +1,3 @@
------------------------------------------------------------
--- Autocomplete configuration file
------------------------------------------------------------
-
--- Plugin: nvim-cmp
--- url: https://github.com/hrsh7th/nvim-cmp
-
 local config = function()
   local cmp_status_ok, cmp = pcall(require, 'cmp')
   if not cmp_status_ok then
@@ -55,17 +48,15 @@ local config = function()
   }
 end
 
-return function(use)
-  use {
-    'hrsh7th/nvim-cmp',
-    tag = 'v0.0.1',
-    requires = {
-      { 'L3MON4D3/LuaSnip', tag = 'v1.1.0' },
-      'hrsh7th/cmp-nvim-lsp',
-      'hrsh7th/cmp-path',
-      'hrsh7th/cmp-buffer',
-      'saadparwaiz1/cmp_luasnip',
-    },
-    config = config
-  }
-end
+return {
+  'hrsh7th/nvim-cmp',
+  tag = 'v0.0.1',
+  requires = {
+    { 'L3MON4D3/LuaSnip', tag = 'v1.1.0' },
+    'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-path',
+    'hrsh7th/cmp-buffer',
+    'saadparwaiz1/cmp_luasnip',
+  },
+  config = config
+}
