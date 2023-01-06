@@ -72,7 +72,6 @@ return packer.startup(function(use)
 
   -- Status bar
   require('plugins/airline')(use)
-  -- require('plugins/hardline')(use)
 
   -- Plug 'mrded/vim-github-codeowners', {'do': 'npm install'}
 
