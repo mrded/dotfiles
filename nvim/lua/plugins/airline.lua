@@ -5,7 +5,7 @@ return {
     vim.cmd [[
         let g:airline#extensions#tabline#enabled = 1
         let g:airline#extensions#tabline#formatter = 'unique_tail'
-
+        let g:airline#extensions#tabline#fnamemod = ':t'
         let g:airline#extensions#tabline#show_tab_count = 0
         let g:airline#extensions#tabline#show_tab_type = 0
         let g:airline#extensions#tabline#show_close_button = 0
