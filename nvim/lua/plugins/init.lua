@@ -11,6 +11,14 @@ if not status_ok then
   return
 end
 
+packer.reset()
+packer.init({
+  display = {
+    open_fn = require('packer.util').float,
+    autoremove = true,
+  },
+})
+
 local plugins = {
   -- Color schemes
   'plugins/gruvbox',
@@ -51,31 +59,18 @@ local plugins = {
   'plugins/gh-line', -- opens a link to the current line on GitHub
 }
 
--- Install plugins
-return packer.startup(function(use)
-  -- Add you plugins here:
-  use 'wbthomason/packer.nvim' -- packer can manage itself
+for _, plugin in ipairs(plugins) do
+  local meta = require(plugin)
+  packer.use(meta)
+  meta.config()
+end
 
-  -- AI autocomplite
-  use {
-    'github/copilot.vim',
-    -- you need to run ':Copilot setup' manually
-  }
+packer.use 'wbthomason/packer.nvim' -- packer can manage itself
 
-  -- Plug 'mrded/vim-github-codeowners', {'do': 'npm install'}
+-- AI autocomplite
+packer.use { 'github/copilot.vim' }
+-- you need to run ':Copilot setup' manually
 
-  -- Highlights words under the cursor
-  -- TODO: can probably done natively.
-  use 'RRethy/vim-illuminate'
-
-  for _, plugin in ipairs(plugins) do
-    local meta = require(plugin)
-    use(meta)
-  end
-
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
-  -- if packer_bootstrap then
-  --   require('packer').sync()
-  -- end
-end)
+-- Highlights words under the cursor
+-- TODO: can probably done natively.
+packer.use 'RRethy/vim-illuminate'
