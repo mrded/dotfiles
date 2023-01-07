@@ -21,48 +21,52 @@ packer.init({
 
 local plugins = {
   -- Color schemes
-  'plugins/gruvbox',
+  'gruvbox',
 
   -- Status bar
-  'plugins/airline',
+  'airline',
 
   -- File explorer
-  'plugins/nvim-tree',
+  'nvim-tree',
 
   -- Full text search
-  'plugins/ctrlsf',
+  'ctrlsf',
 
   -- Fuzzy file finder
-  'plugins/telescope',
-  'plugins/zond',
-  'plugins/aerial', -- Showing functions and methods
+  'telescope',
+  'zond',
+  'aerial', -- Showing functions and methods
 
   -- LSP
-  'plugins/lspconfig',
-  'plugins/null-ls',
+  'lspconfig',
+  'null-ls',
   -- brew install gopls && npm install -g yaml-language-server typescript typescript-language-server
 
   -- Autocomplete
-  'plugins/cmp',
+  'cmp',
 
   -- Syntax highlighting
-  'plugins/treesitter',
+  'treesitter',
 
   -- Commenting
-  'plugins/commentary', -- can probably done natively with LSP.
+  'commentary', -- can probably done natively with LSP.
 
   -- display vertical lines at each indentation level
-  'plugins/indent-blankline',
+  'indent-blankline',
 
   -- Git integration
-  'plugins/vgit', -- Highlight git changes
-  'plugins/gh-line', -- opens a link to the current line on GitHub
+  'vgit', -- Highlight git changes
+  'gh-line', -- opens a link to the current line on GitHub
 }
 
 for _, plugin in ipairs(plugins) do
-  local meta = require(plugin)
-  packer.use(meta)
-  meta.config()
+  local path = ('plugins/%s'):format(plugin)
+
+  local ok, meta = pcall(require, path)
+
+  if ok then
+    packer.use(meta)
+  end
 end
 
 packer.use 'wbthomason/packer.nvim' -- packer can manage itself
