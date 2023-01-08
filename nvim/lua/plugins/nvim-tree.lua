@@ -1,6 +1,6 @@
 return {
   'nvim-tree/nvim-tree.lua',
-  tag = 'nightly',
+  -- tag = 'nightly',
   config = function()
     -- disable netrw
     vim.g.loaded_netrw = 1
@@ -9,6 +9,7 @@ return {
     require("nvim-tree").setup({
       view = {
         adaptive_size = true,
+        hide_root_folder = true,
         mappings = {
           list = {
             { key = "s", action = "vsplit" },
@@ -17,21 +18,21 @@ return {
         },
       },
       renderer = {
+        highlight_git = true,
+        highlight_modified = 'name',
         icons = {
+          webdev_colors = false,
           show = {
             file = false,
             folder = false,
             folder_arrow = false,
             git = false,
+            modified = false,
           },
         },
       },
       filters = {
         dotfiles = false,
-        custom = {
-          -- "^\\.env",
-        },
-        exclude = {},
       },
       git = {
         enable = true,
