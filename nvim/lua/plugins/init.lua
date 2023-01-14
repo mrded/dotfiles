@@ -57,6 +57,9 @@ local plugins = {
   -- Git integration
   'vgit', -- Highlight git changes
   'gh-line', -- opens a link to the current line on GitHub
+
+  -- fancy notifications
+  'notify',
 }
 
 for _, plugin in ipairs(plugins) do
