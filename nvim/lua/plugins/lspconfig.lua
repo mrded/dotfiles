@@ -38,15 +38,9 @@ get_handlers = function()
 end
 
 local config = function()
-  local lsp_status_ok, lspconfig = pcall(require, 'lspconfig')
-  if not lsp_status_ok then
-    return
-  end
+  local lspconfig = require('lspconfig')
 
-  local cmp_status_ok = pcall(require, 'cmp_nvim_lsp')
-  if not cmp_status_ok then
-    return
-  end
+  -- TODO: do a health check here
 
   -- Use a loop to conveniently call 'setup' on multiple servers and
   -- map buffer local keybindings when the language server attaches
