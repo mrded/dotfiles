@@ -60,6 +60,7 @@ local plugins = {
 
   -- fancy notifications
   'notify',
+  'lsp-notify',
 }
 
 for _, plugin in ipairs(plugins) do

@@ -8,6 +8,7 @@ return {
       render = "simple",
     })
 
+    -- Override the default notification handler
     vim.notify = notify
   end
 }
