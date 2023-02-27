@@ -3,7 +3,7 @@ return {
   -- tag = 'v0.11',
   config = function()
     vim.cmd [[
-      let g:airline#extensions#tabline#enabled = 1
+      let g:airline#extensions#tabline#enabled = 0
       let g:airline#extensions#tabline#formatter = 'tabnr'
       let g:airline#extensions#tabline#show_tab_count = 0
       let g:airline#extensions#tabline#show_tab_type = 0

@@ -25,6 +25,7 @@ local plugins = {
 
   -- Status bar
   'airline',
+  'bufferline',
 
   -- File explorer
   'nvim-tree',
