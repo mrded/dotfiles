@@ -12,5 +12,9 @@ return {
         }
       }
     })
+
+    vim.api.nvim_create_user_command('Ghistory', require("vgit").buffer_history_preview, { nargs = 0 })
+    vim.api.nvim_create_user_command('Gblame', require("vgit").buffer_blame_preview, { nargs = 0 })
+    vim.api.nvim_create_user_command('GblameGutter', require("vgit").buffer_gutter_blame_preview, { nargs = 0 })
   end
 }
