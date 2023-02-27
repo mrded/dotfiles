@@ -6,9 +6,9 @@ Clone the repository into **~/dotfiles**: `git clone https://github.com/mrded/do
 
 
 ## NeoVim
-- Install nighty version of Neovim `brew install neovim --HEAD`
-    - `winbar` feature is required 
+- Install nighty version of Neovim `brew install neovim`
 - Replace configuration: `ln -s ~/dotfiles/nvim ~/.config/nvim`
+- Install [Packer](https://github.com/wbthomason/packer.nvim)
 - Install pluggins then run `nvim +PackerSync +TSUpdate`
 
 ## Troubleshooting
