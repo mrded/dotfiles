@@ -12,7 +12,7 @@ return {
       },
 
       sections = {
-        lualine_a = { 'mode' },
+        lualine_a = {},
         lualine_b = { 'branch' },
         lualine_c = {},
         lualine_x = { 'filetype' },
@@ -27,7 +27,7 @@ return {
         lualine_b = {},
         -- lualine_c = {},
         -- lualine_x = {},
-        lualine_y = { 'diagnostics' },
+        lualine_y = { 'diff', 'diagnostics' },
         -- lualine_z = {}
       },
 
@@ -37,7 +37,7 @@ return {
         lualine_c = {
           { 'filename', path = 1 }
         },
-        lualine_x = { 'diagnostics' },
+        lualine_x = { 'diff', 'diagnostics' },
         -- lualine_y = {},
         -- lualine_z = {}
       }
