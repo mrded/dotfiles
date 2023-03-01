@@ -41,7 +41,8 @@ local plugins = {
   -- LSP
   'lspconfig',
   'null-ls',
-  -- brew install gopls && npm install -g yaml-language-server typescript typescript-language-server
+  'mason',
+  'mason-lspconfig',
 
   -- Autocomplete
   'cmp',
