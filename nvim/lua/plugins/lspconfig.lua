@@ -40,13 +40,11 @@ end
 local config = function()
   local lspconfig = require('lspconfig')
 
-  -- TODO: do a health check here
-
   -- Use a loop to conveniently call 'setup' on multiple servers and
   -- map buffer local keybindings when the language server attaches
   local servers = {
     'tsserver',
-    'gopls',
+    -- 'gopls',
     'yamlls',
     'sumneko_lua',
     -- 'eslint',
@@ -65,6 +63,5 @@ end
 return {
   'neovim/nvim-lspconfig',
   tag = 'v0.1.4',
-  run = 'brew install gopls yaml-language-server lua-language-server && npm install -g yaml-language-server typescript typescript-language-server vscode-langservers-extracted @volar/vue-language-server',
   config = config
 }
