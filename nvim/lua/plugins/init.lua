@@ -61,8 +61,7 @@ local plugins = {
   'gh-line', -- opens a link to the current line on GitHub
 
   -- fancy notifications
-  'notify',
-  -- 'lsp-notify',
+  'lsp-notify',
 }
 
 for _, plugin in ipairs(plugins) do
