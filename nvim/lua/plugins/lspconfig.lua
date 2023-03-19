@@ -46,7 +46,7 @@ local config = function()
     'tsserver',
     -- 'gopls',
     'yamlls',
-    'sumneko_lua',
+    'lua_ls',
     -- 'eslint',
     -- 'volar'
   }
@@ -62,6 +62,6 @@ end
 
 return {
   'neovim/nvim-lspconfig',
-  tag = 'v0.1.4',
+  -- tag = 'v0.1.4',
   config = config
 }
