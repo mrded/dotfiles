@@ -1,12 +1,11 @@
 return {
   "nvim-lualine/lualine.nvim",
-  -- tag = 'v0.11',
   config = function()
     require('lualine').setup {
+      globalstatus = true,
       options = {
         icons_enabled = false,
         theme = 'gruvbox',
-
         component_separators = { '', '' },
         section_separators = { '', '' },
       },
