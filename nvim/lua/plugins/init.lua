@@ -25,6 +25,7 @@ local plugins = {
 
   -- Status bar
   'lualine',
+  'lualine-lsp-progress',
   'bufferline',
 
   -- File explorer
@@ -57,11 +58,11 @@ local plugins = {
   'indent-blankline',
 
   -- Git integration
-  'vgit', -- Highlight git changes
+  'vgit',    -- Highlight git changes
   'gh-line', -- opens a link to the current line on GitHub
 
   -- fancy notifications
-  'lsp-notify',
+  -- 'lsp-notify',
 }
 
 for _, plugin in ipairs(plugins) do
