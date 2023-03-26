@@ -11,6 +11,7 @@ return {
       settings = {
         live_blame = { enabled = false },
         live_gutter = { enabled = false },
+        authorship_code_lens = { enabled = false },
       }
     })
 
