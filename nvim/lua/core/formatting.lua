@@ -1,3 +1,7 @@
+vim.filetype.add({
+  extension = { mdx = 'mdx' }
+})
+
 vim.api.nvim_create_autocmd(
   "BufWritePre",
   {
