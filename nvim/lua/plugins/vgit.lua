@@ -10,7 +10,7 @@ return {
     vgit.setup({
       settings = {
         live_blame = { enabled = false },
-        live_gutter = { enabled = false },
+        live_gutter = { enabled = true },
         authorship_code_lens = { enabled = false },
       }
     })
