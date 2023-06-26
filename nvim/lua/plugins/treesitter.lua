@@ -72,10 +72,8 @@ local config = function()
 
     highlight = {
       enable = true,
-
       -- list of language that will be disabled
       disable = {},
-
       -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
       -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
       -- Using this option may slow down your editor, and you may see some duplicate highights.
@@ -83,6 +81,14 @@ local config = function()
       additional_vim_regex_highlighting = false,
     },
   }
+
+  -- use the markdown parser for mdx filetypes
+  -- @see: https://phelipetls.github.io/posts/mdx-syntax-highlight-treesitter-nvim/
+  -- vim.treesitter.language.register('mdx', 'markdown')
+
+  -- TODO: use vim.treesitter.language.register instead, however it doesn't work yet.
+  local ft_to_parser = require("nvim-treesitter.parsers").filetype_to_parsername
+  ft_to_parser.mdx = "markdown"
 end
 
 return {
