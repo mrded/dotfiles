@@ -89,6 +89,7 @@ end
 
 return {
   'nvim-treesitter/nvim-treesitter',
+  tag = 'v0.9.1',
   run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
   config = config
 }
