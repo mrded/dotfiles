@@ -1,0 +1,75 @@
+# Configuration for Alacritty, the GPU enhanced terminal emulator.
+
+env:
+  TERM: alacritty
+
+window:
+  # Spread additional padding evenly around the terminal content.
+  dynamic_padding: true
+
+  startup_mode: Fullscreen
+
+font:
+  size: 12.0
+
+  normal:
+    family: Monaco 
+
+  bold:
+    family: Monaco 
+    style: Bold
+
+  italic:
+    family: Monaco 
+    style: Italic
+
+  bold_italic:
+    family: Monaco 
+    style: Italic
+
+  offset:
+   x: 0
+   y: 4
+
+selection:
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+
+live_config_reload: true
+
+# Setup some amazing custom key bindings here - Best thing is you can setup key bindings
+# using Mac's 'command' to control your tmux.
+# A great reference: https://arslan.io/2018/02/05/gpu-accelerated-terminal-alacritty/#make-alacritty-feel-like-iterm2
+# key_bindings:
+  # Use command + [ - to go to previous tmux window
+  # - { key: LBracket, mods: Command, chars: "\x5c\x70" }
+  # # Use command + ] - to go to previous tmux window
+  # - { key: RBracket, mods: Command, chars: "\x5c\x6e" }
+  # # ctrl-^ doesn't work in some terminals like alacritty
+  # - { key: Key6, mods: Control, chars: "\x1e" }
+
+
+# Colors (Gruvbox dark)
+colors:
+  primary:
+    background: '#282828'
+    foreground: '#ebdbb2'
+
+  normal:
+    black:   '#282828'
+    red:     '#cc241d'
+    green:   '#98971a'
+    yellow:  '#d79921'
+    blue:    '#458588'
+    magenta: '#b16286'
+    cyan:    '#689d6a'
+    white:   '#a89984'
+
+  bright:
+    black:   '#928374'
+    red:     '#fb4934'
+    green:   '#b8bb26'
+    yellow:  '#fabd2f'
+    blue:    '#83a598'
+    magenta: '#d3869b'
+    cyan:    '#8ec07c'
+    white:   '#ebdbb2'

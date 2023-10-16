@@ -10,6 +10,10 @@ Clone the repository into **~/dotfiles**: `git clone https://github.com/mrded/do
 - Install [Packer](https://github.com/wbthomason/packer.nvim) for plugins
 - Install plugins: `nvim +PackerSync +TSUpdate`
 
+## Alacritty
+- Install alacritty `brew install --cask alacritty`
+- Replace configuration: `ln -s ~/dotfiles/alacritty ~/.config/alacritty`
+
 ## How to add a new plugin
 1. Create a new file `nvim/lua/plugins/{plugin-name}.lua`
 2. The file should return [Packer](https://github.com/wbthomason/packer.nvim) formatted string or a table, with a path to the plugin. eg: `return { 'mrded/{plugin-name}' }` 
