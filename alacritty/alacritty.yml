@@ -3,6 +3,15 @@
 env:
   TERM: alacritty
 
+shell:
+  program: /opt/homebrew/bin/tmux 
+  args:
+    - new-session
+    - -A
+    - -D
+    - -s
+    - main
+
 window:
   # Spread additional padding evenly around the terminal content.
   dynamic_padding: true

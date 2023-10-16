@@ -14,6 +14,10 @@ Clone the repository into **~/dotfiles**: `git clone https://github.com/mrded/do
 - Install alacritty `brew install --cask alacritty`
 - Replace configuration: `ln -s ~/dotfiles/alacritty ~/.config/alacritty`
 
+## Tmux
+- Install Tmux `brew install tmux`
+- Replace configuration: `ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf`
+
 ## How to add a new plugin
 1. Create a new file `nvim/lua/plugins/{plugin-name}.lua`
 2. The file should return [Packer](https://github.com/wbthomason/packer.nvim) formatted string or a table, with a path to the plugin. eg: `return { 'mrded/{plugin-name}' }` 
