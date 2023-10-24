@@ -1,22 +1,14 @@
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
-
-env:
-  TERM: xterm-256color
-
 shell:
-  program: /opt/homebrew/bin/tmux 
+  program: /bin/zsh
   args:
-    - new-session
-    - -A
-    - -D
-    - -s
-    - main
+    - -l
+    - -c
+    - "tmux"
 
 window:
   # Spread additional padding evenly around the terminal content.
   dynamic_padding: true
-
-  startup_mode: Fullscreen
 
 font:
   size: 12.0
@@ -42,13 +34,19 @@ font:
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+  save_to_clipboard: false 
 
 live_config_reload: true
 
+# map xterm to iTerm2 Shortcuts + some vim hacks 
 key_bindings:
-    # CMD+T to open a new tmux window (aka tab) 
+    # Create new tab
   - { key: T, mods: Command, chars: "\x02c" } 
-    # Map CMD+N to select tmux window (aka tab)
+
+    # Close Tab or Window 
+  - { key: W, mods: Command, chars: "\x02x" }
+
+    # Select a tab by number 
   - { key: Key1, mods: Command, chars: "\x021" }
   - { key: Key2, mods: Command, chars: "\x022" }
   - { key: Key3, mods: Command, chars: "\x023" }
@@ -59,11 +57,29 @@ key_bindings:
   - { key: Key8, mods: Command, chars: "\x028" }
   - { key: Key9, mods: Command, chars: "\x029" }
 
+    # Make a split and vsplit 
+  - { key: D, mods: Command, chars: "\x02v" } 
+  - { key: D, mods: Command|Shift, chars: "\x02s" }
+
+    # Move between splits (iterm)
+  - { key: Up, mods: Option|Command, chars: "\x02k" }
+  - { key: Down, mods: Option|Command, chars: "\x02j" }
+  - { key: Left, mods: Option|Command, chars: "\x02h" }
+  - { key: Right, mods: Option|Command, chars: "\x02l" }
+
+    # Move between panes (vim like)
+  - { key: K, mods: Option|Command, chars: "\x02k" }
+  - { key: J, mods: Option|Command, chars: "\x02j" }
+  - { key: H, mods: Option|Command, chars: "\x02h" }
+  - { key: L, mods: Option|Command, chars: "\x02l" }
+
 # Colors (Gruvbox dark)
 colors:
   primary:
-    background: '#282828'
-    foreground: '#ebdbb2'
+    hard contrast: background = '0x1d2021'
+    background: "0x282828"
+    soft contrast: background = '0x32302f'
+    foreground: "0xebdbb2"
 
   normal:
     black:   '#282828'
