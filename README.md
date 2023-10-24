@@ -16,6 +16,8 @@ Clone the repository into **~/dotfiles**: `git clone https://github.com/mrded/do
 
 ## Tmux
 - Install Tmux `brew install tmux`
+- Install [Plugin Manager](https://github.com/tmux-plugins/tpm)
+- Install Pluggins: Press prefix + I (capital i, as in Install) 
 - Replace configuration: `ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf`
 
 ## How to add a new plugin
