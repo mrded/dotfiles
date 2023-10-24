@@ -45,17 +45,19 @@ selection:
 
 live_config_reload: true
 
-# Setup some amazing custom key bindings here - Best thing is you can setup key bindings
-# using Mac's 'command' to control your tmux.
-# A great reference: https://arslan.io/2018/02/05/gpu-accelerated-terminal-alacritty/#make-alacritty-feel-like-iterm2
-# key_bindings:
-  # Use command + [ - to go to previous tmux window
-  # - { key: LBracket, mods: Command, chars: "\x5c\x70" }
-  # # Use command + ] - to go to previous tmux window
-  # - { key: RBracket, mods: Command, chars: "\x5c\x6e" }
-  # # ctrl-^ doesn't work in some terminals like alacritty
-  # - { key: Key6, mods: Control, chars: "\x1e" }
-
+key_bindings:
+    # CMD+T to open a new tmux window (aka tab) 
+  - { key: T, mods: Command, chars: "\x02c" } 
+    # Map CMD+N to select tmux window (aka tab)
+  - { key: Key1, mods: Command, chars: "\x021" }
+  - { key: Key2, mods: Command, chars: "\x022" }
+  - { key: Key3, mods: Command, chars: "\x023" }
+  - { key: Key4, mods: Command, chars: "\x024" }
+  - { key: Key5, mods: Command, chars: "\x025" }
+  - { key: Key6, mods: Command, chars: "\x026" }
+  - { key: Key7, mods: Command, chars: "\x027" }
+  - { key: Key8, mods: Command, chars: "\x028" }
+  - { key: Key9, mods: Command, chars: "\x029" }
 
 # Colors (Gruvbox dark)
 colors:
