@@ -58,20 +58,20 @@ key_bindings:
   - { key: Key9, mods: Command, chars: "\x029" }
 
     # Make a split and vsplit 
-  - { key: D, mods: Command, chars: "\x02v" } 
-  - { key: D, mods: Command|Shift, chars: "\x02s" }
+  - { key: D, mods: Command, chars: "\x02%" } 
+  - { key: D, mods: Command|Shift, chars: "\x02\"" }
 
     # Move between splits (iterm)
-  - { key: Up, mods: Option|Command, chars: "\x02k" }
-  - { key: Down, mods: Option|Command, chars: "\x02j" }
-  - { key: Left, mods: Option|Command, chars: "\x02h" }
-  - { key: Right, mods: Option|Command, chars: "\x02l" }
+  - { key: Up, mods: Option|Command, chars: "\x02\x1b[A" }
+  - { key: Down, mods: Option|Command, chars: "\x02\x1b[B" }
+  - { key: Left, mods: Option|Command, chars: "\x02\x1b[D" }
+  - { key: Right, mods: Option|Command, chars: "\x02\x1b[C" }
 
     # Move between panes (vim like)
-  - { key: K, mods: Option|Command, chars: "\x02k" }
-  - { key: J, mods: Option|Command, chars: "\x02j" }
-  - { key: H, mods: Option|Command, chars: "\x02h" }
-  - { key: L, mods: Option|Command, chars: "\x02l" }
+  - { key: K, mods: Option|Command, chars: "\x02\x1b[A" }
+  - { key: J, mods: Option|Command, chars: "\x02\x1b[B" }
+  - { key: H, mods: Option|Command, chars: "\x02\x1b[D" }
+  - { key: L, mods: Option|Command, chars: "\x02\x1b[C" }
 
 # Colors (Gruvbox dark)
 colors:
