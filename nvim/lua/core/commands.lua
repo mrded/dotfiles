@@ -3,7 +3,10 @@ vim.cmd('command! W w')
 vim.cmd('command! V v')
 
 vim.cmd('command! TestRun vsplit term://npx jest % --watch --runInBand --no-cache --coverage=false')
+vim.cmd('command! JestRun vsplit term://npx jest % --watch --runInBand --no-cache --coverage=false')
+vim.cmd('command! VitestRun vsplit term://npx vitest run % --watch --coverage=false')
 vim.api.nvim_create_user_command('Rename', function() vim.lsp.buf.rename() end, { nargs = 0 })
+vim.api.nvim_create_user_command('Format', function() vim.lsp.buf.format() end, { nargs = 0 })
 
 vim.api.nvim_set_keymap('n', '<C-r>', '', {
   noremap = true,
