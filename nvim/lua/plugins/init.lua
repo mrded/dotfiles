@@ -41,9 +41,10 @@ local plugins = {
 
   -- LSP
   'lspconfig',
-  'null-ls',
+  -- 'null-ls',
   'mason',
   'mason-lspconfig',
+  'format-on-save',
 
   -- Autocomplete
   'cmp',
