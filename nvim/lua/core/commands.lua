@@ -9,6 +9,8 @@ vim.api.nvim_create_user_command('Rename', function() vim.lsp.buf.rename() end, 
 -- vim.api.nvim_create_user_command('Format', function() vim.lsp.buf.format() end, { nargs = 0 })
 
 vim.api.nvim_create_user_command('TestRun', function()
+  local file_path = vim.fn.expand("%")
+
   local buf = vim.api.nvim_create_buf(false, true)
   local width = vim.api.nvim_get_option("columns")
   local height = vim.api.nvim_get_option("lines")
@@ -28,7 +30,6 @@ vim.api.nvim_create_user_command('TestRun', function()
     col = col
   })
 
-  local file_path = vim.fn.expand("%")
   vim.fn.termopen("npx jest " .. file_path .. " --runInBand --no-cache --coverage=false")
 end, {})
 
