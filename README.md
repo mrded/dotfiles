@@ -21,6 +21,11 @@ Clone the repository into **~/dotfiles**: `git clone https://github.com/mrded/do
 - Replace configuration: `ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf`
 
 ## Wezterm
+issues:
+- font rendering: https://github.com/wez/wezterm/issues/2523
+- opt+key bug: https://github.com/wez/wezterm/discussions/4739
+
+install:
 - Replace configuration: `ln -s ~/dotfiles/wezterm/wezterm.lua ~/.wezterm.lua`
 
 ## How to add a new plugin
