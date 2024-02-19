@@ -21,18 +21,33 @@ Clone the repository into **~/dotfiles**: `git clone https://github.com/mrded/do
 - Replace configuration: `ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf`
 
 ## Wezterm
-issues:
-- font rendering: https://github.com/wez/wezterm/issues/2523
-- opt+key bug: https://github.com/wez/wezterm/discussions/4739
+Features:
+- [ ] font rendering: https://github.com/wez/wezterm/issues/2523
+- [ ] opt+key bug: https://github.com/wez/wezterm/discussions/4739
+- [ ] strikethrough text support
+- [ ] error text highlighting 
+- [ ] do not copy on select
+- [X] tab support
+- [X] configuration in a file
 
 install:
 - Replace configuration: `ln -s ~/dotfiles/wezterm/wezterm.lua ~/.wezterm.lua`
 
-## How to add a new plugin
+## How to add a new NVim plugin
 1. Create a new file `nvim/lua/plugins/{plugin-name}.lua`
 2. The file should return [Packer](https://github.com/wbthomason/packer.nvim) formatted string or a table, with a path to the plugin. eg: `return { 'mrded/{plugin-name}' }` 
 3. Include the file name at `nvim/lua/plugins/init.lua`, plugins table.
 4. Save and update Packer, to apply changes: `nvim +PackerSync +TSUpdate`
+
+## Terminal requirements
+- font Monaco support
+- font strikethrough support
+    - to test: `echo -e "\e[9mstrikethrough\e[0m"`
+- Grovbox theme support
+- Tabs and Splits (possibly without xterm)
+- iTerm 2 shortcuts 
+- Config in a file
+- Possibility to select text without copying
 
 ## Gotchas
 - When changing plugin's settings, you need to run `nvim +PackerSync +TSUpdate`, as settings are cached.
