@@ -33,6 +33,12 @@ Features:
 install:
 - Replace configuration: `ln -s ~/dotfiles/wezterm/wezterm.lua ~/.wezterm.lua`
 
+## Neovide
+issues:
+- [ ] MacOS tabs https://github.com/neovide/neovide/issues/2378
+- [ ] winbar glitches while scrolling https://github.com/neovide/neovide/issues/2406
+- [ ] modal borders and lines look broken
+
 ## How to add a new NVim plugin
 1. Create a new file `nvim/lua/plugins/{plugin-name}.lua`
 2. The file should return [Packer](https://github.com/wbthomason/packer.nvim) formatted string or a table, with a path to the plugin. eg: `return { 'mrded/{plugin-name}' }` 
@@ -43,6 +49,7 @@ install:
 - font Monaco support
 - font strikethrough support
     - to test: `echo -e "\e[9mstrikethrough\e[0m"`
+    - https://www.reddit.com/r/neovim/comments/14ye7a5/how_could_i_enable_strikethrough_render_in_nvim/
 - Grovbox theme support
 - Tabs and Splits (possibly without xterm)
 - iTerm 2 shortcuts 
