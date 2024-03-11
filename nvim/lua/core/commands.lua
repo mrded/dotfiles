@@ -8,9 +8,7 @@ vim.cmd('command! VitestRun vsplit term://npx vitest run % --watch --coverage=fa
 vim.api.nvim_create_user_command('Rename', function() vim.lsp.buf.rename() end, { nargs = 0 })
 -- vim.api.nvim_create_user_command('Format', function() vim.lsp.buf.format() end, { nargs = 0 })
 
-vim.api.nvim_create_user_command('TestRun', function()
-  local file_path = vim.fn.expand("%")
-
+local function create_window()
   local buf = vim.api.nvim_create_buf(false, true)
   local width = vim.api.nvim_get_option("columns")
   local height = vim.api.nvim_get_option("lines")
@@ -27,11 +25,38 @@ vim.api.nvim_create_user_command('TestRun', function()
     width = win_width,
     height = win_height,
     row = row,
-    col = col
+    col = col,
+    border = "rounded"
   })
+end
+
+vim.api.nvim_create_user_command('TestRun', function()
+  local file_path = vim.fn.expand("%")
+
+  create_window()
 
   vim.fn.termopen("npx jest " .. file_path .. " --runInBand --no-cache --coverage=false")
 end, {})
+
+vim.api.nvim_create_user_command('Terminal', function(opts)
+  create_window()
+
+  vim.cmd("terminal")
+end, {})
+
+vim.api.nvim_create_user_command('Find', function(opts)
+  -- TODO: WIP.
+  create_window()
+
+  -- Run :CtrlSF with the provided argument
+  local search_term = opts.args
+  if search_term ~= "" then
+    vim.cmd("CtrlSF " .. search_term)
+  else
+    print("Please provide a search term.")
+  end
+end, { nargs = 1 })
+
 
 vim.api.nvim_set_keymap('n', '<C-r>', '', {
   noremap = true,
