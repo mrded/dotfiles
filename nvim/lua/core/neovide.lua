@@ -9,4 +9,8 @@ if vim.g.neovide then
   vim.keymap.set('v', '<D-v>', '"+P')    -- Paste visual mode
   vim.keymap.set('c', '<D-v>', '<C-R>+') -- Paste command mode
   vim.keymap.set('i', '<D-v>', '<C-R>+') -- Paste insert mode
+
+  -- Disable horizontal scroll
+  vim.api.nvim_set_keymap('n', '<ScrollWheelRight>', '<Nop>', { noremap = true })
+  vim.api.nvim_set_keymap('n', '<ScrollWheelLeft>', '<Nop>', { noremap = true })
 end
