@@ -6,6 +6,6 @@ vim.api.nvim_create_user_command('Bookmark', function()
   vim.cmd(cmd)
 end, {})
 
-vim.api.nvim_create_user_command('UnBookmark', function()
+vim.api.nvim_create_user_command('BookmarkRemove', function()
   vim.cmd("sign unplace")
 end, {})
