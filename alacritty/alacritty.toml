@@ -1,0 +1,172 @@
+live_config_reload = true
+
+[shell]
+args = ["-l", "-c", "tmux"]
+program = "/bin/zsh"
+
+[selection]
+save_to_clipboard = false
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+
+# Spread additional padding evenly around the terminal content.
+[window]
+dynamic_padding = true
+
+[font]
+size = 12.0
+
+[font.bold]
+family = "Monaco"
+style = "Bold"
+
+[font.bold_italic]
+family = "Monaco"
+style = "Italic"
+
+[font.italic]
+family = "Monaco"
+style = "Italic"
+
+[font.normal]
+family = "Monaco"
+
+[font.offset]
+x = 0
+y = 4
+
+# map tmux to iTerm2 Shortcuts + some vim hacks 
+# Create new tab
+[[keyboard.bindings]]
+chars = "\u0002c"
+key = "T"
+mods = "Command"
+
+# Close Tab or Window 
+[[keyboard.bindings]]
+chars = "\u0002x"
+key = "W"
+mods = "Command"
+
+# Select a tab by number 
+[[keyboard.bindings]]
+chars = "\u00021"
+key = "Key1"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00022"
+key = "Key2"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00023"
+key = "Key3"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00024"
+key = "Key4"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00025"
+key = "Key5"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00026"
+key = "Key6"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00027"
+key = "Key7"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00028"
+key = "Key8"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00029"
+key = "Key9"
+mods = "Command"
+
+# Make a split and vsplit 
+[[keyboard.bindings]]
+chars = "\u0002%"
+key = "D"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002\""
+key = "D"
+mods = "Command|Shift"
+
+# Move between splits (iterm)
+[[keyboard.bindings]]
+chars = "\u0002\u001B[A"
+key = "Up"
+mods = "Option|Command"
+
+[[keyboard.bindings]]
+chars = "\u0002\u001B[B"
+key = "Down"
+mods = "Option|Command"
+
+[[keyboard.bindings]]
+chars = "\u0002\u001B[D"
+key = "Left"
+mods = "Option|Command"
+
+[[keyboard.bindings]]
+chars = "\u0002\u001B[C"
+key = "Right"
+mods = "Option|Command"
+
+# Move between panes (vim like)
+[[keyboard.bindings]]
+chars = "\u0002\u001B[A"
+key = "K"
+mods = "Option|Command"
+
+[[keyboard.bindings]]
+chars = "\u0002\u001B[B"
+key = "J"
+mods = "Option|Command"
+
+[[keyboard.bindings]]
+chars = "\u0002\u001B[D"
+key = "H"
+mods = "Option|Command"
+
+[[keyboard.bindings]]
+chars = "\u0002\u001B[C"
+key = "L"
+mods = "Option|Command"
+
+# Colors (Gruvbox dark)
+[colors.bright]
+black = "#928374"
+blue = "#83a598"
+cyan = "#8ec07c"
+green = "#b8bb26"
+magenta = "#d3869b"
+red = "#fb4934"
+white = "#ebdbb2"
+yellow = "#fabd2f"
+
+[colors.normal]
+black = "#282828"
+blue = "#458588"
+cyan = "#689d6a"
+green = "#98971a"
+magenta = "#b16286"
+red = "#cc241d"
+white = "#a89984"
+yellow = "#d79921"
+
+[colors.primary]
+background = "0x282828"
+foreground = "0xebdbb2"
