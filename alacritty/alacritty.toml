@@ -170,3 +170,8 @@ yellow = "#d79921"
 [colors.primary]
 background = "0x282828"
 foreground = "0xebdbb2"
+
+[colors.cursor]
+cursor = "0xffffff"
+text = "0x1d1f21"
+
