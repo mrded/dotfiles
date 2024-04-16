@@ -54,6 +54,9 @@ local plugins = {
   -- Commenting
   'commentary', -- can probably done natively with LSP.
 
+  -- Surround text with quotes, brackets, etc.
+  'surround',
+
   -- display vertical lines at each indentation level
   'indent-blankline',
 
