@@ -1,6 +1,6 @@
 return {
   "akinsho/bufferline.nvim",
-  tag = 'v3.3.0',
+  tag = 'v4.6.1',
   config = function()
     vim.opt.termguicolors = true
 
@@ -10,7 +10,6 @@ return {
 
         show_buffer_icons = false,
         show_buffer_close_icons = false,
-        show_buffer_default_icon = false,
         show_close_icon = false,
 
         diagnostics = "nvim_lsp",
