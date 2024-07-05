@@ -1,6 +1,6 @@
 return {
   'nvim-tree/nvim-tree.lua',
-  commit = 'a3aa3b47eac8b6289f028743bef4ce9eb0f6782e',
+  tag = 'v1.4.0',
   config = function()
     -- disable netrw
     vim.g.loaded_netrw = 1
