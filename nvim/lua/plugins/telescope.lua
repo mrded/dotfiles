@@ -1,6 +1,6 @@
 return {
   'nvim-telescope/telescope.nvim',
-  tag = '0.1.3',
+  tag = '0.1.8',
   run = 'brew install fd ripgrep',
   requires = {
     'nvim-lua/plenary.nvim',

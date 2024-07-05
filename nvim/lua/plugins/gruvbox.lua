@@ -1,10 +1,8 @@
 return {
-  "morhetz/gruvbox",
-  tag = 'v3.0.1-rc.0',
+  "ellisonleao/gruvbox.nvim",
+  tag = "2.0.0",
   config = function()
-    vim.cmd [[
-        colorscheme gruvbox
-        set background=dark
-      ]]
+    vim.o.background = "dark"
+    vim.cmd([[colorscheme gruvbox]])
   end
 }

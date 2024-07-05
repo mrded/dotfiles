@@ -1,6 +1,6 @@
 return {
-  'scrooloose/nerdtree',
-  tag = '6.10.16',
+  'preservim/nerdtree',
+  tag = '7.1.2',
   requires = {
     'Xuyuanp/nerdtree-git-plugin',
   },

@@ -1,6 +1,6 @@
 return {
   'tanvirtin/vgit.nvim',
-  tag = 'v0.2.1',
+  tag = 'v0.2.2',
   requires = {
     'nvim-lua/plenary.nvim'
   },
