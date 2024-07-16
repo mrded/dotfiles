@@ -81,7 +81,7 @@ end
 packer.use 'wbthomason/packer.nvim' -- packer can manage itself
 
 -- AI autocomplite
-packer.use { 'github/copilot.vim' }
+packer.use { 'github/copilot.vim', tag = 'v1.38.0' }
 -- you need to run ':Copilot setup' manually
 
 -- Highlights words under the cursor
