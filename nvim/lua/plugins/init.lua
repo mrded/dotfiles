@@ -54,9 +54,6 @@ local plugins = {
   -- Commenting
   'nvim-comment',
 
-  -- Surround text with quotes, brackets, etc.
-  'surround',
-
   -- display vertical lines at each indentation level
   'indent-blankline',
 
