@@ -52,7 +52,7 @@ local plugins = {
   'treesitter',
 
   -- Commenting
-  'commentary', -- can probably done natively with LSP.
+  'nvim-comment',
 
   -- Surround text with quotes, brackets, etc.
   'surround',
