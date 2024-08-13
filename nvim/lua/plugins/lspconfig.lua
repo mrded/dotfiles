@@ -47,8 +47,11 @@ local config = function()
     -- 'gopls',
     'yamlls',
     'lua_ls',
+    'terraformls',
     -- 'eslint',
-    -- 'volar'
+    -- 'volar',
+    -- 'graphql-language-service-cli', try https://www.npmjs.com/package/graphql-language-service-server
+    -- 'tailwindcss'
   }
 
   for _, lsp in ipairs(servers) do

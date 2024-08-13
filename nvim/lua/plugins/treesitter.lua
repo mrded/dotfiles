@@ -16,12 +16,12 @@ local config = function()
     ensure_installed = {
       'dockerfile',
 
-      'gomod',
-      'go',
+      -- 'gomod',
+      -- 'go',
 
       'regex',
       'graphql',
-      'http',
+      -- 'http',
 
       'python',
       'ruby',
@@ -37,7 +37,7 @@ local config = function()
       'html',
       'css',
       'scss',
-      'vue',
+      -- 'vue',
 
       'vim',
       'lua',
@@ -51,7 +51,7 @@ local config = function()
       'typescript',
       'jsdoc',
 
-      'todotxt'
+      -- 'todotxt'
     },
 
     -- Install languages synchronously (only applied to `ensure_installed`)

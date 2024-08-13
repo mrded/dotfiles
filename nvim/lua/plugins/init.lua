@@ -25,7 +25,6 @@ local plugins = {
 
   -- Status bar
   'lualine',
-  'lualine-lsp-progress',
   'bufferline',
 
   -- File explorer
