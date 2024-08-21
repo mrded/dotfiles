@@ -1,14 +1,16 @@
 return {
   'stevearc/aerial.nvim',
   config = function()
-    require('aerial').setup()
+    require('aerial').setup({
+      backends = { "lsp" },
+    })
 
     local telescope = require('telescope')
     local themes = require('telescope.themes')
 
     telescope.load_extension('aerial')
 
-    function show_aerial()
+    local function show_aerial()
       telescope.extensions.aerial.aerial(themes.get_dropdown({ previewer = false }))
     end
 
