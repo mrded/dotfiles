@@ -10,10 +10,32 @@ return {
     local builtin = require('telescope.builtin')
     local opts = { noremap = true, silent = true }
 
+    local function search_in_tests()
+      builtin.live_grep({
+        glob_pattern = { "*.test.*", "*.spec.*" },
+      })
+    end
+
+    local function search_in_files()
+      builtin.live_grep({
+        file_ignore_patterns = { "%.test%..*", "%.spec%..*" },
+      })
+    end
+
     vim.keymap.set('n', '<c-p>', builtin.find_files, opts)
-    vim.keymap.set('n', '<C-f>', builtin.live_grep, opts)
+    vim.keymap.set('n', '<C-f>', search_in_files, opts)
+    vim.keymap.set('n', '<C-t>', search_in_tests, opts)
 
     require('telescope').setup {
+      -- defaults = {
+      --   mappings = {
+      --     i = {
+      --     TODO: doesn't work. why?
+      --       ["<c-p>"] = builtin.find_files,
+      --       ["<c-f>"] = builtin.live_grep,
+      --     },
+      --   },
+      -- },
       pickers = {
         find_files = {
           theme = "dropdown",
@@ -22,12 +44,12 @@ return {
       },
       extensions = {
         fzf = {
-          fuzzy = true, -- false will only do exact matching
+          fuzzy = true,                   -- false will only do exact matching
           override_generic_sorter = true, -- override the generic sorter
-          override_file_sorter = true, -- override the file sorter
-          case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+          override_file_sorter = true,    -- override the file sorter
+          case_mode = "smart_case",       -- or "ignore_case" or "respect_case"
         }
-      }
+      },
     }
 
     require('telescope').load_extension('fzf')
