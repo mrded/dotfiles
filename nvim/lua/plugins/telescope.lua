@@ -22,20 +22,11 @@ return {
       })
     end
 
-    vim.keymap.set('n', '<c-p>', builtin.find_files, opts)
+    vim.keymap.set('n', '<C-p>', builtin.find_files, opts)
     vim.keymap.set('n', '<C-f>', search_in_files, opts)
     vim.keymap.set('n', '<C-t>', search_in_tests, opts)
 
     require('telescope').setup {
-      -- defaults = {
-      --   mappings = {
-      --     i = {
-      --     TODO: doesn't work. why?
-      --       ["<c-p>"] = builtin.find_files,
-      --       ["<c-f>"] = builtin.live_grep,
-      --     },
-      --   },
-      -- },
       pickers = {
         find_files = {
           theme = "dropdown",
