@@ -20,6 +20,10 @@ Clone the repository into **~/dotfiles**: `git clone https://github.com/mrded/do
 - Install Pluggins: Press prefix + I (capital i, as in Install) 
 - Replace configuration: `ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf`
 
+TODO:
+- [ ] Prevent from copying to clipboard on mouse select
+- [ ] Copy selected text on CMD+C
+
 ## Wezterm
 Features:
 - [ ] font rendering: https://github.com/wez/wezterm/issues/2523
