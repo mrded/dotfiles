@@ -35,7 +35,7 @@ local plugins = {
 
   -- Fuzzy file finder
   'telescope',
-  'zond',
+  -- 'zond',
   'aerial', -- Showing functions and methods
 
   -- LSP
