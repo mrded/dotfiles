@@ -20,7 +20,8 @@ Clone the repository into **~/dotfiles**: `git clone https://github.com/mrded/do
 - Install Pluggins: Press prefix + I (capital i, as in Install) 
 - Replace configuration: `ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf`
 
-TODO:
+issues:
+- [ ] notifications make an icon at the dock jump
 - [ ] Prevent from copying to clipboard on mouse select
 - [ ] Copy selected text on CMD+C
 
@@ -36,6 +37,10 @@ Features:
 
 install:
 - Replace configuration: `ln -s ~/dotfiles/wezterm/wezterm.lua ~/.wezterm.lua`
+
+## Kitty
+- Install alacritty `brew install --cask alacritty`
+- Replace configuration: `ln -s ~/dotfiles/kitty ~/.config/kitty`
 
 ## Neovide
 issues:
