@@ -29,7 +29,8 @@ return {
         dotfiles = false,
       },
       git = {
-        enable = true,
+        -- disable git integration because it's slow
+        enable = false,
         ignore = false,
         show_on_dirs = true,
         timeout = 400,

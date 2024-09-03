@@ -14,6 +14,10 @@ local config = function()
   nvim_treesitter.setup {
     -- One of "all", "maintained" (parsers with maintainers), or a list of languages
     ensure_installed = {
+
+      -- Part of the core functionality of Neovim.
+      'c', 'help', 'lua', 'vim', 'vimdoc', 'query',
+
       'dockerfile',
 
       -- 'gomod',
@@ -23,24 +27,21 @@ local config = function()
       'graphql',
       -- 'http',
 
-      'python',
-      'ruby',
+      -- 'python',
+      -- 'ruby',
 
       -- 'php',
       -- 'phpdoc',
 
       'make',
       'bash',
-      'cpp',
+      -- 'cpp',
       'cmake',
 
       'html',
       'css',
       'scss',
       -- 'vue',
-
-      'vim',
-      'lua',
 
       'json',
       'json5',
@@ -56,6 +57,7 @@ local config = function()
 
     -- Install languages synchronously (only applied to `ensure_installed`)
     sync_install = false,
+    auto_install = true,
 
     -- List of parsers to ignore installing
     ignore_install = {},
@@ -90,6 +92,7 @@ end
 return {
   'nvim-treesitter/nvim-treesitter',
   tag = 'v0.9.2',
+  build = ":TSUpdate",
   run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
   config = config
 }
