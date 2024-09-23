@@ -94,3 +94,16 @@ local disabled_built_ins = {
 for _, plugin in pairs(disabled_built_ins) do
   g["loaded_" .. plugin] = 0
 end
+
+-----------------------------------------------------------
+--- Diagnostics
+-----------------------------------------------------------
+vim.fn.sign_define("DiagnosticSignError", { text = "" })
+vim.fn.sign_define("DiagnosticSignWarn", { text = "" })
+vim.fn.sign_define("DiagnosticSignHint", { text = "" })
+vim.fn.sign_define("DiagnosticSignInfo", { text = "" })
+
+vim.diagnostic.config({
+  virtual_text = false,
+  signs = true,
+})

@@ -1,19 +1,8 @@
 local config = function()
   local lspconfig = require('lspconfig')
-  --
-  -- Use an on_attach function to only map the following keys
-  -- after the language server attaches to the current buffer
-  local on_attach = function(client, bufnr)
-    if client.name == "eslint" then
-      -- format a document on save:
-      vim.api.nvim_create_autocmd("BufWritePre", {
-        buffer = bufnr,
-        command = "EslintFixAll",
-      })
-    end
 
+  local common_on_attach = function(client, bufnr)
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-
     local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
     -- Enable completion triggered by <c-x><c-o>
@@ -35,49 +24,34 @@ local config = function()
     buf_set_keymap('n', 'gE', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
   end
 
-  local get_handlers = function()
-    -- Hover doc popup
-    local pop_opts = { border = "rounded", max_width = 80 }
+  lspconfig.eslint.setup {
+    -- flags = { debounce_text_changes = 150 },
+    on_attach = function(client, bufnr)
+      common_on_attach(client, bufnr)
 
-    return {
-      ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, pop_opts),
-      ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, pop_opts),
-      ["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-        virtual_text = false,
-      }),
-    }
-  end
-
-  -- Use a loop to conveniently call 'setup' on multiple servers and
-  -- map buffer local keybindings when the language server attaches
-  local servers = {
-    'ts_ls',
-    -- 'gopls',
-    'yamlls',
-    'lua_ls',
-    'terraformls',
-    'eslint',
-    -- 'volar',
-    -- 'graphql-language-service-cli', try https://www.npmjs.com/package/graphql-language-service-server
-    -- 'tailwindcss'
+      -- client.resolved_capabilities.document_formatting = true
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        buffer = bufnr,
+        command = "EslintFixAll",
+      })
+    end,
   }
 
-  local common_setup = {
-    on_attach = on_attach,
-    flags = { debounce_text_changes = 150 },
-    handlers = get_handlers(),
+  lspconfig.ts_ls.setup {
+    on_attach = common_on_attach,
   }
 
-  for _, lsp in ipairs(servers) do
-    if lsp == 'whatever' then
-      -- TODO: do custom setup for eslint
-      lspconfig[lsp].setup(vim.tbl_extend("force", common_setup, {
-        -- TODO: custom setup
-      }))
-    else
-      lspconfig[lsp].setup(common_setup)
-    end
-  end
+  lspconfig.yamlls.setup {
+    on_attach = common_on_attach,
+  }
+
+  lspconfig.lua_ls.setup {
+    on_attach = common_on_attach,
+  }
+
+  lspconfig.terraformls.setup {
+    on_attach = common_on_attach,
+  }
 end
 
 return {
