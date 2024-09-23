@@ -3,7 +3,15 @@ local config = function()
   --
   -- Use an on_attach function to only map the following keys
   -- after the language server attaches to the current buffer
-  local on_attach = function(_, bufnr)
+  local on_attach = function(client, bufnr)
+    if client.name == "eslint" then
+      -- format a document on save:
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        buffer = bufnr,
+        command = "EslintFixAll",
+      })
+    end
+
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
 
     local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
@@ -48,18 +56,27 @@ local config = function()
     'yamlls',
     'lua_ls',
     'terraformls',
-    -- 'eslint',
+    'eslint',
     -- 'volar',
     -- 'graphql-language-service-cli', try https://www.npmjs.com/package/graphql-language-service-server
     -- 'tailwindcss'
   }
 
+  local common_setup = {
+    on_attach = on_attach,
+    flags = { debounce_text_changes = 150 },
+    handlers = get_handlers(),
+  }
+
   for _, lsp in ipairs(servers) do
-    lspconfig[lsp].setup {
-      on_attach = on_attach,
-      flags = { debounce_text_changes = 150 },
-      handlers = get_handlers(),
-    }
+    if lsp == 'whatever' then
+      -- TODO: do custom setup for eslint
+      lspconfig[lsp].setup(vim.tbl_extend("force", common_setup, {
+        -- TODO: custom setup
+      }))
+    else
+      lspconfig[lsp].setup(common_setup)
+    end
   end
 end
 
