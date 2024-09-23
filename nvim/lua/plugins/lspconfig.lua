@@ -43,7 +43,7 @@ local config = function()
   -- Use a loop to conveniently call 'setup' on multiple servers and
   -- map buffer local keybindings when the language server attaches
   local servers = {
-    'tsserver',
+    'ts_ls',
     -- 'gopls',
     'yamlls',
     'lua_ls',
@@ -65,6 +65,6 @@ end
 
 return {
   'neovim/nvim-lspconfig',
-  tag = 'v0.1.8',
+  tag = 'v1.0.0',
   config = config
 }
