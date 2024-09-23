@@ -4,5 +4,6 @@ return {
   config = function()
     vim.o.background = "dark"
     vim.cmd([[colorscheme gruvbox]])
+    vim.cmd [[set cursorline]]
   end
 }
