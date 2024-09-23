@@ -1,6 +1,6 @@
 return {
   "akinsho/bufferline.nvim",
-  tag = 'v4.6.1',
+  tag = 'v4.7.0',
   config = function()
     vim.opt.termguicolors = true
 
