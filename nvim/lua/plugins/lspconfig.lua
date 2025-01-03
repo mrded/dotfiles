@@ -52,6 +52,10 @@ local config = function()
   lspconfig.terraformls.setup {
     on_attach = common_on_attach,
   }
+
+  lspconfig.tflint.setup {
+    on_attach = common_on_attach,
+  }
 end
 
 return {
