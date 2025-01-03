@@ -52,6 +52,7 @@ local config = function()
       'typescript',
       'jsdoc',
 
+      'hcl',
       -- 'todotxt'
     },
 
