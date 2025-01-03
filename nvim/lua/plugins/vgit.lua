@@ -1,6 +1,6 @@
 return {
   'tanvirtin/vgit.nvim',
-  -- tag = 'v0.2.2', https://github.com/tanvirtin/vgit.nvim/issues/365
+  tag = 'v0.2.3',
   requires = {
     'nvim-lua/plenary.nvim'
   },
