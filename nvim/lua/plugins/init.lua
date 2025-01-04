@@ -63,6 +63,7 @@ local plugins = {
 
   -- fancy notifications
   -- 'lsp-notify',
+  'terraform',
 }
 
 for _, plugin in ipairs(plugins) do
