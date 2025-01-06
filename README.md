@@ -14,6 +14,11 @@ Clone the repository into **~/dotfiles**: `git clone https://github.com/mrded/do
 - Install alacritty `brew install --cask alacritty`
 - Replace configuration: `ln -s ~/dotfiles/alacritty ~/.config/alacritty`
 
+issues:
+- [ ] osc notification support, to solve a problem with the terminal icon jumping in the dock
+    - https://github.com/alacritty/alacritty/issues/7105
+    - https://github.com/alacritty/alacritty/issues/406
+
 ## Tmux
 - Install Tmux `brew install tmux`
 - Install [Plugin Manager](https://github.com/tmux-plugins/tpm)
