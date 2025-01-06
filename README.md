@@ -39,8 +39,11 @@ install:
 - Replace configuration: `ln -s ~/dotfiles/wezterm/wezterm.lua ~/.wezterm.lua`
 
 ## Kitty
-- Install alacritty `brew install --cask alacritty`
+- Install: `brew install kitty`
 - Replace configuration: `ln -s ~/dotfiles/kitty ~/.config/kitty`
+
+issues:
+- the maintainer is a character https://github.com/kovidgoyal/kitty/pull/3544
 
 ## Neovide
 issues:
