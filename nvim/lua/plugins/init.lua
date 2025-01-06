@@ -38,6 +38,10 @@ local plugins = {
   -- 'zond',
   -- 'aerial', -- Showing functions and methods. Problematic with JS files.
 
+  -- Git integration
+  'vgit',    -- Highlight git changes
+  'gh-line', -- opens a link to the current line on GitHub
+
   -- LSP
   'lspconfig',
   -- 'null-ls',
@@ -57,12 +61,13 @@ local plugins = {
   -- display vertical lines at each indentation level
   'indent-blankline',
 
-  -- Git integration
-  'vgit',    -- Highlight git changes
-  'gh-line', -- opens a link to the current line on GitHub
+  -- fancy scrollbars
+  -- 'scrollview', -- not working properly
 
   -- fancy notifications
   -- 'lsp-notify',
+
+  -- terraform
   'terraform',
 }
 
