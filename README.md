@@ -50,6 +50,9 @@ install:
 issues:
 - the maintainer is a character https://github.com/kovidgoyal/kitty/pull/3544
 
+## Ghostty
+- Replace configuration: `ln -s ~/dotfiles/ghostty ~/.config/ghostty`
+
 ## Neovide
 issues:
 - [ ] MacOS tabs https://github.com/neovide/neovide/issues/2378
