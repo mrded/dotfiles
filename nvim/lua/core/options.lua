@@ -63,6 +63,10 @@ opt.updatetime = 700  -- ms to wait for trigger an event
 -- Disable nvim intro
 opt.shortmess:append "sI"
 
+-- Set the tab title
+opt.title = true
+opt.titlestring = vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
+
 -- Change leader to a comma
 g.mapleader = ','
 
