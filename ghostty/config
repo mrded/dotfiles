@@ -1,3 +1,7 @@
 theme = gruvbox
 font-family = Monaco
 font-size = 12
+font-thicken = true
+adjust-cell-height = 3 
+adjust-strikethrough-position = -1
+adjust-underline-position = 2
