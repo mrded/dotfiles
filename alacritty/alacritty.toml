@@ -1,6 +1,5 @@
-live_config_reload = true
 
-[shell]
+[terminal.shell]
 args = ["-l", "-c", "tmux"]
 program = "/bin/zsh"
 
@@ -174,4 +173,9 @@ foreground = "0xebdbb2"
 [colors.cursor]
 cursor = "0xffffff"
 text = "0x1d1f21"
+
+[general]
+live_config_reload = true
+
+[terminal]
 
