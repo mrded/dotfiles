@@ -26,7 +26,7 @@ local plugins = {
   -- Status bar
   'lualine',
   'bufferline', -- Tabs
-  'barbecue',
+  -- 'barbecue',
 
   -- File explorer
   'nvim-tree',
