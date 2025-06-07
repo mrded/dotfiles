@@ -58,14 +58,4 @@ vim.api.nvim_create_user_command('Find', function(opts)
 end, { nargs = 1 })
 
 
-vim.api.nvim_set_keymap('n', '<C-r>', '', {
-  noremap = true,
-  desc = 'restarting everything',
-  callback = function()
-    print('restarting everything')
-    vim.cmd('edit')
-    -- vim.cmd('PackerSync')
-    -- vim.cmd('TSUpdateSync')
-    -- vim.cmd('LspRestart')
-  end,
-})
+vim.keymap.set('n', '<C-r>', ':Telescope lsp_references<CR>', { noremap = true, silent = true })
