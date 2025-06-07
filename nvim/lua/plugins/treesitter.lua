@@ -88,6 +88,20 @@ local config = function()
   -- use the markdown parser for mdx filetypes
   -- @see: https://phelipetls.github.io/posts/mdx-syntax-highlight-treesitter-nvim/
   vim.treesitter.language.register('markdown', 'mdx')
+
+  -- Treesitter is trying to highlight a floating window (or closed window) that no longer exists
+  vim.api.nvim_create_autocmd("WinEnter", {
+    callback = function()
+      local win = vim.api.nvim_get_current_win()
+      local config = vim.api.nvim_win_get_config(win)
+
+      -- If it's a floating window, disable Treesitter highlighting
+      if config.relative ~= "" then
+        local buf = vim.api.nvim_win_get_buf(win)
+        pcall(vim.treesitter.stop, buf)
+      end
+    end
+  })
 end
 
 return {
