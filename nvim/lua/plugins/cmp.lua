@@ -52,7 +52,7 @@ return {
   'hrsh7th/nvim-cmp',
   tag = 'v0.0.2',
   requires = {
-    { 'L3MON4D3/LuaSnip', tag = 'v2.3.0', run = "make install_jsregexp" },
+    { 'L3MON4D3/LuaSnip', tag = 'v2.4.0', run = "make install_jsregexp" },
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-path',
     'hrsh7th/cmp-buffer',
