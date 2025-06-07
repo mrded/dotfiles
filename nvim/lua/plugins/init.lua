@@ -48,6 +48,7 @@ local plugins = {
   -- 'null-ls',
   'mason',
   'mason-lspconfig',
+  'lspsaga', -- LSP UI
 
   -- Autocomplete
   'cmp',
