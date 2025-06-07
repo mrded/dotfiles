@@ -60,6 +60,6 @@ end
 
 return {
   'neovim/nvim-lspconfig',
-  tag = 'v1.0.0',
+  tag = 'v2.2.0',
   config = config
 }
