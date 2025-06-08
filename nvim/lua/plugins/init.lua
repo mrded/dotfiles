@@ -1,10 +1,3 @@
------------------------------------------------------------
--- Plugin manager configuration file
------------------------------------------------------------
-
--- Plugin manager: packer.nvim
--- url: https://github.com/wbthomason/packer.nvim
-
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, 'packer')
 if not status_ok then
@@ -18,6 +11,7 @@ packer.init({
     autoremove = true,
   },
 })
+
 
 local plugins = {
   -- Color schemes
@@ -73,18 +67,20 @@ local plugins = {
   'terraform',
 }
 
-for _, plugin in ipairs(plugins) do
-  local path = ('plugins/%s'):format(plugin)
+packer.startup(function(use)
+  for _, plugin in ipairs(plugins) do
+    local path = ('plugins/%s'):format(plugin)
 
-  local ok, meta = pcall(require, path)
+    local ok, meta = pcall(require, path)
 
-  if ok then
-    packer.use(meta)
+    if ok then
+      use(meta)
+    end
   end
-end
 
-packer.use 'wbthomason/packer.nvim' -- packer can manage itself
+  use 'wbthomason/packer.nvim' -- packer can manage itself
 
--- Highlights words under the cursor
--- TODO: can probably done natively.
-packer.use 'RRethy/vim-illuminate'
+  -- Highlights words under the cursor
+  -- TODO: can probably done natively.
+  use 'RRethy/vim-illuminate'
+end)
