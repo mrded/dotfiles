@@ -87,3 +87,7 @@ neovim may not install plugins propperly. Try to running `:UpdateRemotePlugins`
 
 ### treesitter
 treesitter may give errors. Try running `:TSUpdate` to update languages.
+
+## Tools
+
+`./print_nvim_config.sh | pbcopy` to copy all the configuration into clipboard, to show it to the ChatGPT or someone else.
