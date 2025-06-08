@@ -14,6 +14,9 @@ packer.init({
 
 
 local plugins = {
+  -- packer can manage itself
+  'packer',
+
   -- Color schemes
   'gruvbox',
 
@@ -65,6 +68,9 @@ local plugins = {
 
   -- terraform
   'terraform',
+
+  -- Highlights words under the cursor
+  'illuminate'
 }
 
 packer.startup(function(use)
@@ -77,10 +83,4 @@ packer.startup(function(use)
       use(meta)
     end
   end
-
-  use 'wbthomason/packer.nvim' -- packer can manage itself
-
-  -- Highlights words under the cursor
-  -- TODO: can probably done natively.
-  use 'RRethy/vim-illuminate'
 end)
