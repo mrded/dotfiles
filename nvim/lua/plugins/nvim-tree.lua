@@ -1,3 +1,4 @@
+-- File explorer
 return {
   'nvim-tree/nvim-tree.lua',
   tag = 'v1.4.0',

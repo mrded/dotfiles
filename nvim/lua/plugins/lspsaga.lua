@@ -1,3 +1,4 @@
+-- winbar with file path and diagnostics
 return {
   'nvimdev/lspsaga.nvim',
   -- tag = 'v1.0.0',

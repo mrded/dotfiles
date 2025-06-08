@@ -1,3 +1,4 @@
+-- Full text search
 return {
   "dyng/ctrlsf.vim",
   tag = 'v2.6.0',

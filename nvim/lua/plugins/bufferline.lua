@@ -1,3 +1,4 @@
+-- Tabs
 return {
   "akinsho/bufferline.nvim",
   tag = 'v4.7.0',

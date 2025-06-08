@@ -1,3 +1,4 @@
+-- Highlight git changes
 return {
   'tanvirtin/vgit.nvim',
   tag = 'v0.2.3',

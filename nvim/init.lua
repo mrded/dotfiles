@@ -4,5 +4,4 @@ require('core/signs')
 require('core/terminal')
 require('core/formatting')
 require('core/neovide')
-
-require('plugins')
+require('core/packer')
