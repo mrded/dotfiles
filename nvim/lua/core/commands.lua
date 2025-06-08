@@ -1,6 +1,5 @@
 -- One of the most annoying things about vim was that I frequently typed :W instead of :w.
-vim.cmd('command! W w')
-vim.cmd('command! V v')
+vim.api.nvim_create_user_command("W", "w", {})
 
 vim.cmd('command! TestRunWatch vsplit term://npx jest % --watch --runInBand --no-cache --coverage=false')
 vim.cmd('command! JestRun vsplit term://npx jest % --watch --runInBand --no-cache --coverage=false')

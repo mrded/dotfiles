@@ -1,6 +1,7 @@
 -- This plugin is used just to use prettier.
 -- TODO: find outher way to use prettier and remove null-ls
 -- NOTE: null-ls is no longer supported, migrated to none-ls
+-- use https://github.com/stevearc/conform.nvim
 return {
   'nvimtools/none-ls.nvim',
   ft = { "javascript", "typescript", "css", "json", "yaml", "markdown" }, -- Add other file types handled by Prettier
