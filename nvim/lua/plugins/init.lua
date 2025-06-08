@@ -33,8 +33,6 @@ local plugins = {
 
   -- Fuzzy file finder
   'telescope',
-  -- 'zond',
-  -- 'aerial', -- Showing functions and methods. Problematic with JS files.
 
   -- Git integration
   'vgit',    -- Highlight git changes
@@ -42,7 +40,6 @@ local plugins = {
 
   -- LSP
   'lspconfig',
-  -- 'null-ls',
   'mason',
   'mason-lspconfig',
   'lspsaga', -- LSP UI
@@ -62,9 +59,6 @@ local plugins = {
 
   -- fancy scrollbars
   -- 'scrollview', -- not working properly
-
-  -- fancy notifications
-  -- 'lsp-notify',
 
   -- terraform
   'terraform',
