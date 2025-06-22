@@ -60,6 +60,10 @@ end
 
 return {
   'neovim/nvim-lspconfig',
+  dependencies = {
+    { 'williamboman/mason.nvim',           config = true },
+    { 'williamboman/mason-lspconfig.nvim', config = true },
+  },
   tag = 'v2.2.0',
   config = config
 }
