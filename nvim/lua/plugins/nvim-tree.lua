@@ -1,7 +1,7 @@
 -- File explorer
 return {
   'nvim-tree/nvim-tree.lua',
-  tag = 'v1.4.0',
+  tag = 'v1.13.0',
   config = function()
     -- disable netrw
     vim.g.loaded_netrw = 1
