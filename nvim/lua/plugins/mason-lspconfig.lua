@@ -1,7 +1,7 @@
 return {
   'williamboman/mason-lspconfig.nvim',
   tag = 'v1.31.0',
-  depends = {
+  requires = {
     'williamboman/mason.nvim',
     'neovim/nvim-lspconfig',
   },
