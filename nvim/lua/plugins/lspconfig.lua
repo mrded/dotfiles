@@ -1,6 +1,21 @@
 local config = function()
+  -- Step 1: Setup mason
+  require('mason').setup()
+  require('mason-lspconfig').setup {
+    automatic_installation = true,
+    ensure_installed = {
+      "eslint",
+      "tsserver",
+      "yamlls",
+      "lua_ls",
+      "terraformls",
+      "tflint",
+    },
+  }
+
   local lspconfig = require('lspconfig')
 
+  -- Step 2: Shared on_attach
   local common_on_attach = function(client, bufnr)
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
     local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
@@ -24,37 +39,25 @@ local config = function()
     buf_set_keymap('n', 'gE', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
   end
 
-  lspconfig.eslint.setup {
-    -- flags = { debounce_text_changes = 150 },
-    on_attach = function(client, bufnr)
-      common_on_attach(client, bufnr)
-
-      -- client.resolved_capabilities.document_formatting = true
-      vim.api.nvim_create_autocmd("BufWritePre", {
-        buffer = bufnr,
-        command = "EslintFixAll",
-      })
+  require('mason-lspconfig').setup_handlers {
+    function(server_name) -- default handler for all servers
+      lspconfig[server_name].setup {
+        on_attach = common_on_attach,
+      }
     end,
-  }
 
-  lspconfig.ts_ls.setup {
-    on_attach = common_on_attach,
-  }
-
-  lspconfig.yamlls.setup {
-    on_attach = common_on_attach,
-  }
-
-  lspconfig.lua_ls.setup {
-    on_attach = common_on_attach,
-  }
-
-  lspconfig.terraformls.setup {
-    on_attach = common_on_attach,
-  }
-
-  lspconfig.tflint.setup {
-    on_attach = common_on_attach,
+    -- Custom handler for eslint
+    ["eslint"] = function()
+      lspconfig.eslint.setup {
+        on_attach = function(client, bufnr)
+          common_on_attach(client, bufnr)
+          vim.api.nvim_create_autocmd("BufWritePre", {
+            buffer = bufnr,
+            command = "EslintFixAll",
+          })
+        end,
+      }
+    end,
   }
 end
 
