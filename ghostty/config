@@ -5,3 +5,4 @@ font-thicken = true
 adjust-cell-height = 3 
 adjust-strikethrough-position = -1
 adjust-underline-position = 2
+keybind = shift+enter=text:\n
