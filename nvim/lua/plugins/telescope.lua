@@ -26,6 +26,7 @@ return {
     vim.keymap.set('n', '<C-p>', builtin.find_files, opts)
     vim.keymap.set('n', '<C-f>', search_in_files, opts)
     vim.keymap.set('n', '<C-t>', search_in_tests, opts)
+    vim.keymap.set('n', '<C-g>', builtin.git_status, opts)
 
     require('telescope').setup {
       pickers = {
