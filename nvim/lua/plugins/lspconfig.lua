@@ -4,15 +4,15 @@ local config = function()
   require('mason-lspconfig').setup {
     automatic_installation = true,
     ensure_installed = {
-      "eslint-lsp",
-      "graphql-language-service-cli",
-      "lua-language-server",
-      "luau-lsp",
-      "tailwindcss-language-server",
-      "terraform-ls",
+      "eslint",
+      "graphql",
+      "lua_ls",
+      "luau_lsp",
+      "tailwindcss",
+      "terraformls",
       "tflint",
-      "typescript-language-server",
-      "yaml-language-server",
+      "tsserver",
+      "yamlls",
     },
   }
 
