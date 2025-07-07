@@ -11,7 +11,7 @@ local config = function()
       "tailwindcss",
       "terraformls",
       "tflint",
-      "tsserver",
+      "ts_ls",
       "yamlls",
     },
   }
