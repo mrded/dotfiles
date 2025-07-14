@@ -40,7 +40,6 @@ This is a personal dotfiles repository containing configuration files for variou
 
 ### Configuration Management
 
-- **Export NeoVim config**: `./print_nvim_config.sh | pbcopy`
 - **Auto Node.js version switching**: `source ./zsh/nvm-auto-switch.zsh`
 
 ## Setup Instructions
@@ -91,5 +90,5 @@ ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
 - Uses Gruvbox theme across all applications
 - Monaco font preferred for terminals
 - LSP servers and language support managed via Mason
+- Ghostty is preferred as a terminal
 - Contains Claude Code plugin for AI-assisted development
-
