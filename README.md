@@ -27,7 +27,9 @@ Tmux is needed for Alacritty to support tabs and splits.
 
 - Install Tmux `brew install tmux`
 - Install [Plugin Manager](https://github.com/tmux-plugins/tpm)
-- Install Pluggins: Press prefix + I (capital i, as in Install)
+- Install Pluggins: `~/.tmux/plugins/tpm/scripts/install_plugins.sh`
+- Update Pluggins: `~/.tmux/plugins/tpm/scripts/update_plugin.sh all`
+- Cleanup Pluggins: ` ~/.tmux/plugins/tpm/scripts/clean_plugins.sh`
 - Replace configuration: `ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf`
 
 issues:
