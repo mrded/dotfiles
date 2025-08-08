@@ -10,7 +10,7 @@ local config = function()
     ensure_installed = {
 
       -- Part of the core functionality of Neovim.
-      'c', 'help', 'lua', 'vim', 'vimdoc', 'query',
+      'c', 'lua', 'vim', 'vimdoc', 'query',
 
       'dockerfile',
 
