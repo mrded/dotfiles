@@ -58,3 +58,9 @@ end, { nargs = 1 })
 
 
 vim.keymap.set('n', '<C-r>', ':Telescope lsp_references<CR>', { noremap = true, silent = true })
+
+vim.api.nvim_create_user_command('CopyPath', function()
+  local file_path = vim.fn.expand("%:p")
+  vim.fn.setreg("+", file_path)
+  print("Copied to clipboard: " .. file_path)
+end, {})
