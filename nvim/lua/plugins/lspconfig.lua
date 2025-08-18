@@ -16,6 +16,18 @@ local config = function()
     },
   }
 
+  -- Step 1.5: Auto-install unsupported servers
+  vim.defer_fn(function()
+    local registry = require('mason-registry')
+    if registry.is_installed('sonarlint-language-server') then
+      print("SonarLint already installed")
+    else
+      print("Installing SonarLint...")
+      registry.get_package('sonarlint-language-server'):install()
+      print("SonarLint installation complete")
+    end
+  end, 4000)
+
   local lspconfig = require('lspconfig')
 
   -- Step 2: Shared on_attach
