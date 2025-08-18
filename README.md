@@ -29,7 +29,7 @@ Tmux is needed for Alacritty to support tabs and splits.
 - Install [Plugin Manager](https://github.com/tmux-plugins/tpm)
 - Install Pluggins: `~/.tmux/plugins/tpm/scripts/install_plugins.sh`
 - Update Pluggins: `~/.tmux/plugins/tpm/scripts/update_plugin.sh all`
-- Cleanup Pluggins: ` ~/.tmux/plugins/tpm/scripts/clean_plugins.sh`
+- Cleanup Pluggins: `~/.tmux/plugins/tpm/scripts/clean_plugins.sh`
 - Replace configuration: `ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf`
 
 issues:
@@ -107,6 +107,21 @@ neovim may not install plugins propperly. Try to running `:UpdateRemotePlugins`
 ### treesitter
 
 treesitter may give errors. Try running `:TSUpdate` to update languages.
+
+### SonarLint
+
+SonarLint requires Java 11+
+
+```bash
+java -version
+```
+
+Add to your `~/.zshrc`:
+
+```bash
+export JAVA_HOME="/opt/homebrew/opt/openjdk@17"
+JAVA_PATH=$JAVA_HOME/bin
+```
 
 ## Tools
 
