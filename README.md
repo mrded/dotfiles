@@ -11,6 +11,10 @@ Clone the repository into **~/dotfiles**: `git clone https://github.com/mrded/do
 - Install [Packer](https://github.com/wbthomason/packer.nvim) for plugins
 - Install plugins: `nvim +PackerSync +TSUpdate`
 
+## Vifm
+
+Replace configuration: `ln -s ~/dotfiles/vifm/vifmrc ~/.config/vifm/vifmrc`
+
 ## Alacritty
 
 Replace configuration: `ln -s ~/dotfiles/alacritty ~/.config/alacritty`
