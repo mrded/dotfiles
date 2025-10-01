@@ -54,7 +54,7 @@ return {
     local opts = { noremap = true, silent = true }
 
     -- vim.api.nvim_set_keymap('n', '<C-n>', "<cmd>NvimTreeToggle<CR>", opts)
-    vim.api.nvim_set_keymap('n', '<C-n>', "<cmd>NvimTreeFindFileToggle<CR>", opts)
+    vim.keymap.set('n', '<C-n>', "<cmd>NvimTreeFindFileToggle<CR>", opts)
 
     -- open nvim-tree on startup
     vim.api.nvim_create_autocmd({ "VimEnter" }, {

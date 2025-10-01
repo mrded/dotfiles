@@ -9,8 +9,8 @@ vim.api.nvim_create_user_command('Rename', function() vim.lsp.buf.rename() end, 
 
 local function create_window()
   local buf = vim.api.nvim_create_buf(false, true)
-  local width = vim.api.nvim_get_option("columns")
-  local height = vim.api.nvim_get_option("lines")
+  local width = vim.o.columns
+  local height = vim.o.lines
 
   -- calculate the center position
   local win_height = math.ceil(height * 0.9 - 4)

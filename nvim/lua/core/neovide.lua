@@ -10,8 +10,8 @@ if vim.g.neovide then
   vim.keymap.set('i', '<D-v>', '<C-R>+') -- Paste insert mode
 
   -- Disable horizontal scroll
-  vim.api.nvim_set_keymap('n', '<ScrollWheelRight>', '<Nop>', { noremap = true })
-  vim.api.nvim_set_keymap('n', '<ScrollWheelLeft>', '<Nop>', { noremap = true })
+  vim.keymap.set('n', '<ScrollWheelRight>', '<Nop>', { noremap = true })
+  vim.keymap.set('n', '<ScrollWheelLeft>', '<Nop>', { noremap = true })
 
   vim.g.neovide_show_border = true
   vim.g.neovide_floating_shadow = true
