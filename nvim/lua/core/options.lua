@@ -31,6 +31,7 @@ opt.smartcase = true      -- Ignore lowercase for the whole pattern
 opt.linebreak = true      -- Wrap on word boundary
 opt.termguicolors = true  -- Enable 24-bit RGB colors
 opt.laststatus = 3        -- Set global statusline
+opt.signcolumn = 'yes'    -- Always show signcolumn to prevent text shifting
 
 vim.cmd [[
   set winbar=%=%m\ %f
