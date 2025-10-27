@@ -1,7 +1,7 @@
 -- File explorer
 return {
   'nvim-tree/nvim-tree.lua',
-  tag = 'v1.13.0',
+  tag = 'v1.14.0',
   config = function()
     -- disable netrw
     vim.g.loaded_netrw = 1
@@ -35,6 +35,9 @@ return {
         ignore = false,
         show_on_dirs = true,
         timeout = 400,
+      },
+      filesystem_watchers = {
+        enable = true,
       },
       on_attach = function(bufnr)
         local api = require('nvim-tree.api')
