@@ -1,9 +1,9 @@
 -- One of the most annoying things about vim was that I frequently typed :W instead of :w.
 vim.api.nvim_create_user_command("W", "w", {})
 
-vim.cmd('command! TestRunWatch vsplit term://npx jest % --watch --runInBand --no-cache --coverage=false')
 vim.cmd('command! JestRun vsplit term://npx jest % --watch --runInBand --no-cache --coverage=false')
 vim.cmd('command! VitestRun vsplit term://npx vitest run % --watch --coverage=false')
+vim.cmd('command! BuntestRun vsplit term://bun test % --watch')
 vim.api.nvim_create_user_command('Rename', function() vim.lsp.buf.rename() end, { nargs = 0 })
 -- vim.api.nvim_create_user_command('Format', function() vim.lsp.buf.format() end, { nargs = 0 })
 
@@ -63,4 +63,9 @@ vim.api.nvim_create_user_command('CopyPath', function()
   local file_path = vim.fn.expand("%:p")
   vim.fn.setreg("+", file_path)
   print("Copied to clipboard: " .. file_path)
+end, {})
+
+vim.api.nvim_create_user_command('GitAdd', function()
+  local file_path = vim.fn.expand("%")
+  vim.cmd("!git add " .. file_path)
 end, {})
