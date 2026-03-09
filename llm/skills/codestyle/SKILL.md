@@ -109,6 +109,37 @@ When creating tests, follow these strict rules:
   import { bar } from '../utils/helper.js'
   ```
 
+- **NEVER use dynamic `import()`** - Always use static imports at the top of the file
+  - Dynamic imports add complexity and make dependencies unclear
+  - They make code harder to understand and maintain
+  - Use static imports for all dependencies
+  ```typescript
+  // ✅ Correct - static imports at top
+  import fs from "fs";
+  import path from "path";
+  import prettier from "prettier";
+  import { parseProjectManifest, resolveRef } from "./schema/project";
+  import { parseServiceManifest } from "./schema/service";
+  import { generateApiFile } from "./generators/api";
+
+  export async function generate(opts: { project: string }): Promise<void> {
+    // Use the imported modules directly
+    const content = fs.readFileSync(opts.project);
+    // ...
+  }
+
+  // ❌ Wrong - dynamic imports inside function
+  export async function generate(opts: { project: string }): Promise<void> {
+    const fs = await import("fs");
+    const path = await import("path");
+    const prettier = await import("prettier");
+    const { parseProjectManifest, resolveRef } = await import("./schema/project");
+    const { parseServiceManifest } = await import("./schema/service");
+    const { generateApiFile } = await import("./generators/api");
+    // ...
+  }
+  ```
+
 ### Git Operations
 
 - **NEVER run git write commands** - You are prohibited from executing:
@@ -134,5 +165,6 @@ When reviewing or writing code, verify:
 - [ ] No massive try/catch blocks - errors handled at appropriate level
 - [ ] No deeply nested conditions - use early returns
 - [ ] Tests follow AAA pattern and are minimal
-- [ ] TypeScript imports are extensionless
+- [ ] TypeScript imports are extensionless (no `.js`)
+- [ ] No inline `import()` - use static imports
 - [ ] No git write commands are executed
