@@ -127,6 +127,24 @@ export JAVA_HOME="/opt/homebrew/opt/openjdk@17"
 JAVA_PATH=$JAVA_HOME/bin
 ```
 
+## Claude Code
+
+Custom skills for Claude Code are stored in `llm/skills/`.
+
+To activate them, symlink to your Claude configuration:
+
+```bash
+ln -s ~/dotfiles/llm/skills/codestyle ~/.claude/plugins/local/skills/codestyle
+ln -s ~/dotfiles/llm/skills/development ~/.claude/plugins/local/skills/development
+```
+
+### Available Skills
+
+- **codestyle** - Enforces code style guidelines (no `let`, no `any`, AAA test pattern, etc.)
+- **development** - Development best practices and patterns
+
+Skills are automatically activated by Claude Code based on context.
+
 ## Tools
 
 - `source ./zsh/nvm-auto-switch.zsh` to automatically switch Node.js versions based on the `.nvmrc` file in the current directory.
