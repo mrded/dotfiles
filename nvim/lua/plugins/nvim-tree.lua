@@ -1,7 +1,7 @@
 -- File explorer
 return {
   'nvim-tree/nvim-tree.lua',
-  tag = 'v1.14.0',
+  tag = 'v1.15.0',
   config = function()
     -- disable netrw
     vim.g.loaded_netrw = 1
@@ -10,6 +10,13 @@ return {
     require("nvim-tree").setup({
       view = {
         adaptive_size = true,
+      },
+      actions = {
+        open_file = {
+          window_picker = {
+            enable = true,
+          },
+        },
       },
       renderer = {
         root_folder_label = false,
@@ -38,6 +45,18 @@ return {
       },
       filesystem_watchers = {
         enable = true,
+        debounce_delay = 50,
+        ignore_dirs = {},
+      },
+      modified = {
+        enable = true,
+      },
+      reload_on_bufenter = true,
+      sync_root_with_cwd = true,
+      respect_buf_cwd = true,
+      update_focused_file = {
+        enable = true,
+        update_root = false,
       },
       on_attach = function(bufnr)
         local api = require('nvim-tree.api')
