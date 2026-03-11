@@ -24,6 +24,19 @@ Apply these rules consistently across all code changes:
 - Prefer explicit types over implicit `any`
 - Use proper generics and type inference instead of type escape hatches
 
+- **Types are always defined with a first capital letter** - Use PascalCase for all type names
+  ```typescript
+  // ✅ Correct
+  type UserProfile = { name: string; age: number };
+  interface ApiResponse { data: unknown; }
+  class ServiceManager { }
+
+  // ❌ Wrong
+  type userProfile = { name: string; age: number };
+  interface apiResponse { data: unknown; }
+  class serviceManager { }
+  ```
+
 ### Error Handling
 
 - **Avoid massive try/catch blocks** - Don't wrap large sections of code in try/catch
@@ -162,6 +175,7 @@ When reviewing or writing code, verify:
 
 - [ ] No `let` declarations present
 - [ ] No `any` types or type escape hatches
+- [ ] All type names use PascalCase (first letter capitalized)
 - [ ] No massive try/catch blocks - errors handled at appropriate level
 - [ ] No deeply nested conditions - use early returns
 - [ ] Tests follow AAA pattern and are minimal

@@ -136,6 +136,7 @@ To activate them, symlink to your Claude configuration:
 ```bash
 ln -s ~/dotfiles/llm/skills/codestyle ~/.claude/plugins/local/skills/codestyle
 ln -s ~/dotfiles/llm/skills/development ~/.claude/plugins/local/skills/development
+ln -s ~/dotfiles/llm/skills ~/.claude/skills
 ```
 
 ### Available Skills
