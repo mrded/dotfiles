@@ -4,6 +4,20 @@ The single dot that has it all.
 
 Clone the repository into **~/dotfiles**: `git clone https://github.com/mrded/dotfiles.git ~/dotfiles`
 
+## Zsh
+
+Add to your `~/.zshrc`:
+
+```bash
+source ~/dotfiles/zsh/init.zsh
+```
+
+This loads:
+- Robbyrussell theme (vanilla zsh, no oh-my-zsh required)
+- NVM auto-switch (automatically changes Node.js version based on `.nvmrc`)
+
+Then reload: `source ~/.zshrc`
+
 ## NeoVim
 
 - Install Neovim `brew install neovim`
@@ -148,5 +162,5 @@ Skills are automatically activated by Claude Code based on context.
 
 ## Tools
 
-- `source ./zsh/nvm-auto-switch.zsh` to automatically switch Node.js versions based on the `.nvmrc` file in the current directory.
+- `source ~/dotfiles/zsh/init.zsh` - Load zsh configuration (robbyrussell theme + nvm auto-switch)
 - `./scripts/killport.sh <port>` - Kill any process running on the specified port.

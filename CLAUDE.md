@@ -16,6 +16,12 @@ This is a personal dotfiles repository containing configuration files for variou
   - `nvim/lua/core/packer.lua` - automatically loads all plugin specs from `lua/plugins/*.lua`
   - Each plugin has its own file in `nvim/lua/plugins/` returning a Packer spec
 
+### Zsh Configuration Structure
+
+- **Entry Point**: `zsh/init.zsh` - loads all zsh modules and configurations
+- **Theme**: `zsh/theme.zsh` - robbyrussell theme (vanilla zsh, no oh-my-zsh required)
+- **NVM Auto-Switch**: `zsh/nvm-auto-switch.zsh` - automatically switches Node.js versions based on `.nvmrc`
+
 ### Terminal Configurations
 
 - **Alacritty**: `alacritty/alacritty.toml`
@@ -38,9 +44,10 @@ This is a personal dotfiles repository containing configuration files for variou
 2. Return Packer spec: `return { 'author/plugin-name' }`
 3. Save and run: `nvim +PackerSync +TSUpdate`
 
-### Configuration Management
+### Zsh Configuration
 
-- **Auto Node.js version switching**: `source ./zsh/nvm-auto-switch.zsh`
+- **Load all zsh configs**: `source ~/dotfiles/zsh/init.zsh` (includes theme and nvm auto-switch)
+- **Individual modules**: Can be sourced separately if needed
 
 ## Setup Instructions
 
@@ -49,6 +56,18 @@ This is a personal dotfiles repository containing configuration files for variou
 ```bash
 git clone https://github.com/mrded/dotfiles.git ~/dotfiles
 ```
+
+### Zsh Setup
+
+```bash
+# Add to ~/.zshrc
+source ~/dotfiles/zsh/init.zsh
+
+# Reload shell
+source ~/.zshrc
+```
+
+**Note**: Uses vanilla zsh with robbyrussell theme (no oh-my-zsh required)
 
 ### NeoVim Setup
 
@@ -92,3 +111,4 @@ ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
 - LSP servers and language support managed via Mason
 - Ghostty is preferred as a terminal
 - Contains Claude Code plugin for AI-assisted development
+- Uses vanilla zsh with robbyrussell theme (no oh-my-zsh dependency)
