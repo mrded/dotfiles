@@ -7,4 +7,5 @@ ZSH_DIR="${0:A:h}"
 source "$ZSH_DIR/theme.zsh"
 source "$ZSH_DIR/nvm.zsh"
 source "$ZSH_DIR/history.zsh"
+source "$ZSH_DIR/completion.zsh"
 
