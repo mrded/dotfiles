@@ -4,8 +4,7 @@
 # Get the directory where this script is located
 ZSH_DIR="${0:A:h}"
 
-# Load theme
 source "$ZSH_DIR/theme.zsh"
+source "$ZSH_DIR/nvm.zsh"
+source "$ZSH_DIR/history.zsh"
 
-# Load nvm auto-switch
-source "$ZSH_DIR/nvm-auto-switch.zsh"
