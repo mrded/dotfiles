@@ -17,6 +17,41 @@ Apply these rules consistently across all code changes:
 - **NEVER use `let`** - Always use `const` for immutable bindings, or restructure code to avoid reassignment
 - If you absolutely need mutability, consider refactoring to functional patterns first
 
+### Object Operations
+
+- **NEVER use `Object.assign()`** - Use object spread syntax instead
+  - Object spread is more concise and easier to read
+  - Prefer immutable patterns over mutation
+  ```typescript
+  // ✅ Correct - object spread
+  const updated = { ...original, newProp: 'value' };
+  const merged = { ...obj1, ...obj2 };
+
+  // ❌ Wrong - Object.assign()
+  const updated = Object.assign({}, original, { newProp: 'value' });
+  const merged = Object.assign({}, obj1, obj2);
+  ```
+
+### String Operations
+
+- **NEVER concatenate strings with `+`** - Use template literals instead
+  - Template literals are more readable and less error-prone
+  - They handle multiline strings naturally
+  ```typescript
+  // ✅ Correct - template literals
+  const message = `Hello, ${name}!`;
+  const path = `${baseUrl}/api/${endpoint}`;
+  const multiline = `
+    Line 1
+    Line 2
+  `;
+
+  // ❌ Wrong - string concatenation
+  const message = 'Hello, ' + name + '!';
+  const path = baseUrl + '/api/' + endpoint;
+  const multiline = 'Line 1\n' + 'Line 2';
+  ```
+
 ### Type Safety
 
 - **NEVER use type hacks like `any`** - Always use proper types
@@ -175,6 +210,8 @@ When reviewing or writing code, verify:
 
 - [ ] No `let` declarations present
 - [ ] No `any` types or type escape hatches
+- [ ] No `Object.assign()` - use object spread syntax
+- [ ] No string concatenation with `+` - use template literals
 - [ ] All type names use PascalCase (first letter capitalized)
 - [ ] No massive try/catch blocks - errors handled at appropriate level
 - [ ] No deeply nested conditions - use early returns
