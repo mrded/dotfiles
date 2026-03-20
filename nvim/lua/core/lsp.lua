@@ -19,7 +19,17 @@ M.on_attach = function(client, bufnr)
   vim.keymap.set('n', 'D', vim.diagnostic.open_float, opts)
   vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
   vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
-  vim.keymap.set('n', '<CR>', vim.lsp.buf.code_action, opts)
+
+  -- Code actions only on diagnostics (warnings/errors)
+  vim.keymap.set('n', '<CR>', function()
+    local line = vim.api.nvim_win_get_cursor(0)[1] - 1
+    local diagnostics = vim.diagnostic.get(bufnr, { lnum = line })
+
+    if #diagnostics > 0 then
+      vim.lsp.buf.code_action()
+    end
+  end, opts)
+
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
   vim.keymap.set('n', 'ge', vim.diagnostic.goto_next, opts)
   vim.keymap.set('n', 'gE', vim.diagnostic.goto_prev, opts)
