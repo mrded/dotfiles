@@ -17,6 +17,29 @@ Apply these rules consistently across all code changes:
 - **NEVER use `let`** - Always use `const` for immutable bindings, or restructure code to avoid reassignment
 - If you absolutely need mutability, consider refactoring to functional patterns first
 
+### Function Declarations
+
+- **Prefer arrow functions** - Use arrow functions over function declarations
+  - Arrow functions are more concise and have clearer scope semantics
+  - Use `const foo = () => {}` instead of `function foo() {}`
+  ```typescript
+  // ✅ Correct - arrow function
+  const processData = (data: string) => {
+    return data.trim();
+  };
+
+  const calculate = (a: number, b: number) => a + b;
+
+  // ❌ Wrong - function declaration
+  function processData(data: string) {
+    return data.trim();
+  }
+
+  function calculate(a: number, b: number) {
+    return a + b;
+  }
+  ```
+
 ### Object Operations
 
 - **NEVER use `Object.assign()`** - Use object spread syntax instead
@@ -101,7 +124,88 @@ Apply these rules consistently across all code changes:
   }
   ```
 
+### Array Operations
+
+- **Prefer functional array methods** - Use `.map()`, `.reduce()`, `.filter()`, etc. over imperative loops
+  - Functional methods are more declarative and easier to understand
+  - They prevent mutation and side effects
+  - Chainable for complex transformations
+  ```typescript
+  // ✅ Correct - functional approach with map
+  const doubled = numbers.map(n => n * 2);
+
+  // ✅ Correct - chaining functional methods
+  const result = users
+    .filter(user => user.isActive)
+    .map(user => user.name)
+    .sort();
+
+  // ✅ Correct - reduce for aggregation
+  const sum = numbers.reduce((acc, n) => acc + n, 0);
+
+  const grouped = items.reduce((acc, item) => {
+    const key = item.category;
+    return { ...acc, [key]: [...(acc[key] ?? []), item] };
+  }, {} as Record<string, Item[]>);
+
+  // ❌ Wrong - imperative loop
+  const doubled = [];
+  for (let i = 0; i < numbers.length; i++) {
+    doubled.push(numbers[i] * 2);
+  }
+
+  // ❌ Wrong - manual filtering and mapping
+  const result = [];
+  for (const user of users) {
+    if (user.isActive) {
+      result.push(user.name);
+    }
+  }
+  result.sort();
+  ```
+
 ### Control Flow
+
+- **Avoid `while` loops** - Use recursion, functional patterns, or `for` loops instead
+  - `while` loops are harder to reason about and more error-prone
+  - **Prefer recursion** for iterative logic - it's more elegant and functional
+  - Use array methods like `.map()`, `.filter()`, `.reduce()` when working with collections
+  - If iteration logic is simple, use a `for` loop with clear bounds
+  ```typescript
+  // ✅ Correct - recursion
+  const factorial = (n: number): number => {
+    if (n <= 1) return 1;
+    return n * factorial(n - 1);
+  };
+
+  const processItems = (items: Item[], index = 0): void => {
+    if (index >= items.length) return;
+    process(items[index]);
+    processItems(items, index + 1);
+  };
+
+  // ✅ Correct - functional approach
+  const results = items.map(item => process(item));
+
+  // ✅ Correct - for...of loop (when side effects are needed)
+  for (const item of items) {
+    process(item);
+  }
+
+  // ❌ Wrong - while loop
+  let i = 0;
+  while (i < items.length) {
+    process(items[i]);
+    i++;
+  }
+
+  let n = 5;
+  let result = 1;
+  while (n > 1) {
+    result *= n;
+    n--;
+  }
+  ```
 
 - **Avoid nested conditions** - Prefer early returns and guard clauses
   - Use early returns to reduce nesting
@@ -209,11 +313,14 @@ When creating tests, follow these strict rules:
 When reviewing or writing code, verify:
 
 - [ ] No `let` declarations present
+- [ ] Arrow functions used instead of function declarations
 - [ ] No `any` types or type escape hatches
 - [ ] No `Object.assign()` - use object spread syntax
 - [ ] No string concatenation with `+` - use template literals
 - [ ] All type names use PascalCase (first letter capitalized)
+- [ ] Functional array methods (`.map()`, `.reduce()`, `.filter()`) used instead of loops
 - [ ] No massive try/catch blocks - errors handled at appropriate level
+- [ ] No `while` loops - use recursion, functional patterns, or `for` loops
 - [ ] No deeply nested conditions - use early returns
 - [ ] Tests follow AAA pattern and are minimal
 - [ ] TypeScript imports are extensionless (no `.js`)
