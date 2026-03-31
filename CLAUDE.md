@@ -73,9 +73,12 @@ source ~/.zshrc
 
 ```bash
 brew install neovim
+brew install tree-sitter-cli  # Required for TreeSitter parser compilation
 ln -s ~/dotfiles/nvim ~/.config/nvim
 nvim +PackerSync +TSUpdate
 ```
+
+**Note**: `tree-sitter-cli` is required for compiling TreeSitter parsers in NeoVim 0.12.0+
 
 ### Terminal Setup
 
