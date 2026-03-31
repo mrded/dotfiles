@@ -1,7 +1,7 @@
 -- Fuzzy file finder
 return {
   'nvim-telescope/telescope.nvim',
-  tag = '0.1.8',
+  tag = 'v0.2.1',
   run = 'brew install fd ripgrep',
   requires = {
     'nvim-lua/plenary.nvim',
@@ -45,6 +45,9 @@ return {
       },
     }
 
-    require('telescope').load_extension('fzf')
+    -- Load fzf extension if available (requires manual build)
+    pcall(function()
+      require('telescope').load_extension('fzf')
+    end)
   end
 }
