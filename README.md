@@ -13,10 +13,35 @@ source ~/dotfiles/zsh/init.zsh
 ```
 
 This loads:
+
 - Robbyrussell theme (vanilla zsh, no oh-my-zsh required)
 - NVM auto-switch (automatically changes Node.js version based on `.nvmrc`)
 
 Then reload: `source ~/.zshrc`
+
+## NVM & Node.js
+
+NVM is required for NeoVim plugins (TypeScript tools, Copilot) and is auto-loaded by `zsh/init.zsh`.
+
+1. **Install NVM:**
+
+   ```bash
+   brew install nvm
+   ```
+
+2. **Install and set default Node.js version (>= v22):**
+
+   ```bash
+   nvm install 22
+   nvm alias default 22
+   ```
+
+3. **Install required global packages:**
+   ```bash
+   npm install -g typescript neovim
+   ```
+
+NeoVim plugins (Copilot, TypeScript tools) will use the default Node version via `nvm which default`.
 
 ## NeoVim
 
