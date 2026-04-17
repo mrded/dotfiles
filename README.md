@@ -86,6 +86,15 @@ issues:
 
 ## Neovide
 
+Install and link configuration:
+
+```bash
+brew install --cask neovide
+ln -s ~/dotfiles/neovide ~/.config/neovide
+```
+
+Neovide is a GUI client for NeoVim that uses your existing `~/.config/nvim` configuration.
+
 issues:
 
 - [ ] MacOS tabs https://github.com/neovide/neovide/issues/2378
