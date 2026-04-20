@@ -24,11 +24,9 @@ This is a personal dotfiles repository containing configuration files for variou
 
 ### Terminal Configurations
 
-- **Alacritty**: `alacritty/alacritty.toml`
 - **Ghostty**: `ghostty/config` with themes in `ghostty/themes/`
 - **Kitty**: `kitty/kitty.conf` and `kitty/theme.conf`
 - **Wezterm**: `wezterm/wezterm.lua`
-- **Tmux**: `tmux/tmux.conf`
 
 ## Common Commands
 
@@ -83,9 +81,6 @@ nvim +PackerSync +TSUpdate
 ### Terminal Setup
 
 ```bash
-# Alacritty
-ln -s ~/dotfiles/alacritty ~/.config/alacritty
-
 # Ghostty
 ln -s ~/dotfiles/ghostty ~/.config/ghostty
 
@@ -97,10 +92,6 @@ ln -s ~/dotfiles/wezterm/wezterm.lua ~/.wezterm.lua
 
 # Neovide (GUI NeoVim client)
 brew install --cask neovide
-
-# Tmux
-brew install tmux
-ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
 ```
 
 ## Development Notes
