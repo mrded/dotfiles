@@ -10,14 +10,14 @@ Add to your `~/.zshrc`:
 
 ```bash
 ZSH_DISABLE_COMPFIX=true
-source ~/dotfiles/zsh/init.zsh
+source ~/dotfiles/zsh/zshrc/init.zsh
 ```
 
 Add to your `~/.zprofile`:
 
 ```bash
 ZSH_DISABLE_COMPFIX=true
-source ~/dotfiles/zsh/nvm.zsh
+source ~/dotfiles/zsh/zprofile/init.zsh
 ```
 
 ## NVM & Node.js
