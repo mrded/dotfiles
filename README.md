@@ -9,15 +9,16 @@ Clone the repository into **~/dotfiles**: `git clone https://github.com/mrded/do
 Add to your `~/.zshrc`:
 
 ```bash
+ZSH_DISABLE_COMPFIX=true
 source ~/dotfiles/zsh/init.zsh
 ```
 
-This loads:
+Add to your `~/.zprofile`:
 
-- Robbyrussell theme (vanilla zsh, no oh-my-zsh required)
-- NVM auto-switch (automatically changes Node.js version based on `.nvmrc`)
-
-Then reload: `source ~/.zshrc`
+```bash
+ZSH_DISABLE_COMPFIX=true
+source ~/dotfiles/zsh/nvm.zsh
+```
 
 ## NVM & Node.js
 
