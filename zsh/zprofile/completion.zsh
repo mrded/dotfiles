@@ -1,5 +1,8 @@
 zmodload zsh/complist
 
+# Initialize completion system (must run before any compdef calls)
+autoload -Uz compinit && compinit -u
+
 # Show a selectable completion menu
 zstyle ':completion:*' menu select
 

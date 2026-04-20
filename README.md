@@ -42,8 +42,6 @@ NVM is required for NeoVim plugins (TypeScript tools, Copilot) and is auto-loade
    npm install -g typescript neovim
    ```
 
-NeoVim plugins (Copilot, TypeScript tools) will use the default Node version via `nvm which default`.
-
 ## NeoVim
 
 - Install Neovim `brew install neovim`
