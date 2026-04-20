@@ -1,5 +1,5 @@
 return {
-  'stevearc/conform.nvim',
+  src = 'stevearc/conform.nvim',
   tag = 'v9.0.0',
   config = function()
     require('conform').setup {

@@ -1,11 +1,25 @@
 -- Fuzzy file finder
 return {
-  'nvim-telescope/telescope.nvim',
+  src = 'nvim-telescope/telescope.nvim',
   tag = 'v0.2.1',
-  run = 'brew install fd ripgrep',
+  install = function()
+    -- brew install fd ripgrep
+    local missing = {}
+    for _, bin in ipairs({ 'fd', 'rg' }) do
+      if vim.fn.executable(bin) == 0 then
+        table.insert(missing, bin)
+      end
+    end
+    if #missing > 0 then
+      vim.notify(
+        "telescope: missing system tools: " .. table.concat(missing, ", ") ..
+        vim.log.levels.WARN
+      )
+    end
+  end,
   requires = {
-    'nvim-lua/plenary.nvim',
-    { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
+    { src = 'nvim-lua/plenary.nvim' },
+    { src = 'nvim-telescope/telescope-fzf-native.nvim' },
   },
   config = function()
     local builtin = require('telescope.builtin')

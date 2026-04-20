@@ -1,7 +1,7 @@
 -- Completion with blink.cmp
 return {
-  'saghen/blink.cmp',
-  version = 'v1.7.0',
+  src = 'saghen/blink.cmp',
+  tag = 'v1.7.0',
   config = function()
     require('blink.cmp').setup({
       keymap = {

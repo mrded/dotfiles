@@ -1,5 +1,5 @@
 return {
-  'hashivim/vim-terraform',
+  src = 'hashivim/vim-terraform',
   -- tag = 'v0.2.3',
   config = function()
     -- see: https://www.mukeshsharma.dev/2022/02/08/neovim-workflow-for-terraform.html

@@ -1,0 +1,119 @@
+{
+  "plugins": {
+    "blink.cmp": {
+      "rev": "327fff91fe6af358e990be7be1ec8b78037d2138",
+      "src": "https://github.com/saghen/blink.cmp",
+      "version": "'v1.7.0'"
+    },
+    "bufferline.nvim": {
+      "rev": "655133c3b4c3e5e05ec549b9f8cc2894ac6f51b3",
+      "src": "https://github.com/akinsho/bufferline.nvim",
+      "version": "'v4.9.1'"
+    },
+    "conform.nvim": {
+      "rev": "a6f5bdb78caa305496357d17e962bbc4c0b392e2",
+      "src": "https://github.com/stevearc/conform.nvim",
+      "version": "'v9.0.0'"
+    },
+    "copilot.vim": {
+      "rev": "a12fd5672110c8aa7e3c8419e28c96943ca179be",
+      "src": "https://github.com/github/copilot.vim",
+      "version": "'v1.59.0'"
+    },
+    "ctrlsf.vim": {
+      "rev": "46e7b2a29d7723ebe73ce4e90d14f548ee6b9b20",
+      "src": "https://github.com/dyng/ctrlsf.vim",
+      "version": "'v2.6.0'"
+    },
+    "gruvbox.nvim": {
+      "rev": "61b0b3be2f0cfd521667403a0367298144d6c165",
+      "src": "https://github.com/ellisonleao/gruvbox.nvim",
+      "version": "'2.0.0'"
+    },
+    "indent-blankline.nvim": {
+      "rev": "005b56001b2cb30bfa61b7986bc50657816ba4ba",
+      "src": "https://github.com/lukas-reineke/indent-blankline.nvim",
+      "version": "'v3.9.0'"
+    },
+    "lualine-lsp-progress": {
+      "rev": "56842d097245a08d77912edf5f2a69ba29f275d7",
+      "src": "https://github.com/arkav/lualine-lsp-progress"
+    },
+    "lualine.nvim": {
+      "rev": "a905eeebc4e63fdc48b5135d3bf8aea5618fb21c",
+      "src": "https://github.com/nvim-lualine/lualine.nvim"
+    },
+    "mason-lspconfig.nvim": {
+      "rev": "25c11854aa25558ee6c03432edfa0df0217324be",
+      "src": "https://github.com/williamboman/mason-lspconfig.nvim",
+      "version": "'v1.31.0'"
+    },
+    "mason.nvim": {
+      "rev": "44d1e90e1f66e077268191e3ee9d2ac97cc18e65",
+      "src": "https://github.com/williamboman/mason.nvim",
+      "version": "'v2.2.1'"
+    },
+    "nvim-comment": {
+      "rev": "e9ac16ab056695cad6461173693069ec070d2b23",
+      "src": "https://github.com/terrortylor/nvim-comment"
+    },
+    "nvim-launchpad": {
+      "rev": "442482472bc4753620f5b72f542d87ebaf578972",
+      "src": "https://github.com/mrded/nvim-launchpad"
+    },
+    "nvim-lspconfig": {
+      "rev": "3ea99227e316c5028f57a4d86a1a7fd01dd876d0",
+      "src": "https://github.com/neovim/nvim-lspconfig",
+      "version": "'v2.2.0'"
+    },
+    "nvim-tree.lua": {
+      "rev": "a0db8bf7d6488b1dcd9cb5b0dfd6684a1e14f769",
+      "src": "https://github.com/nvim-tree/nvim-tree.lua",
+      "version": "'v1.15.0'"
+    },
+    "nvim-treesitter": {
+      "rev": "4916d6592ede8c07973490d9322f187e07dfefac",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter"
+    },
+    "nvim-treesitter-context": {
+      "rev": "ed1cf48d5af252248c55f50b9427e8ce883a2c6b",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter-context",
+      "version": "'v1.0.0'"
+    },
+    "plenary.nvim": {
+      "rev": "50012918b2fc8357b87cff2a7f7f0446e47da174",
+      "src": "https://github.com/nvim-lua/plenary.nvim",
+      "version": "'v0.1.4'"
+    },
+    "telescope-fzf-native.nvim": {
+      "rev": "6fea601bd2b694c6f2ae08a6c6fab14930c60e2c",
+      "src": "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
+    },
+    "telescope.nvim": {
+      "rev": "3333a52ff548ba0a68af6d8da1e54f9cd96e9179",
+      "src": "https://github.com/nvim-telescope/telescope.nvim",
+      "version": "'v0.2.1'"
+    },
+    "typescript-tools.nvim": {
+      "rev": "c2f5910074103705661e9651aa841e0d7eea9932",
+      "src": "https://github.com/pmizio/typescript-tools.nvim"
+    },
+    "vgit.nvim": {
+      "rev": "9afe79a3ae65594ca483c2e6161690ff9b85123b",
+      "src": "https://github.com/tanvirtin/vgit.nvim",
+      "version": "'v0.2.3'"
+    },
+    "vim-gh-line": {
+      "rev": "731751fdfa4f64a061dbc7088cb7b2f12e0828ad",
+      "src": "https://github.com/ruanyl/vim-gh-line"
+    },
+    "vim-illuminate": {
+      "rev": "0d1e93684da00ab7c057410fecfc24f434698898",
+      "src": "https://github.com/RRethy/vim-illuminate"
+    },
+    "vim-terraform": {
+      "rev": "520498fab16a3a11f2ae1b8cb65e0a1684bc317a",
+      "src": "https://github.com/hashivim/vim-terraform"
+    }
+  }
+}

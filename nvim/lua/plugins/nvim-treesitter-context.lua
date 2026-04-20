@@ -1,8 +1,8 @@
 return {
-  'nvim-treesitter/nvim-treesitter-context',
+  src = 'nvim-treesitter/nvim-treesitter-context',
   tag = 'v1.0.0',
-  depends = {
-    'nvim-treesitter/nvim-treesitter',
+  requires = {
+    { src = 'nvim-treesitter/nvim-treesitter' },
   },
   config = function()
     require('treesitter-context').setup({

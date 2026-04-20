@@ -44,12 +44,11 @@ NVM is required for NeoVim plugins (TypeScript tools, Copilot) and is auto-loade
 
 ## NeoVim
 
-- Install Neovim `brew install neovim tree-sitter-cli`
+- Install Neovim `brew install neovim tree-sitter-cli` (requires NeoVim 0.12.0+)
 - Replace configuration: `ln -s ~/dotfiles/nvim ~/.config/nvim`
-- Install [Packer](https://github.com/wbthomason/packer.nvim) for plugins
-- Install plugins: `nvim +PackerSync +TSUpdate`
+- Install plugins: `nvim +PackSync +TSUpdate`
 
-**Note**: `tree-sitter-cli` is required for compiling TreeSitter parsers in NeoVim 0.12.0+
+**Note**: Uses `vim.pack` APIs (NeoVim 0.12+ built-in) with automatic dependency deduplication. The lockfile at `~/.config/nvim/nvim-pack-lock.json` tracks plugin versions and should be version controlled for consistency across machines.
 
 ## Vifm
 
@@ -130,8 +129,22 @@ issues:
 ## How to add a new NVim plugin
 
 1. Create a new file `nvim/lua/plugins/{plugin-name}.lua`
-2. The file should return [Packer](https://github.com/wbthomason/packer.nvim) formatted string or a table, with a path to the plugin. eg: `return { 'mrded/{plugin-name}' }`
-3. Save and update Packer, to apply changes: `nvim +PackerSync +TSUpdate`
+2. Return a plugin spec:
+   ```lua
+   return {
+     src = 'author/plugin-name',   -- required
+     tag = 'v1.0.0',               -- optional: pin version
+     install = 'make',             -- optional: runs once on first install, in plugin dir
+     requires = {                  -- optional: src and tag only
+       { src = 'nvim-lua/plenary.nvim' },
+     },
+     config = function()           -- optional: runs on every startup
+       require('plugin-name').setup({})
+     end,
+   }
+   ```
+   - If a dependency needs its own `install` hook, give it its own file in `lua/plugins/`
+3. Save and sync: `nvim +PackSync` or `:PackSync` inside NeoVim
 
 ## Terminal requirements
 
@@ -148,8 +161,16 @@ issues:
 
 ## Gotchas
 
-- When changing plugin's settings, you need to run `nvim +PackerSync +TSUpdate`, as settings are cached.
-- Plugin dependencies (eg language servers) should install automagically by [Mason](https://github.com/williamboman/mason.nvim), if not - troubleshoot that direction.
+- After changing plugin settings, run `:PackSync` and restart NeoVim
+- **Changing versions**: Edit `tag`, delete the plugin dir (`rm -rf ~/.local/share/nvim/site/pack/core/opt/<name>`), then `:PackSync`. For all plugins: `:PackNuke` then `:PackSync`
+- **Removing plugins**: Delete the spec file and run `:PackSync` — auto-removes from disk
+- **Spec errors**: Syntax errors in plugin files abort the sync (not silently dropped)
+- **Local plugins**: Not supported — use git remotes or push to GitHub instead
+- **Dependencies**: Automatically deduplicated; pinned specs (`tag`) take precedence over unpinned
+- **Unpinned plugins**: Updated on every `:PackSync` (omit `tag` to track latest)
+- **Install hooks**: Run once on first install in the plugin directory; failed hooks remove the plugin so `:PackSync` retries
+- **LSP servers**: Managed by [Mason](https://github.com/williamboman/mason.nvim) and install automatically
+- **Non-interactive**: `nvim +PackSync` and `nvim +PackNuke` skip plugin startup to run cleanly
 
 ## Troubleshooting
 

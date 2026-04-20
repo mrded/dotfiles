@@ -1,9 +1,9 @@
 -- Highlight git changes
 return {
-  'tanvirtin/vgit.nvim',
+  src = 'tanvirtin/vgit.nvim',
   tag = 'v0.2.3',
   requires = {
-    'nvim-lua/plenary.nvim'
+    { src = 'nvim-lua/plenary.nvim' },
   },
   config = function()
     local vgit = require('vgit')
