@@ -44,10 +44,12 @@ NVM is required for NeoVim plugins (TypeScript tools, Copilot) and is auto-loade
 
 ## NeoVim
 
-- Install Neovim `brew install neovim`
+- Install Neovim `brew install neovim tree-sitter-cli`
 - Replace configuration: `ln -s ~/dotfiles/nvim ~/.config/nvim`
 - Install [Packer](https://github.com/wbthomason/packer.nvim) for plugins
 - Install plugins: `nvim +PackerSync +TSUpdate`
+
+**Note**: `tree-sitter-cli` is required for compiling TreeSitter parsers in NeoVim 0.12.0+
 
 ## Vifm
 
