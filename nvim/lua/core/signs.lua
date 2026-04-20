@@ -1,11 +1,18 @@
-vim.cmd([[sign define heartSign text=♥ texthl=Hint]])
+-- Define custom bookmark sign
+vim.fn.sign_define('heartSign', {
+  text = '♥',
+  texthl = 'Hint'
+})
 
+-- Command to add a bookmark at the current line
 vim.api.nvim_create_user_command('Bookmark', function()
   local current_line = vim.fn.line('.')
-  local cmd = string.format("sign place 1 line=%d name=heartSign", current_line)
-  vim.cmd(cmd)
+  vim.fn.sign_place(1, '', 'heartSign', '', {
+    lnum = current_line
+  })
 end, {})
 
+-- Command to remove all bookmarks
 vim.api.nvim_create_user_command('BookmarkRemove', function()
-  vim.cmd("sign unplace")
+  vim.fn.sign_unplace('')
 end, {})
