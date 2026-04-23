@@ -37,7 +37,7 @@ This is a personal dotfiles repository containing configuration files for variou
 
 - **Install/update**: `:PackSync` - install missing, update unpinned, remove undeclared (non-interactive)
 - **Wipe all plugins**: `:PackNuke` - delete everything, no confirmation
-- **Reinstall from scratch**: `:PackNuke` then `:PackSync`, or `:PackReinstall` (prompts)
+- **Reinstall from scratch**: `:PackNuke` then `:PackSync`
 - **Update TreeSitter**: `nvim +TSUpdate`
 - **Update remote plugins**: `nvim +UpdateRemotePlugins`
 
@@ -145,12 +145,11 @@ brew install --cask neovide
 - **Commands**:
   - `:PackSync` - install missing, update unpinned, remove undeclared, run install hooks
   - `:PackNuke` - delete `~/.local/share/nvim/site/pack/core/` with no confirmation
-  - `:PackReinstall` - same as PackNuke + PackSync with a confirmation prompt
 
 - **Version change workflow**:
   1. Edit `tag` in the spec (or remove it to track latest)
   2. For a single plugin: `rm -rf ~/.local/share/nvim/site/pack/core/opt/<plugin>` then `:PackSync`
-  3. For all plugins: `:PackNuke` then `:PackSync` (or `:PackReinstall`)
+  3. For all plugins: `:PackNuke` then `:PackSync`
 
 ### Current Setup
 
