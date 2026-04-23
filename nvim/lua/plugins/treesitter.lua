@@ -85,7 +85,7 @@ local config = function()
 end
 
 return {
-  'nvim-treesitter/nvim-treesitter',
-  run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+  src = 'nvim-treesitter/nvim-treesitter',
+  install = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
   config = config
 }

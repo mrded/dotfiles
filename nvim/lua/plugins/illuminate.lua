@@ -1,6 +1,6 @@
 -- Highlights words under the cursor
 return {
-  'RRethy/vim-illuminate',
+  src = 'RRethy/vim-illuminate',
   config = function()
     require('illuminate').configure({
       -- Delay in milliseconds before highlighting

@@ -1,6 +1,6 @@
 -- Full text search
 return {
-  "dyng/ctrlsf.vim",
+  src = 'dyng/ctrlsf.vim',
   tag = 'v2.6.0',
   config = function()
     vim.cmd [[

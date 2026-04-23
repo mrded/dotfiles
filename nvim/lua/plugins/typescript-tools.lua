@@ -1,7 +1,10 @@
 -- TypeScript/JavaScript LSP (faster alternative to ts_ls)
 return {
-  'pmizio/typescript-tools.nvim',
-  dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
+  src = 'pmizio/typescript-tools.nvim',
+  requires = {
+    { src = 'nvim-lua/plenary.nvim' },
+    { src = 'neovim/nvim-lspconfig' },
+  },
   config = function()
     local lsp_config = require('core.lsp')
 

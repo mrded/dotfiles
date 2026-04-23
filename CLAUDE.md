@@ -12,9 +12,12 @@ This is a personal dotfiles repository containing configuration files for variou
 
 - **Entry Point**: `nvim/init.lua` - loads all core modules
 - **Core Modules**: `nvim/lua/core/` - fundamental NeoVim settings and functionality
-- **Plugin System**: Uses Packer.nvim with a modular approach
-  - `nvim/lua/core/packer.lua` - automatically loads all plugin specs from `lua/plugins/*.lua`
-  - Each plugin has its own file in `nvim/lua/plugins/` returning a Packer spec
+- **Plugin System**: Uses vim.pack (NeoVim 0.12+ built-in package manager)
+  - `nvim/lua/core/pack.lua` - wrapper around vim.pack APIs
+  - Each plugin has its own file in `nvim/lua/plugins/` returning a plugin spec
+  - Dependencies via `requires` are deduplicated automatically (pinned specs take precedence)
+  - Local plugin paths are not supported — use git remotes instead
+  - Plugins installed to `~/.local/share/nvim/site/pack/core/opt/`
 
 ### Zsh Configuration Structure
 
@@ -32,15 +35,48 @@ This is a personal dotfiles repository containing configuration files for variou
 
 ### NeoVim Plugin Management
 
-- **Install/Update plugins**: `nvim +PackerSync +TSUpdate`
+- **Install/update**: `:PackSync` - install missing, update unpinned, remove undeclared (non-interactive)
+- **Wipe all plugins**: `:PackNuke` - delete everything, no confirmation
+- **Reinstall from scratch**: `:PackNuke` then `:PackSync`
 - **Update TreeSitter**: `nvim +TSUpdate`
 - **Update remote plugins**: `nvim +UpdateRemotePlugins`
 
 ### Adding New NeoVim Plugins
 
 1. Create new file: `nvim/lua/plugins/{plugin-name}.lua`
-2. Return Packer spec: `return { 'author/plugin-name' }`
-3. Save and run: `nvim +PackerSync +TSUpdate`
+2. Return a plugin spec (see format below)
+3. Save and run: `:PackSync` inside NeoVim or `nvim +PackSync`
+
+**Spec format**:
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `src` | `string` | `'author/repo'` or full URL (required) |
+| `tag` | `string` | Pin to tag, branch, or SHA (omit for latest) |
+| `requires` | `table` | Array of `{ src = '...' }` / `{ src = '...', tag = '...' }` (optional) |
+| `install` | `string\|function` | Runs once on first install, in the plugin directory (optional) |
+| `config` | `function` | Runs on every startup for installed plugins (optional) |
+
+**Rules**:
+- `requires` entries support only `src` and `tag` — no hooks or nesting
+- If a dependency needs an `install` hook or its own `requires`, give it its own file in `lua/plugins/`
+- Local paths not supported — use a git remote or push to GitHub
+
+**Example:**
+```lua
+return {
+  src = 'nvim-telescope/telescope.nvim',
+  tag = 'v0.2.1',
+  install = 'brew install fd ripgrep',
+  requires = {
+    { src = 'nvim-lua/plenary.nvim' },
+    { src = 'nvim-telescope/telescope-fzf-native.nvim' },
+  },
+  config = function()
+    require('telescope').setup({})
+  end
+}
+```
 
 ### Zsh Configuration
 
@@ -70,13 +106,13 @@ source ~/.zshrc
 ### NeoVim Setup
 
 ```bash
-brew install neovim
+brew install neovim  # NeoVim 0.12.0+ required for vim.pack
 brew install tree-sitter-cli  # Required for TreeSitter parser compilation
 ln -s ~/dotfiles/nvim ~/.config/nvim
-nvim +PackerSync +TSUpdate
+nvim +PackSync +TSUpdate
 ```
 
-**Note**: `tree-sitter-cli` is required for compiling TreeSitter parsers in NeoVim 0.12.0+
+**Note**: Requires NeoVim 0.12.0+ with `vim.pack` API support
 
 ### Terminal Setup
 
@@ -98,8 +134,22 @@ brew install --cask neovide
 
 ### Plugin System Behavior
 
-- Plugin dependencies (LSP servers) are managed by Mason and should install automatically
-- Plugin settings are cached - run `nvim +PackerSync +TSUpdate` after changing configurations
+- **Package Manager**: Uses vim.pack APIs (`vim.pack.add()`, `vim.pack.update()`, `vim.pack.del()`)
+- **Parallel Installation**: vim.pack downloads plugins in parallel for fast setup
+- **Dependency Management**: Dependencies are automatically deduplicated (pinned specs win over unpinned)
+- **Auto-remove**: Undeclared plugins are automatically removed during `:PackSync`
+- **Auto-update**: Unpinned plugins (no `tag`) are updated on every `:PackSync`
+- **LSP Servers**: Managed by Mason and install automatically
+- **Local paths**: Not supported — use git remotes instead
+- **CLI safety**: `nvim +PackSync` and `nvim +PackNuke` skip plugin startup loading to avoid noise
+- **Commands**:
+  - `:PackSync` - install missing, update unpinned, remove undeclared, run install hooks
+  - `:PackNuke` - delete `~/.local/share/nvim/site/pack/core/` with no confirmation
+
+- **Version change workflow**:
+  1. Edit `tag` in the spec (or remove it to track latest)
+  2. For a single plugin: `rm -rf ~/.local/share/nvim/site/pack/core/opt/<plugin>` then `:PackSync`
+  3. For all plugins: `:PackNuke` then `:PackSync`
 
 ### Current Setup
 

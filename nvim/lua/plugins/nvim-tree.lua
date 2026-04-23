@@ -1,6 +1,6 @@
 -- File explorer
 return {
-  'nvim-tree/nvim-tree.lua',
+  src = 'nvim-tree/nvim-tree.lua',
   tag = 'v1.15.0',
   config = function()
     -- disable netrw

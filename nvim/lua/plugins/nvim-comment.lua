@@ -1,5 +1,5 @@
 return {
-  "terrortylor/nvim-comment",
+  src = 'terrortylor/nvim-comment',
   config = function()
     require('nvim_comment').setup()
   end

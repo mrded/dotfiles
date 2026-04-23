@@ -1,6 +1,6 @@
 -- Tabs
 return {
-  "akinsho/bufferline.nvim",
+  src = 'akinsho/bufferline.nvim',
   tag = 'v4.9.1',
   config = function()
     vim.opt.termguicolors = true

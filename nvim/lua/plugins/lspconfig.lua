@@ -45,11 +45,11 @@ local config = function()
 end
 
 return {
-  'neovim/nvim-lspconfig',
-  requires = {
-    'williamboman/mason.nvim',
-    'williamboman/mason-lspconfig.nvim',
-  },
+  src = 'neovim/nvim-lspconfig',
   tag = 'v2.2.0',
+  requires = {
+    { src = 'williamboman/mason.nvim' },
+    { src = 'williamboman/mason-lspconfig.nvim' },
+  },
   config = config
 }

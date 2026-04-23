@@ -1,6 +1,6 @@
 -- Highlights words under the cursor
 return {
-  'mrded/nvim-launchpad',
+  src = 'mrded/nvim-launchpad',
   config = function()
     require("launchpad").setup({
       projects = {

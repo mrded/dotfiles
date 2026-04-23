@@ -1,8 +1,8 @@
 -- Status bar
 return {
-  "nvim-lualine/lualine.nvim",
-  depends = {
-    'arkav/lualine-lsp-progress',
+  src = 'nvim-lualine/lualine.nvim',
+  requires = {
+    { src = 'arkav/lualine-lsp-progress' },
   },
   config = function()
     require('lualine').setup {
