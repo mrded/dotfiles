@@ -25,6 +25,10 @@
       "src": "https://github.com/dyng/ctrlsf.vim",
       "version": "'v2.6.0'"
     },
+    "dashboard-nvim": {
+      "rev": "f787e3462c2ee2b6117b17c1aa4ddf66cb6f57fe",
+      "src": "https://github.com/nvimdev/dashboard-nvim"
+    },
     "gruvbox.nvim": {
       "rev": "61b0b3be2f0cfd521667403a0367298144d6c165",
       "src": "https://github.com/ellisonleao/gruvbox.nvim",
@@ -53,13 +57,13 @@
       "src": "https://github.com/williamboman/mason.nvim",
       "version": "'v2.2.1'"
     },
+    "milli.nvim": {
+      "rev": "48415bf96bf463c5bb1010e02aa03ffbed0cf1a9",
+      "src": "https://github.com/Amansingh-afk/milli.nvim"
+    },
     "nvim-comment": {
       "rev": "e9ac16ab056695cad6461173693069ec070d2b23",
       "src": "https://github.com/terrortylor/nvim-comment"
-    },
-    "nvim-launchpad": {
-      "rev": "442482472bc4753620f5b72f542d87ebaf578972",
-      "src": "https://github.com/mrded/nvim-launchpad"
     },
     "nvim-lspconfig": {
       "rev": "3ea99227e316c5028f57a4d86a1a7fd01dd876d0",
