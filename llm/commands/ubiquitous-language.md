@@ -1,19 +1,8 @@
 ---
-name: ubiquitous-language
-description: Build a shared domain language for the project by scanning the codebase for terminology and creating a UBIQUITOUS_LANGUAGE.md file with terms that both human and AI understand in common.
+description: Build a shared domain language by scanning the codebase and creating UBIQUITOUS_LANGUAGE.md
 ---
 
-# Ubiquitous Language Builder
-
-Creates a shared vocabulary between you and the AI by analyzing the codebase and establishing common terminology.
-
-## Purpose
-
-Build a comprehensive domain language glossary that:
-- Documents key terms, concepts, and patterns used in the project
-- Ensures consistent terminology across conversations
-- Reduces ambiguity in technical discussions
-- Serves as onboarding documentation for new contributors
+Create a shared vocabulary between you and the AI by analyzing the codebase and establishing common terminology.
 
 ## Process
 
@@ -79,28 +68,10 @@ Create `UBIQUITOUS_LANGUAGE.md` in the project root with structure:
 ---
 
 ## Patterns & Conventions
-
-### Pattern Name
-...
-
 ## Tools & Technologies
-
-### Tool Name
-...
-
 ## Processes & Workflows
-
-### Process Name
-...
-
 ## Components & Modules
-
-### Component Name
-...
-
 ## Abbreviations & Acronyms
-
-- **ABC**: What ABC stands for
 ```
 
 ## Rules
@@ -109,7 +80,6 @@ Create `UBIQUITOUS_LANGUAGE.md` in the project root with structure:
 - Prioritize terms that appear multiple times or are central to the architecture
 - Include location references (file paths) for concrete examples
 - Keep definitions concise but complete
-- Update the file when new patterns or terms emerge
 - Cross-reference related terms for better navigation
 
 ## Anti-Patterns to Avoid
@@ -118,11 +88,3 @@ Create `UBIQUITOUS_LANGUAGE.md` in the project root with structure:
 - Don't document obvious or universal programming terms (e.g., "function", "class")
 - Don't create definitions for one-off occurrences
 - Don't use jargon in definitions - explain clearly
-
-## Usage
-
-After creating the ubiquitous language file:
-1. Reference it in future conversations to maintain consistency
-2. Update it as the project evolves
-3. Use it to onboard new team members
-4. Refer to it when making architectural decisions

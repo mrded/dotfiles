@@ -199,22 +199,30 @@ JAVA_PATH=$JAVA_HOME/bin
 
 ## Claude Code
 
-Custom skills for Claude Code are stored in `llm/skills/`.
+Custom skills and commands for Claude Code are stored in `llm/`.
 
-To activate them, symlink to your Claude configuration:
+### Setup
+
+Symlink skills and commands to your Claude configuration:
 
 ```bash
-ln -s ~/dotfiles/llm/skills/codestyle ~/.claude/plugins/local/skills/codestyle
-ln -s ~/dotfiles/llm/skills/development ~/.claude/plugins/local/skills/development
 ln -s ~/dotfiles/llm/skills ~/.claude/skills
+ln -s ~/dotfiles/llm/commands ~/.claude/commands
 ```
 
 ### Available Skills
 
-- **codestyle** - Enforces code style guidelines (no `let`, no `any`, AAA test pattern, etc.)
-- **development** - Development best practices and patterns
+Skills are automatically activated by Claude Code based on context:
 
-Skills are automatically activated by Claude Code based on context.
+- **codestyle** (`llm/skills/codestyle/`) - Enforces code style guidelines (no `let`, no `any`, AAA test pattern, etc.)
+- **development** (`llm/skills/development/`) - Development best practices and patterns
+
+### Available Commands
+
+Commands are invoked manually with slash syntax:
+
+- **/grill-me** - Interview mode for intensive design review, walks through every aspect of a plan
+- **/ubiquitous-language** - Scans codebase and creates UBIQUITOUS_LANGUAGE.md with shared terminology
 
 ## Tools
 
