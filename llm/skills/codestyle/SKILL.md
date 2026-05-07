@@ -86,13 +86,50 @@ Apply these rules consistently across all code changes:
   ```typescript
   // ✅ Correct
   type UserProfile = { name: string; age: number };
-  interface ApiResponse { data: unknown; }
+  type ApiResponse = { data: unknown; };
   class ServiceManager { }
 
   // ❌ Wrong
   type userProfile = { name: string; age: number };
   interface apiResponse { data: unknown; }
   class serviceManager { }
+  ```
+
+- **Prefer `type` over `interface`** - Use `type` for type definitions
+  - `type` is more versatile and supports unions, intersections, and primitives
+  - `type` has simpler semantics without declaration merging
+  - Use `interface` only when you specifically need declaration merging or extending classes
+  ```typescript
+  // ✅ Correct - type alias
+  type User = {
+    name: string;
+    age: number;
+  };
+
+  type ApiResponse<T> = {
+    data: T;
+    error?: string;
+  };
+
+  type Status = 'pending' | 'active' | 'inactive';
+
+  type UserWithStatus = User & { status: Status };
+
+  // ❌ Wrong - interface when type is more appropriate
+  interface User {
+    name: string;
+    age: number;
+  }
+
+  interface ApiResponse<T> {
+    data: T;
+    error?: string;
+  }
+
+  // ⚠️ Only use interface when you need declaration merging
+  interface Window {
+    myCustomProperty: string;
+  }
   ```
 
 ### Error Handling
@@ -378,6 +415,7 @@ When reviewing or writing code, verify:
 - [ ] No `let` declarations present
 - [ ] Arrow functions used instead of function declarations
 - [ ] No `any` types or type escape hatches
+- [ ] `type` used instead of `interface` (unless declaration merging needed)
 - [ ] No `Object.assign()` - use object spread syntax
 - [ ] No string concatenation with `+` - use template literals
 - [ ] All type names use PascalCase (first letter capitalized)
