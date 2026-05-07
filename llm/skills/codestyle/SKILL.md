@@ -124,6 +124,69 @@ Apply these rules consistently across all code changes:
   }
   ```
 
+- **NEVER nest try/catch blocks** - Nested try/catch is a code smell indicating poor error handling design
+  - Nesting try/catch blocks makes error flow impossible to follow
+  - It creates confusion about which catch handles which error
+  - Extract nested try/catch into separate functions with their own error handling
+  - Use helper functions that return success/failure states instead
+  ```typescript
+  // ✅ Correct - extracted functions with independent error handling
+  const saveData = async (params) => {
+    try {
+      await savePersonData(params);
+      logger.info("Saved person data");
+      return { success: true };
+    } catch (err) {
+      logger.error(err, "Failed to save person data");
+      return { success: false, error: err };
+    }
+  };
+
+  const saveAddresses = async (params) => {
+    try {
+      await savePersonFoundAddresses(params);
+      logger.info("Saved addresses");
+      return { success: true };
+    } catch (err) {
+      logger.error(err, "Failed to save addresses");
+      return { success: false, error: err };
+    }
+  };
+
+  // Main flow - clean and flat
+  try {
+    const result = await fetchReport();
+    await saveData(params);
+    return result;
+  } catch (error) {
+    if (shouldSaveAddresses) {
+      await saveAddresses(params);
+    }
+    throw error;
+  }
+
+  // ❌ Wrong - nested try/catch
+  try {
+    try {
+      await savePersonData(params);
+      logger.info("Saved person data");
+    } catch (err) {
+      logger.error(err, "Failed to save person data");
+    }
+    return report;
+  } catch (error) {
+    if (subjectRef && personRef) {
+      try {
+        await savePersonFoundAddresses(params);
+        logger.info("Saved addresses after error");
+      } catch (err) {
+        logger.error(err, "Failed to save addresses");
+      }
+    }
+    throw error;
+  }
+  ```
+
 ### Array Operations
 
 - **Prefer functional array methods** - Use `.map()`, `.reduce()`, `.filter()`, etc. over imperative loops
@@ -320,6 +383,7 @@ When reviewing or writing code, verify:
 - [ ] All type names use PascalCase (first letter capitalized)
 - [ ] Functional array methods (`.map()`, `.reduce()`, `.filter()`) used instead of loops
 - [ ] No massive try/catch blocks - errors handled at appropriate level
+- [ ] No nested try/catch blocks - extract into separate functions
 - [ ] No `while` loops - use recursion, functional patterns, or `for` loops
 - [ ] No deeply nested conditions - use early returns
 - [ ] Tests follow AAA pattern and are minimal
