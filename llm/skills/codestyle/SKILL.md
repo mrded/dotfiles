@@ -264,6 +264,23 @@ Apply these rules consistently across all code changes:
   result.sort();
   ```
 
+### Destructuring
+
+- **Use array destructuring to access items by index** - Prefer destructuring over bracket notation when accessing array elements by position
+  - More readable and signals intent clearly
+  - Naturally names the extracted value
+  ```typescript
+  // ✅ Correct - array destructuring
+  const [person] = persons;
+  const [first, second] = items;
+  const [, second] = items;
+
+  // ❌ Wrong - bracket notation
+  const person = persons[0];
+  const first = items[0];
+  const second = items[1];
+  ```
+
 ### Control Flow
 
 - **Avoid `while` loops** - Use recursion, functional patterns, or `for` loops instead
@@ -420,6 +437,7 @@ When reviewing or writing code, verify:
 - [ ] No string concatenation with `+` - use template literals
 - [ ] All type names use PascalCase (first letter capitalized)
 - [ ] Functional array methods (`.map()`, `.reduce()`, `.filter()`) used instead of loops
+- [ ] Array destructuring (`const [first] = items`) used instead of index access (`items[0]`)
 - [ ] No massive try/catch blocks - errors handled at appropriate level
 - [ ] No nested try/catch blocks - extract into separate functions
 - [ ] No `while` loops - use recursion, functional patterns, or `for` loops
