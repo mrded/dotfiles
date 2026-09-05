@@ -203,11 +203,12 @@ Custom skills and commands for Claude Code are stored in `llm/`.
 
 ### Setup
 
-Symlink skills and commands to your Claude configuration:
+Symlink skills, commands, and settings to your Claude configuration:
 
 ```bash
 ln -s ~/dotfiles/llm/skills ~/.claude/skills
 ln -s ~/dotfiles/llm/commands ~/.claude/commands
+ln -s ~/dotfiles/claude/settings.json ~/.claude/settings.json
 ```
 
 ### Available Skills
