@@ -216,6 +216,7 @@ Skills are either auto-triggered by context or manually invoked with `/skill-nam
 - **brainstorm** - Explores user intent and requirements before implementation
 - **art-of-explanation** - Structures explanations for clarity and precision
 - **dialectic** - Parallel agents argue both sides of a claim to eliminate bias (`/dialectic`)
+- **ask-codex** - Consult OpenAI Codex for a second opinion on debugging or review (`/ask-codex`)
 - **ubiquitous-language** - Scans codebase and creates UBIQUITOUS_LANGUAGE.md (`/ubiquitous-language`)
 
 ## Tools
