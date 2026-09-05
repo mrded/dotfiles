@@ -220,6 +220,7 @@ Skills are either auto-triggered by context or manually invoked with `/skill-nam
 - **learn** - Captures strategic project knowledge to CLAUDE.md (`/learn`)
 - **backlog** - Manages deferred work items (`/backlog`)
 - **ubiquitous-language** - Scans codebase and creates UBIQUITOUS_LANGUAGE.md (`/ubiquitous-language`)
+- **add-serena** - Adds Serena (semantic code intelligence) to the current project via `.mcp.json` and `.serena/project.yml` (`/add-serena`)
 
 ## Tools
 
