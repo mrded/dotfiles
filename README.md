@@ -215,7 +215,7 @@ Skills are either auto-triggered by context or manually invoked with `/skill-nam
 - **codestyle** - Enforces code style guidelines (no `let`, no `any`, AAA test pattern, etc.)
 - **brainstorm** - Explores user intent and requirements before implementation
 - **art-of-explanation** - Structures explanations for clarity and precision
-- **grill-me** - Intensive design review, questions every aspect of a plan (`/grill-me`)
+- **dialectic** - Parallel agents argue both sides of a claim to eliminate bias (`/dialectic`)
 - **ubiquitous-language** - Scans codebase and creates UBIQUITOUS_LANGUAGE.md (`/ubiquitous-language`)
 
 ## Tools
