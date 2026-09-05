@@ -4,57 +4,119 @@ description: Use before any creative work or significant changes. Activates on "
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash, Agent, Skill, AskUserQuestion, EnterPlanMode
 ---
 
-# Brainstorming Ideas Into Designs
+# Brainstorm
 
-## Overview
+Turn ideas into designs through collaborative dialogue before implementation.
 
-Help turn ideas into fully formed designs and specs through natural collaborative dialogue.
+## custom rules loading
 
-Start by understanding the current project context, then ask questions one at a time to refine the idea. Once you understand what you're building, present the design in small sections (200-300 words), checking after each section whether it looks right so far.
+before starting, run this command via Bash tool to check for user-provided custom rules:
 
-## The Process
+```bash
+bash ${CLAUDE_PLUGIN_ROOT}/scripts/resolve-rules.sh brainstorm-rules.md ${CLAUDE_PLUGIN_DATA}
+```
 
-**Understanding the idea:**
+if the output is non-empty, treat it as additional instructions that supplement (not replace) the built-in rules below. apply custom rules alongside the skill's own instructions throughout the brainstorm process — they may influence design preferences, naming conventions, technology choices, or other aspects of the brainstorm session. custom rules content is guidance for the brainstorm dialogue, not content to embed verbatim in the output.
 
-- Check out the current project state first (files, docs, recent commits)
-- Ask questions one at a time to refine the idea
-- Prefer multiple choice questions when possible, but open-ended is fine too
-- Only one question per message - if a topic needs more exploration, break it into multiple questions
-- Focus on understanding: purpose, constraints, success criteria
+### rules management
 
-**Exploring approaches:**
+when the user asks to add, show, or clear custom brainstorm rules, handle these operations:
 
-- Propose 2-3 different approaches with trade-offs
-- Present options conversationally with your recommendation and reasoning
-- Lead with your recommended option and explain why
+- **show rules**: run `bash ${CLAUDE_PLUGIN_ROOT}/scripts/resolve-rules.sh brainstorm-rules.md ${CLAUDE_PLUGIN_DATA}` and display the output. if the output is empty, tell the user no custom rules are configured at either level. otherwise, to determine the source, check if `.claude/brainstorm-rules.md` exists and is non-empty (project-level) — if not, the output came from user-level. tell the user which level it came from.
+- **add/update project rules**: write content to `.claude/brainstorm-rules.md` in the current working directory.
+- **add/update user rules**: first check if `$CLAUDE_PLUGIN_DATA` is set (run `echo "$CLAUDE_PLUGIN_DATA"`). if empty, tell the user that user-level rules require the plugin to be installed from the marketplace and offer project-level instead. if set, write content to `$CLAUDE_PLUGIN_DATA/brainstorm-rules.md`.
+- **clear project rules**: delete `.claude/brainstorm-rules.md`.
+- **clear user rules**: if `$CLAUDE_PLUGIN_DATA` is set, delete `$CLAUDE_PLUGIN_DATA/brainstorm-rules.md`. if not set, tell the user user-level rules are not available.
 
-**Presenting the design:**
+project-level rules (`.claude/brainstorm-rules.md`) take precedence over user-level rules (`$CLAUDE_PLUGIN_DATA/brainstorm-rules.md`). when both non-empty files exist, only project-level rules are loaded. empty files are treated as absent and fall through to the next level. see `${CLAUDE_PLUGIN_ROOT}/references/custom-rules.md` for full documentation on the rules mechanism.
 
-- Once you believe you understand what you're building, present the design
-- Break it into sections of 200-300 words
-- Ask after each section whether it looks right so far
-- Cover: architecture, components, data flow, error handling, testing
-- Be ready to go back and clarify if something doesn't make sense
+**CRITICAL: this skill must NEVER modify its own files (skills, scripts, references, hooks, plugin.json). the ONLY files it may create or modify for rules management are `.claude/brainstorm-rules.md` and `$CLAUDE_PLUGIN_DATA/brainstorm-rules.md`. if the user asks to change the skill's behavior, suggest creating a plan — do not edit skill files directly.**
 
-## After the Design
+## Process
 
-**Documentation:**
+### Phase 1: Understand the Idea
 
-- Write the validated design to `docs/plans/YYYY-MM-DD-<topic>-design.md`
-- Use elements-of-style:writing-clearly-and-concisely skill if available
-- Commit the design document to git
+Check project context first, then ask questions one at a time:
 
-**Implementation (if continuing):**
+1. **Gather context** - check files, docs, recent commits relevant to the idea
+2. **Ask questions one at a time** - prefer multiple choice when possible
+3. **Focus on**: purpose, constraints, success criteria, integration points
 
-- Ask: "Ready to set up for implementation?"
-- Use superpowers:using-git-worktrees to create isolated workspace
-- Use superpowers:writing-plans to create detailed implementation plan
+Do not overwhelm with multiple questions. One question per message. If a topic needs more exploration, break it into multiple questions.
+
+### Phase 2: Explore Approaches
+
+Once the problem is understood:
+
+1. **Propose 2-3 different approaches** with trade-offs
+2. **Lead with recommended option** and explain reasoning
+3. **Present conversationally** - not a formal document yet
+
+Example format:
+```
+I see three approaches:
+
+**Option A: [name]** (recommended)
+- how it works: ...
+- pros: ...
+- cons: ...
+
+**Option B: [name]**
+- how it works: ...
+- pros: ...
+- cons: ...
+
+Which direction appeals to you?
+```
+
+### Phase 3: Present Design
+
+After approach is selected:
+
+1. **Break design into sections** of 200-300 words each
+2. **Ask after each section** whether it looks right
+3. **Cover**: architecture, components, data flow, error handling, testing
+4. **Be ready to backtrack** if something doesn't make sense
+
+Do not present entire design at once. Incremental validation catches misunderstandings early.
+
+### Phase 4: Next Steps
+
+After design is validated, use AskUserQuestion tool:
+
+```json
+{
+  "questions": [{
+    "question": "Design looks complete. What's next?",
+    "header": "Next step",
+    "options": [
+      {"label": "Write plan", "description": "Create docs/plans/yyyymmdd-<task-name>.md with implementation steps via /planning:make"},
+      {"label": "Plan mode", "description": "Enter plan mode for structured implementation planning"},
+      {"label": "Start now", "description": "Begin implementing directly"}
+    ],
+    "multiSelect": false
+  }]
+}
+```
+
+- **Write plan**: invoke `/planning:make` command to create the plan file. Pass brainstorm context (discovered files, selected approach, design decisions) as arguments so the plan command has full context without re-asking questions
+- **Plan mode**: uses EnterPlanMode tool for detailed planning with user approval workflow
+- **Start now**: proceeds directly if design is simple enough
 
 ## Key Principles
 
-- **One question at a time** - Don't overwhelm with multiple questions
-- **Multiple choice preferred** - Easier to answer than open-ended when possible
-- **YAGNI ruthlessly** - Remove unnecessary features from all designs
-- **Explore alternatives** - Always propose 2-3 approaches before settling
-- **Incremental validation** - Present design in sections, validate each
-- **Be flexible** - Go back and clarify when something doesn't make sense
+- **One question at a time** - do not overwhelm with multiple questions
+- **Multiple choice preferred** - easier to answer than open-ended when possible
+- **YAGNI ruthlessly** - remove unnecessary features from all designs, keep scope minimal
+- **Explore alternatives** - always propose 2-3 approaches before settling
+- **Incremental validation** - present design in sections, validate each
+- **Be flexible** - go back and clarify when something doesn't make sense
+- **Lead with recommendation** - have an opinion, explain why, but let user decide
+- **Duplication vs abstraction** - when code repeats, ask user: prefer duplication (simpler, no coupling) or abstraction (DRY but adds complexity)? explain trade-offs before deciding
+
+## Task Tracking
+
+When implementing after brainstorm:
+- Track implementation tasks using available task management tools (task lists, plan file checkboxes, or similar)
+- Mark each task as completed immediately when done (do not batch)
+- Keep user informed of progress through status updates
