@@ -1,5 +1,7 @@
 ---
-description: Build a shared domain language by scanning the codebase and creating UBIQUITOUS_LANGUAGE.md
+name: ubiquitous-language
+description: Manually invoked with /ubiquitous-language. Build a shared domain language by scanning the codebase and creating UBIQUITOUS_LANGUAGE.md.
+version: 1.0
 ---
 
 Create a shared vocabulary between you and the AI by analyzing the codebase and establishing common terminology.

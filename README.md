@@ -203,27 +203,22 @@ Custom skills and commands for Claude Code are stored in `llm/`.
 
 ### Setup
 
-Symlink skills, commands, and settings to your Claude configuration:
+Symlink skills and settings to your Claude configuration:
 
 ```bash
 ln -s ~/dotfiles/llm/skills ~/.claude/skills
-ln -s ~/dotfiles/llm/commands ~/.claude/commands
 ln -s ~/dotfiles/claude/settings.json ~/.claude/settings.json
 ```
 
 ### Available Skills
 
-Skills are automatically activated by Claude Code based on context:
+Skills are either auto-triggered by context or manually invoked with `/skill-name`:
 
-- **codestyle** (`llm/skills/codestyle/`) - Enforces code style guidelines (no `let`, no `any`, AAA test pattern, etc.)
-- **development** (`llm/skills/development/`) - Development best practices and patterns
-
-### Available Commands
-
-Commands are invoked manually with slash syntax:
-
-- **/grill-me** - Interview mode for intensive design review, walks through every aspect of a plan
-- **/ubiquitous-language** - Scans codebase and creates UBIQUITOUS_LANGUAGE.md with shared terminology
+- **codestyle** - Enforces code style guidelines (no `let`, no `any`, AAA test pattern, etc.)
+- **brainstorming** - Explores user intent and requirements before implementation
+- **art-of-explanation** - Structures explanations for clarity and precision
+- **grill-me** - Intensive design review, questions every aspect of a plan (`/grill-me`)
+- **ubiquitous-language** - Scans codebase and creates UBIQUITOUS_LANGUAGE.md (`/ubiquitous-language`)
 
 ## Tools
 

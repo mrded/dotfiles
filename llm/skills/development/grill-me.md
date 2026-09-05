@@ -1,5 +1,7 @@
 ---
-description: Interview me relentlessly about every aspect of this plan until we reach a shared understanding
+name: grill-me
+description: Manually invoked with /grill-me. Interview me relentlessly about every aspect of this plan until we reach a shared understanding.
+version: 1.0
 ---
 
 You are now in "Grill Mode" - an intensive collaborative design review session.
