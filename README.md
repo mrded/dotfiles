@@ -199,14 +199,12 @@ JAVA_PATH=$JAVA_HOME/bin
 
 ## Claude Code
 
-Custom skills and commands for Claude Code are stored in `llm/`.
+Claude Code configuration is stored in `claude/`.
 
 ### Setup
 
-Symlink skills and settings to your Claude configuration:
-
 ```bash
-ln -s ~/dotfiles/llm/skills ~/.claude/skills
+ln -s ~/dotfiles/claude/skills ~/.claude/skills
 ln -s ~/dotfiles/claude/settings.json ~/.claude/settings.json
 ```
 
@@ -215,7 +213,7 @@ ln -s ~/dotfiles/claude/settings.json ~/.claude/settings.json
 Skills are either auto-triggered by context or manually invoked with `/skill-name`:
 
 - **codestyle** - Enforces code style guidelines (no `let`, no `any`, AAA test pattern, etc.)
-- **brainstorming** - Explores user intent and requirements before implementation
+- **brainstorm** - Explores user intent and requirements before implementation
 - **art-of-explanation** - Structures explanations for clarity and precision
 - **grill-me** - Intensive design review, questions every aspect of a plan (`/grill-me`)
 - **ubiquitous-language** - Scans codebase and creates UBIQUITOUS_LANGUAGE.md (`/ubiquitous-language`)
