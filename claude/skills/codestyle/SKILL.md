@@ -409,22 +409,6 @@ When creating tests, follow these strict rules:
   }
   ```
 
-### Git Operations
-
-- **NEVER run git write commands** - You are prohibited from executing:
-  - `git commit`
-  - `git push`
-  - `git merge`
-  - `git rebase`
-  - `git cherry-pick`
-  - Any other command that modifies git history or remote state
-
-- **Read-only git access** - You may only:
-  - View git history with `git log`
-  - Check status with `git status`
-  - View diffs with `git diff`
-  - Inspect branches and refs
-
 ## Code Review Checklist
 
 When reviewing or writing code, verify:
@@ -445,4 +429,3 @@ When reviewing or writing code, verify:
 - [ ] Tests follow AAA pattern and are minimal
 - [ ] TypeScript imports are extensionless (no `.js`)
 - [ ] No inline `import()` - use static imports
-- [ ] No git write commands are executed
