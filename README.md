@@ -221,6 +221,7 @@ Skills are either auto-triggered by context or manually invoked with `/skill-nam
 - **backlog** - Manages deferred work items (`/backlog`)
 - **ubiquitous-language** - Scans codebase and creates UBIQUITOUS_LANGUAGE.md (`/ubiquitous-language`)
 - **add-serena** - Adds Serena (semantic code intelligence) to the current project via `.mcp.json` and `.serena/project.yml` (`/add-serena`)
+- **add-locus** - Adds Locus (LSP-based code intelligence MCP server) to the current project via `locus.toml` and `.mcp.json` (`/add-locus`)
 
 ## Tools
 
