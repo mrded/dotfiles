@@ -60,7 +60,7 @@ Map detected files to Serena language identifiers:
 | Detected file / extension | Serena language |
 |---------------------------|-----------------|
 | `package.json`, `*.ts`, `*.tsx` | `typescript` |
-| `package.json` (no TS) | `typescript` (JS uses TS tooling in Serena) |
+| `package.json` with `*.js` only (no TS) | `typescript` (Serena uses TS tooling for JS too) |
 | `go.mod` | `go` |
 | `Cargo.toml` | `rust` |
 | `pyproject.toml`, `setup.py`, `*.py` | `python` |
@@ -69,6 +69,29 @@ Map detected files to Serena language identifiers:
 | `*.cs`, `*.csproj` | `csharp` |
 
 If multiple languages are detected, include all of them. If none are detected, ask the user.
+
+#### Vanilla JS projects: add `jsconfig.json`
+
+If the project has `package.json` but **no** `.ts`/`.tsx` files and no existing `jsconfig.json`, create one before writing the Serena config. A `jsconfig.json` tells the TypeScript language service what belongs to the project and dramatically improves cross-file understanding without requiring a migration to TypeScript.
+
+Detect the source and test directories by inspecting the project layout, then write:
+
+```json
+{
+  "compilerOptions": {
+    "checkJs": false,
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "target": "ES2022"
+  },
+  "include": ["src/**/*.js", "test/**/*.js"],
+  "exclude": ["node_modules", "dist"]
+}
+```
+
+Adjust `include` to match the actual directory names found (e.g. `tests/`, `lib/`, `app/`). Keep `checkJs: false` — this is for navigation, not type-checking.
+
+Still use `typescript` as the Serena language regardless. That is the correct setting for both TypeScript and JavaScript projects.
 
 ### 5. Write `.serena/project.yml`
 
