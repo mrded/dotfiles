@@ -324,6 +324,19 @@ Apply these rules consistently across all code changes:
   }
   ```
 
+- **Always use braces on `if`/`else` bodies** - Never write a braceless single-statement body, even on one line
+  - Braceless bodies are easy to break silently when a second statement is added later
+  - Applies to every branch, including early returns
+  ```typescript
+  // ✅ Correct - braces even for a single statement
+  if (isValid(value)) {
+    return value
+  }
+
+  // ❌ Wrong - braceless if, even though it's one line
+  if (isValid(value)) return value
+  ```
+
 - **Avoid nested conditions** - Prefer early returns and guard clauses
   - Use early returns to reduce nesting
   - Extract complex conditions into well-named variables or functions
@@ -425,6 +438,7 @@ When reviewing or writing code, verify:
 - [ ] No massive try/catch blocks - errors handled at appropriate level
 - [ ] No nested try/catch blocks - extract into separate functions
 - [ ] No `while` loops - use recursion, functional patterns, or `for` loops
+- [ ] Every `if`/`else` body uses braces, even single-statement one-liners
 - [ ] No deeply nested conditions - use early returns
 - [ ] Tests follow AAA pattern and are minimal
 - [ ] TypeScript imports are extensionless (no `.js`)
