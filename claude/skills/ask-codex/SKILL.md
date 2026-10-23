@@ -6,7 +6,7 @@ allowed-tools: Bash, Read, Grep, Glob
 
 # Ask Codex
 
-Consult OpenAI Codex (o3) as a second opinion for investigation, debugging, or review tasks.
+Consult OpenAI Codex as a second opinion for investigation, debugging, or review tasks.
 
 ## Activation Triggers
 
@@ -165,12 +165,14 @@ Use "approve" only if you cannot support any substantive finding.
 Run codex in background (it takes 2-5 minutes for complex analysis):
 
 ```bash
-codex exec -m o3 \
+codex exec \
   --sandbox read-only \
   -c model_reasoning_effort="xhigh" \
-  -c stream_idle_timeout_ms=600000 \
   "prompt here" < /dev/null
 ```
+
+For a long prompt, write it to a file in the scratchpad and pass `"$(cat <file>)"`, then redirect output to a
+file (`> <file> 2>&1`) so the JSON verdict can be pulled out afterwards.
 
 **Execution rules:**
 - Always end the invocation with `< /dev/null` (as shown). `codex exec` reads stdin to append a `<stdin>` block even when the prompt is a positional arg, so an inherited open pipe (common under a background launch) never closes and codex blocks forever on "Reading additional input from stdin…"; `/dev/null` gives immediate EOF.
@@ -181,7 +183,10 @@ codex exec -m o3 \
 
 **Flags:**
 - `--sandbox read-only` — codex can read all project files but cannot modify anything
-- `-m o3` — strong reasoning model; adjust as newer versions become available
+- No `-m`: use the model Codex is configured with (`~/.codex/config.toml`, or Codex's own default). The
+  models an account may use change over time and depend on how it's signed in — e.g. `o3` is rejected
+  with "not supported when using Codex with a ChatGPT account". The model actually used is printed as
+  `model:` in the output header. Only pass `-m <model>` when the user asks for a specific one.
 - `model_reasoning_effort="xhigh"` — deepest reasoning tier
 
 ### Step 5: Present Results
@@ -255,6 +260,7 @@ Parse the JSON output and present findings sorted by severity, filtered by confi
 
 - **Codex not found**: `which codex` — install via `npm install -g @openai/codex`
 - **Authentication**: `codex login` if getting auth errors
-- **Timeout**: increase `stream_idle_timeout_ms` for complex analyses
+- **"model is not supported"**: a `-m` was passed that the account can't use; drop it and use the configured default
+- **Timeout**: raise the Bash `timeout` (background runs allow up to 2 hours); `stream_idle_timeout_ms` is ignored by recent Codex versions
 - **Off-target response**: refine prompt with more specific file:line references
 - **Hangs on "Reading additional input from stdin…"**: the invocation is missing the `< /dev/null` stdin redirect — add it (see Step 4).
