@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
   "permissions": {
-    "allow": ["mcp__serena__*"],
+    "allow": ["mcp__serena__*", "Bash(git rm*)"],
     "deny": [
       "Bash(git add*)",
       "Bash(git commit*)",
@@ -11,8 +11,10 @@
       "Bash(git merge*)",
       "Bash(git restore*)",
       "Bash(git stash*)",
-      "Bash(git branch -d*)",
-      "Bash(git branch -D*)",
+      "Bash(git branch *)",
+      "Bash(git checkout*)",
+      "Bash(git switch*)",
+      "Bash(git worktree add*)",
       "Bash(git tag*)",
       "Bash(git cherry-pick*)"
     ]
